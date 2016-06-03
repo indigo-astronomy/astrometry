@@ -1,0 +1,8 @@
+*.DS_Store
+*.xcworkspace
+*.xctimeline
+xcworkspacedata/*
+xcuserdata/*
+astrometry.xcodeproj/xcuserdata/*
+.hg
+.hgignore
