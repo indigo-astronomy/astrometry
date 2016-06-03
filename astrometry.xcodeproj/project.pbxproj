@@ -1553,7 +1553,7 @@
 				59217D801AA65AA800C6EA41 /* wcsutil.c */,
 			);
 			name = cfitsio;
-			path = ../cfitsio;
+			path = ../cfitsio3390;
 			sourceTree = "<group>";
 		};
 		59217DD91AA65AF500C6EA41 /* anbase */ = {
