@@ -3928,7 +3928,7 @@
 					"$(inherited)",
 					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"../Astrometry/**",
-					"../cfitsio/**",
+					"../cfitsio3390/**",
 					"../astrometry.net/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -3983,7 +3983,7 @@
 					"$(inherited)",
 					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"../Astrometry/**",
-					"../cfitsio/**",
+					"../cfitsio3390/**",
 					"../astrometry.net/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
