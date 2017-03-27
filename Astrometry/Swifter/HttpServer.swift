@@ -8,15 +8,15 @@
 
 import Foundation
 
-public class HttpServer: HttpServerIO {
+open class HttpServer: HttpServerIO {
   
-  private let router = HttpRouter()
+  fileprivate let router = HttpRouter()
   
-  public var routes: [(method: String?, path: String)] {
+  open var routes: [(method: String?, path: String)] {
     return router.routes()
   }
   
-  public subscript(path: String) -> (HttpRequest -> HttpResponse)? {
+  open subscript(path: String) -> ((HttpRequest) -> HttpResponse)? {
     set {
       if let handler = newValue {
         self.router.register(nil, path: path, handler: handler)
@@ -28,17 +28,17 @@ public class HttpServer: HttpServerIO {
     get { return nil }
   }
   
-  public lazy var DELETE : Route = self.lazyBuild("DELETE")
-  public lazy var UPDATE : Route = self.lazyBuild("UPDATE")
-  public lazy var HEAD   : Route = self.lazyBuild("HEAD")
-  public lazy var POST   : Route = self.lazyBuild("POST")
-  public lazy var GET    : Route = self.lazyBuild("GET")
-  public lazy var PUT    : Route = self.lazyBuild("PUT")
+  open lazy var DELETE : Route = self.lazyBuild("DELETE")
+  open lazy var UPDATE : Route = self.lazyBuild("UPDATE")
+  open lazy var HEAD   : Route = self.lazyBuild("HEAD")
+  open lazy var POST   : Route = self.lazyBuild("POST")
+  open lazy var GET    : Route = self.lazyBuild("GET")
+  open lazy var PUT    : Route = self.lazyBuild("PUT")
   
   public struct Route {
     public let method: String
     public let server: HttpServer
-    public subscript(path: String) -> (HttpRequest -> HttpResponse)? {
+    public subscript(path: String) -> ((HttpRequest) -> HttpResponse)? {
       set {
         if let handler = newValue {
           server.router.register(method, path: path, handler: handler)
@@ -50,11 +50,11 @@ public class HttpServer: HttpServerIO {
     }
   }
   
-  private func lazyBuild(method: String) -> Route {
+  fileprivate func lazyBuild(_ method: String) -> Route {
     return Route(method: method, server: self)
   }
   
-  override public func select(method: String, url: String) -> ([String : String], HttpRequest -> HttpResponse) {
+  override open func select(_ method: String, url: String) -> ([String : String], (HttpRequest) -> HttpResponse) {
     if let handler = router.select(method, url: url) {
       return handler
     }

@@ -8,11 +8,11 @@ import Foundation
 
 extension String {
   
-  public func split(separator: Character) -> [String] {
+  public func split(_ separator: Character) -> [String] {
     return self.characters.split { $0 == separator }.map(String.init)
   }
   
-  public func replace(old: Character, new: Character) -> String {
+  public func replace(_ old: Character, new: Character) -> String {
     var buffer = [Character]()
     self.characters.forEach { buffer.append($0 == old ? new : $0) }
     return String(buffer)
@@ -33,11 +33,11 @@ extension String {
       if scalar == "%" {
         let first = scalars.popFirst()
         let secon = scalars.popFirst()
-        if let first = unicodeScalarToUInt32Hex(first), secon = unicodeScalarToUInt32Hex(secon) {
+        if let first = unicodeScalarToUInt32Hex(first), let secon = unicodeScalarToUInt32Hex(secon) {
           bytesBuffer.append(first*16+secon)
         } else {
           if !bytesBuffer.isEmpty {
-            output.appendContentsOf(UInt8ArrayToUTF8String(bytesBuffer))
+            output.append(UInt8ArrayToUTF8String(bytesBuffer))
             bytesBuffer.removeAll()
           }
           if let first = first { output.append(Character(first)) }
@@ -45,20 +45,20 @@ extension String {
         }
       } else {
         if !bytesBuffer.isEmpty {
-          output.appendContentsOf(UInt8ArrayToUTF8String(bytesBuffer))
+          output.append(UInt8ArrayToUTF8String(bytesBuffer))
           bytesBuffer.removeAll()
         }
         output.append(Character(scalar))
       }
     }
     if !bytesBuffer.isEmpty {
-      output.appendContentsOf(UInt8ArrayToUTF8String(bytesBuffer))
+      output.append(UInt8ArrayToUTF8String(bytesBuffer))
       bytesBuffer.removeAll()
     }
     return output
   }
   
-  private func unicodeScalarToUInt32Whitespace(x: UnicodeScalar?) -> UInt8? {
+  fileprivate func unicodeScalarToUInt32Whitespace(_ x: UnicodeScalar?) -> UInt8? {
     if let x = x {
       if x.value >= 9 && x.value <= 13 {
         return UInt8(x.value)
@@ -70,7 +70,7 @@ extension String {
     return nil
   }
   
-  private func unicodeScalarToUInt32Hex(x: UnicodeScalar?) -> UInt8? {
+  fileprivate func unicodeScalarToUInt32Hex(_ x: UnicodeScalar?) -> UInt8? {
     if let x = x {
       if x.value >= 48 && x.value <= 57 {
         return UInt8(x.value) - 48
@@ -86,11 +86,11 @@ extension String {
   }
 }
 
-public func UInt8ArrayToUTF8String(array: [UInt8]) -> String {
+public func UInt8ArrayToUTF8String(_ array: [UInt8]) -> String {
   #if os(Linux)
     return String(data: NSData(bytes: array, length: array.count), encoding: NSUTF8StringEncoding)
   #else
-    if let s = String(data: NSData(bytes: array, length: array.count), encoding: NSUTF8StringEncoding) {
+    if let s = String(data: Data(bytes: UnsafePointer<UInt8>(array), count: array.count), encoding: String.Encoding.utf8) {
       return s
     }
     return ""

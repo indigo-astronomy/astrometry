@@ -12,11 +12,11 @@ let GREEN = NSColor(calibratedRed: 0.0, green: 0.6, blue: 0.0, alpha: 1.0)
 let YELLOW = NSColor(calibratedRed: 1.0, green: 0.5, blue: 0.0, alpha: 1.0)
 let RED = NSColor(calibratedRed: 0.5, green: 0.0, blue: 0.0, alpha: 1.0)
 
-let FILE_NAMANGER = NSFileManager.defaultManager()
-let WORKSPACE = NSWorkspace.sharedWorkspace()
-let DEFAULTS = NSUserDefaults.standardUserDefaults()
+let FILE_NAMANGER = FileManager.default
+let WORKSPACE = NSWorkspace.shared()
+let DEFAULTS = UserDefaults.standard
 
-let FOLDER = "\(NSFileManager().URLsForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).first!.path!)/Astrometry"
+let FOLDER = "\(FileManager().urls(for: FileManager.SearchPathDirectory.applicationSupportDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!.path)/Astrometry"
 let CONFIG = "\(FOLDER)/astrometry.cfg"
 
 let FILES = [

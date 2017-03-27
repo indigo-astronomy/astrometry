@@ -13,16 +13,16 @@ class StreamReader  {
   let encoding : UInt
   let chunkSize : Int
   
-  var fileHandle : NSFileHandle!
+  var fileHandle : FileHandle!
   let buffer : NSMutableData!
-  let delimData : NSData!
+  let delimData : Data!
   var atEof : Bool = false
   
-  init?(fileHandle : NSFileHandle, delimiter: String = "\n") {
+  init?(fileHandle : FileHandle, delimiter: String = "\n") {
     self.chunkSize = 64
-    self.encoding = NSUTF8StringEncoding
+    self.encoding = String.Encoding.utf8.rawValue
     
-    if let delimData = "\n".dataUsingEncoding(encoding), buffer = NSMutableData(capacity: chunkSize) {
+    if let delimData = "\n".data(using: String.Encoding(rawValue: encoding)), let buffer = NSMutableData(capacity: chunkSize) {
       self.fileHandle = fileHandle
       self.delimData = delimData
       self.buffer = buffer
@@ -43,23 +43,23 @@ class StreamReader  {
     if atEof {
       return nil
     }
-    var range = buffer.rangeOfData(delimData, options: [], range: NSMakeRange(0, buffer.length))
+    var range = buffer.range(of: delimData, options: [], in: NSMakeRange(0, buffer.length))
     while range.location == NSNotFound {
-      let tmpData = fileHandle.readDataOfLength(chunkSize)
-      if tmpData.length == 0 {
+      let tmpData = fileHandle.readData(ofLength: chunkSize)
+      if tmpData.count == 0 {
         atEof = true
         if buffer.length > 0 {
-          let line = NSString(data: buffer, encoding: encoding)
+          let line = NSString(data: buffer as Data, encoding: encoding)
           buffer.length = 0
           return line as String?
         }
         return nil
       }
-      buffer.appendData(tmpData)
-      range = buffer.rangeOfData(delimData, options: [], range: NSMakeRange(0, buffer.length))
+      buffer.append(tmpData)
+      range = buffer.range(of: delimData, options: [], in: NSMakeRange(0, buffer.length))
     }
-    let line = NSString(data: buffer.subdataWithRange(NSMakeRange(0, range.location)), encoding: encoding)
-    buffer.replaceBytesInRange(NSMakeRange(0, range.location + range.length), withBytes: nil, length: 0)
+    let line = NSString(data: buffer.subdata(with: NSMakeRange(0, range.location)), encoding: encoding)
+    buffer.replaceBytes(in: NSMakeRange(0, range.location + range.length), withBytes: nil, length: 0)
     return line as String?
   }
   

@@ -11,19 +11,19 @@
 #endif
 
 
-enum HttpParserError: ErrorType {
-  case ReadBodyFailed(String)
-  case InvalidStatusLine(String)
+enum HttpParserError: Error {
+  case readBodyFailed(String)
+  case invalidStatusLine(String)
 }
 
 class HttpParser {
   
-  func readHttpRequest(socket: Socket) throws -> HttpRequest {
+  func readHttpRequest(_ socket: Socket) throws -> HttpRequest {
     let statusLine = try socket.readLine()
     let statusLineTokens = statusLine.split(" ")
     //print(statusLineTokens)
     if statusLineTokens.count < 3 {
-      throw HttpParserError.InvalidStatusLine(statusLine)
+      throw HttpParserError.invalidStatusLine(statusLine)
     }
     var request = HttpRequest()
     request.method = statusLineTokens[0]
@@ -36,30 +36,30 @@ class HttpParser {
     return request
   }
   
-  private func extractUrlParams(url: String) -> [(String, String)] {
+  fileprivate func extractUrlParams(_ url: String) -> [(String, String)] {
     guard let query = url.split("?").last else {
       return []
     }
     return query.split("&").map { (param: String) -> (String, String) in
       let tokens = param.split("=")
-      guard let name = tokens.first, value = tokens.last else {
+      guard let name = tokens.first, let value = tokens.last else {
         return ("", "")
       }
       return (name.removePercentEncoding(), value.removePercentEncoding())
     }
   }
   
-  private func readBody(socket: Socket, size: Int) throws -> [UInt8] {
+  fileprivate func readBody(_ socket: Socket, size: Int) throws -> [UInt8] {
     var body = [UInt8]()
     var counter = 0
     while counter < size {
       body.append(try socket.read())
-      counter++
+      counter += 1
     }
     return body
   }
   
-  private func readHeaders(socket: Socket) throws -> [String: String] {
+  fileprivate func readHeaders(_ socket: Socket) throws -> [String: String] {
     var requestHeaders = [String: String]()
     repeat {
       let headerLine = try socket.readLine()
@@ -67,14 +67,14 @@ class HttpParser {
         return requestHeaders
       }
       let headerTokens = headerLine.split(":")
-      if let name = headerTokens.first where headerTokens.count >= 2 {
-        let value = headerTokens.dropFirst().joinWithSeparator(":")
-        requestHeaders[name.lowercaseString] = value.trim()
+      if let name = headerTokens.first, headerTokens.count >= 2 {
+        let value = headerTokens.dropFirst().joined(separator: ":")
+        requestHeaders[name.lowercased()] = value.trim()
       }
     } while true
   }
   
-  func supportsKeepAlive(headers: [String: String]) -> Bool {
+  func supportsKeepAlive(_ headers: [String: String]) -> Bool {
     if let value = headers["connection"] {
       return "keep-alive" == value.trim()
     }

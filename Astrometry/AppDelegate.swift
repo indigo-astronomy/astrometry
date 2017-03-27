@@ -14,18 +14,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet var solver: SolverDelegate!
   @IBOutlet var indexManager: IndexManagerDelegate!
 
-  @IBAction func openProductPage(sender: AnyObject) {
-    NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.cloudmakers.eu/astrometry")!)
+  @IBAction func openProductPage(_ sender: AnyObject) {
+    NSWorkspace.shared().open(URL(string: "http://www.cloudmakers.eu/astrometry")!)
   }
   
-  @IBAction func openAstrometryNet(sender: AnyObject) {
-    NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.astrometry.net")!)
+  @IBAction func openAstrometryNet(_ sender: AnyObject) {
+    NSWorkspace.shared().open(URL(string: "http://www.astrometry.net")!)
   }
   
-  func applicationDidFinishLaunching(aNotification: NSNotification) {
-    if !FILE_NAMANGER.fileExistsAtPath(CONFIG) {
-      if let config = "cpulimit 300\nadd_path \(FOLDER)\nautoindex\n".dataUsingEncoding(NSASCIIStringEncoding) {
-        config.writeToFile(CONFIG, atomically: true)
+  func applicationDidFinishLaunching(_ aNotification: Notification) {
+    NSImageRep.registerClass(RawImageRep.self)
+    if !FILE_NAMANGER.fileExists(atPath: CONFIG) {
+      if let config = "cpulimit 300\nadd_path \(FOLDER)\nautoindex\n".data(using: String.Encoding.ascii) {
+        try? config.write(to: URL(fileURLWithPath: CONFIG), options: [.atomic])
       }
     }
     indexManager.showIfNoIndexFound()
@@ -33,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     solver.startServer()
   }
 
-  func applicationWillTerminate(aNotification: NSNotification) {
+  func applicationWillTerminate(_ aNotification: Notification) {
   }
 }
 

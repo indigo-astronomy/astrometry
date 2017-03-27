@@ -6,27 +6,27 @@
 
 import Foundation
 
-public class HttpRouter {
+open class HttpRouter {
   
-  private var handlers: [(String?, pattern: [String], HttpRequest -> HttpResponse)] = []
+  fileprivate var handlers: [(String?, pattern: [String], (HttpRequest) -> HttpResponse)] = []
   
-  public func routes() -> [(method: String?, path: String)] {
-    return handlers.map { ($0.0, "/" + $0.pattern.joinWithSeparator("/")) }
+  open func routes() -> [(method: String?, path: String)] {
+    return handlers.map { ($0.0, "/" + $0.pattern.joined(separator: "/")) }
   }
   
-  public func register(method: String?, path: String, handler: HttpRequest -> HttpResponse) {
+  open func register(_ method: String?, path: String, handler: @escaping (HttpRequest) -> HttpResponse) {
     handlers.append((method, path.split("/"), handler))
-    handlers.sortInPlace { $0.0.pattern.count < $0.1.pattern.count }
+    handlers.sort { $0.0.pattern.count < $0.1.pattern.count }
   }
   
-  public func unregister(method: String?, path: String) {
+  open func unregister(_ method: String?, path: String) {
     let tokens = path.split("/")
     handlers = handlers.filter { (meth, pattern, _) -> Bool in
       return meth != method || pattern != tokens
     }
   }
   
-  public func select(method: String?, url: String) -> ([String: String], HttpRequest -> HttpResponse)? {
+  open func select(_ method: String?, url: String) -> ([String: String], (HttpRequest) -> HttpResponse)? {
     let urlTokens = url.split("/")
     for (meth, pattern, handler) in handlers {
       if meth == nil || meth! == method {
@@ -38,7 +38,7 @@ public class HttpRouter {
     return nil
   }
   
-  public func matchParams(patternTokens: [String], valueTokens: [String]) -> [String: String]? {
+  open func matchParams(_ patternTokens: [String], valueTokens: [String]) -> [String: String]? {
     var params = [String: String]()
     for index in 0..<valueTokens.count {
       if index >= patternTokens.count {
@@ -55,7 +55,7 @@ public class HttpRouter {
         #if os(Linux)
           params[patternToken.substringFromIndex(1)] = valueToken
         #else
-          params[patternToken.substringFromIndex(patternToken.characters.startIndex.successor())] = valueToken
+          params[patternToken.substring(from: patternToken.characters.index(after: patternToken.characters.startIndex))] = valueToken
         #endif
       } else {
         if patternToken != valueToken {

@@ -6,34 +6,34 @@
 
 import Foundation
 
-public enum SerializationError: ErrorType {
-  case InvalidObject
-  case NotSupported
+public enum SerializationError: Error {
+  case invalidObject
+  case notSupported
 }
 
 public enum HttpResponseBody {
   
-  case Json(AnyObject)
-  case Html(String)
-  case Text(String)
-  case Custom(Any, (Any) throws -> String)
+  case json(AnyObject)
+  case html(String)
+  case text(String)
+  case custom(Any, (Any) throws -> String)
   
   func data() -> [UInt8]? {
     do {
       switch self {
-      case .Json(let object):
-        guard let obj = object as? AnyObject where NSJSONSerialization.isValidJSONObject(obj) else {
-          throw SerializationError.InvalidObject
+      case .json(let object):
+        guard let obj = object as? AnyObject, JSONSerialization.isValidJSONObject(obj) else {
+          throw SerializationError.invalidObject
         }
-        let json = try NSJSONSerialization.dataWithJSONObject(obj, options: NSJSONWritingOptions.PrettyPrinted)
-        return Array(UnsafeBufferPointer(start: UnsafePointer<UInt8>(json.bytes), count: json.length))
-      case .Text(let body):
+        let json = try JSONSerialization.data(withJSONObject: obj, options: JSONSerialization.WritingOptions.prettyPrinted)
+        return Array(UnsafeBufferPointer(start: (json as NSData).bytes.bindMemory(to: UInt8.self, capacity: json.count), count: json.count))
+      case .text(let body):
         let serialised = body
         return [UInt8](serialised.utf8)
-      case .Html(let body):
+      case .html(let body):
         let serialised = "<html><meta charset=\"UTF-8\"><body>\(body)</body></html>"
         return [UInt8](serialised.utf8)
-      case .Custom(let object, let closure):
+      case .custom(let object, let closure):
         let serialised = try closure(object)
         return [UInt8](serialised.utf8)
       }
@@ -45,54 +45,54 @@ public enum HttpResponseBody {
 
 public enum HttpResponse {
   
-  case OK(HttpResponseBody), Created, Accepted
-  case MovedPermanently(String)
-  case BadRequest, Unauthorized, Forbidden, NotFound
-  case InternalServerError
-  case RAW(Int, String, [String:String]?, [UInt8]?)
+  case ok(HttpResponseBody), created, accepted
+  case movedPermanently(String)
+  case badRequest, unauthorized, forbidden, notFound
+  case internalServerError
+  case raw(Int, String, [String:String]?, [UInt8]?)
   
   func statusCode() -> Int {
     switch self {
-    case .OK(_)                   : return 200
-    case .Created                 : return 201
-    case .Accepted                : return 202
-    case .MovedPermanently        : return 301
-    case .BadRequest              : return 400
-    case .Unauthorized            : return 401
-    case .Forbidden               : return 403
-    case .NotFound                : return 404
-    case .InternalServerError     : return 500
-    case .RAW(let code, _ , _, _) : return code
+    case .ok(_)                   : return 200
+    case .created                 : return 201
+    case .accepted                : return 202
+    case .movedPermanently        : return 301
+    case .badRequest              : return 400
+    case .unauthorized            : return 401
+    case .forbidden               : return 403
+    case .notFound                : return 404
+    case .internalServerError     : return 500
+    case .raw(let code, _ , _, _) : return code
     }
   }
   
   func reasonPhrase() -> String {
     switch self {
-    case .OK(_)                    : return "OK"
-    case .Created                  : return "Created"
-    case .Accepted                 : return "Accepted"
-    case .MovedPermanently         : return "Moved Permanently"
-    case .BadRequest               : return "Bad Request"
-    case .Unauthorized             : return "Unauthorized"
-    case .Forbidden                : return "Forbidden"
-    case .NotFound                 : return "Not Found"
-    case .InternalServerError      : return "Internal Server Error"
-    case .RAW(_, let phrase, _, _) : return phrase
+    case .ok(_)                    : return "OK"
+    case .created                  : return "Created"
+    case .accepted                 : return "Accepted"
+    case .movedPermanently         : return "Moved Permanently"
+    case .badRequest               : return "Bad Request"
+    case .unauthorized             : return "Unauthorized"
+    case .forbidden                : return "Forbidden"
+    case .notFound                 : return "Not Found"
+    case .internalServerError      : return "Internal Server Error"
+    case .raw(_, let phrase, _, _) : return phrase
     }
   }
   
   func headers() -> [String: String] {
     var headers = ["Server" : "Swifter \(Constants.VERSION)"]
     switch self {
-    case .OK(let body):
+    case .ok(let body):
       switch body {
-      case .Json(_)   : headers["Content-Type"] = "application/json"
-      case .Html(_)   : headers["Content-Type"] = "text/html"
+      case .json(_)   : headers["Content-Type"] = "application/json"
+      case .html(_)   : headers["Content-Type"] = "text/html"
       default:break
       }
-    case .MovedPermanently(let location):
+    case .movedPermanently(let location):
       headers["Location"] = location
-    case .RAW(_, _, let rawHeaders, _):
+    case .raw(_, _, let rawHeaders, _):
       if let rawHeaders = rawHeaders {
         for (k, v) in rawHeaders {
           headers.updateValue(v, forKey: k)
@@ -105,8 +105,8 @@ public enum HttpResponse {
   
   func body() -> [UInt8]? {
     switch self {
-    case .OK(let body)           : return body.data()
-    case .RAW(_, _, _, let data) : return data
+    case .ok(let body)           : return body.data()
+    case .raw(_, _, _, let data) : return data
     default                      : return nil
     }
   }

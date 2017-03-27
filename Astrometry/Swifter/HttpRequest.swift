@@ -21,12 +21,12 @@ public struct HttpRequest {
       return []
     }
     let contentTypeHeaderTokens = contentTypeHeader.split(";").map { $0.trim() }
-    guard let contentType = contentTypeHeaderTokens.first where contentType == "application/x-www-form-urlencoded" else {
+    guard let contentType = contentTypeHeaderTokens.first, contentType == "application/x-www-form-urlencoded" else {
       return []
     }
     return UInt8ArrayToUTF8String(body).split("&").map { (param: String) -> (String, String) in
       let tokens = param.split("=")
-      if let name = tokens.first, value = tokens.last where tokens.count == 2 {
+      if let name = tokens.first, let value = tokens.last, tokens.count == 2 {
         return (name.replace("+", new: " ").removePercentEncoding(),
           value.replace("+", new: " ").removePercentEncoding())
       }
@@ -44,24 +44,24 @@ public struct HttpRequest {
       return []
     }
     let contentTypeHeaderTokens = contentTypeHeader.split(";").map { $0.trim() }
-    guard let contentType = contentTypeHeaderTokens.first where contentType == "multipart/form-data" else {
+    guard let contentType = contentTypeHeaderTokens.first, contentType == "multipart/form-data" else {
       return []
     }
     var boundary: String? = nil
     contentTypeHeaderTokens.forEach({
       let tokens = $0.split("=")
-      if let key = tokens.first where key == "boundary" && tokens.count == 2 {
+      if let key = tokens.first, key == "boundary" && tokens.count == 2 {
         boundary = tokens.last
       }
     })
-    if let boundary = boundary where boundary.utf8.count > 0 {
+    if let boundary = boundary, boundary.utf8.count > 0 {
       return parseMultiPartFormData(body, boundary: "--\(boundary)")
     }
     return []
   }
   
-  private func parseMultiPartFormData(data: [UInt8], boundary: String) -> [MultiPart] {
-    var generator = data.generate()
+  fileprivate func parseMultiPartFormData(_ data: [UInt8], boundary: String) -> [MultiPart] {
+    var generator = data.makeIterator()
     var result = [MultiPart]()
     while let part = nextMultiPart(&generator, boundary: boundary, isFirst: result.isEmpty) {
       result.append(part)
@@ -69,7 +69,7 @@ public struct HttpRequest {
     return result
   }
   
-  private func nextMultiPart(inout generator: IndexingGenerator<[UInt8]>, boundary: String, isFirst: Bool) -> MultiPart? {
+  fileprivate func nextMultiPart(_ generator: inout IndexingIterator<[UInt8]>, boundary: String, isFirst: Bool) -> MultiPart? {
     if isFirst {
       guard nextMultiPartLine(&generator) == boundary else {
         return nil
@@ -78,10 +78,10 @@ public struct HttpRequest {
       nextMultiPartLine(&generator)
     }
     var headers = [String: String]()
-    while let line = nextMultiPartLine(&generator) where !line.isEmpty {
+    while let line = nextMultiPartLine(&generator), !line.isEmpty {
       let tokens = line.split(":")
-      if let name = tokens.first, value = tokens.last where tokens.count == 2 {
-        headers[name.lowercaseString] = value.trim()
+      if let name = tokens.first, let value = tokens.last, tokens.count == 2 {
+        headers[name.lowercased()] = value.trim()
       }
     }
     guard let body = nextMultiPartBody(&generator, boundary: boundary) else {
@@ -90,7 +90,7 @@ public struct HttpRequest {
     return MultiPart(headers: headers, body: body)
   }
   
-  private func nextMultiPartLine(inout generator: IndexingGenerator<[UInt8]>) -> String? {
+  fileprivate func nextMultiPartLine(_ generator: inout IndexingIterator<[UInt8]>) -> String? {
     var result = String()
     while let value = generator.next() {
       if value > Constants.CR {
@@ -103,7 +103,7 @@ public struct HttpRequest {
     return result
   }
   
-  private func nextMultiPartBody(inout generator: IndexingGenerator<[UInt8]>, boundary: String) -> [UInt8]? {
+  fileprivate func nextMultiPartBody(_ generator: inout IndexingIterator<[UInt8]>, boundary: String) -> [UInt8]? {
     var body = [UInt8]()
     let boundaryArray = [UInt8](boundary.utf8)
     var matchOffset = 0;
@@ -111,7 +111,7 @@ public struct HttpRequest {
       matchOffset = ( x == boundaryArray[matchOffset] ? matchOffset + 1 : 0 )
       body.append(x)
       if matchOffset == boundaryArray.count {
-        body.removeRange(Range<Int>(start: body.count-matchOffset, end: body.count))
+        body.removeSubrange(((body.count-matchOffset) ..< body.count))
         if body.last == Constants.NL {
           body.removeLast()
           if body.last == Constants.CR {

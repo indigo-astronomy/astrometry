@@ -1,4 +1,4 @@
-Copyright (c) 2015, CloudMakers, s. r. o.
+Copyright (c) 2015-2017, CloudMakers, s. r. o.
 
 Copyright (c) 2006-2015, Astrometry.net Developers
 
