@@ -16,14 +16,8 @@ bool Convert(NSString *input, NSString *output) {
     image = [[NSImage alloc] initWithContentsOfFile:input];
   else
     image = [[NSImage alloc] initWithData:[NSData dataWithContentsOfFile:input]];
-  if (image != NULL) {
-    NSBitmapImageRep *imageRep = nil;
-    for (NSBitmapImageRep *rep in image.representations) {
-      if ([rep isKindOfClass:NSBitmapImageRep.class]) {
-        imageRep = rep;
-        break;
-      }
-    }
+  NSBitmapImageRep* imageRep = (NSBitmapImageRep *)[image.representations firstObject];
+  if (imageRep != NULL) {
     int width = (int)imageRep.pixelsWide;
     int height = (int)imageRep.pixelsHigh;
     int length = 2*width*height;
