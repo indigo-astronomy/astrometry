@@ -175,29 +175,19 @@ class SolverDelegate: NSObject, NetServiceDelegate {
         }
         try self.execute("image2xy", arguments: [ "-O", "-o", xy, fits ])
         try self.execute("solve-field", arguments: self.addArgs("solve-field-args", [ "--overwrite", "--no-fits2fits", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0", "--config", CONFIG, xy ]))
-        if FileManager.default.fileExists(atPath: wcs) {
-          if DEFAULTS.bool(forKey: "writeWCSHeaders") {
-            try self.execute("new-wcs", arguments: [ "-v", "-d", "-i", fits, "-o", wcs_fits, "-w", wcs ])
-          }
-          self.raCenter = nil
-          self.decCenter = nil
-          self.orientation = nil
-          self.pixelScale = nil
-          try self.execute("wcsinfo", arguments: [ wcs ], parse: true)
-          self.done("\nDone in \(round((Date().timeIntervalSince1970 - start) * 100) / 100) seconds")
-        } else {
-          self.failed("\nFailed to solve file")
-        }
+        try self.execute("new-wcs", arguments: [ "-v", "-d", "-i", fits, "-o", wcs_fits, "-w", wcs ])
+        self.raCenter = nil
+        self.decCenter = nil
+        self.orientation = nil
+        self.pixelScale = nil
+        try self.execute("wcsinfo", arguments: [ wcs ], parse: true)
+        self.done("\nDone in \(round((Date().timeIntervalSince1970 - start) * 100) / 100) seconds")
       } catch {
-        self.failed("\nFailed to solve file")
       }
       if self.removeFilesButton.state == NSOnState {
-        var files = [xy, wcs, "\(base).axy", "\(base).corr", "\(base).match", "\(base).rdls", "\(base).solved", "\(base)-indx.xyls" ]
+        WORKSPACE.performFileOperation(NSWorkspaceRecycleOperation, source: "", destination: "", files: [xy, wcs, "\(base).axy", "\(base).corr", "\(base).match", "\(base).rdls", "\(base).solved", "\(base)-indx.xyls" ], tag: nil)
         if rmFITS {
-          files.append(fits)
-        }
-        for file in files {
-          WORKSPACE.performFileOperation(NSWorkspaceRecycleOperation, source: "", destination: "", files: [file], tag: nil)
+          WORKSPACE.performFileOperation(NSWorkspaceRecycleOperation, source: "", destination: "", files: [fits], tag: nil)
         }
       }
     }
@@ -207,7 +197,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     let panel = NSOpenPanel()
     panel.canChooseFiles = true
     panel.prompt = "Select image file"
-    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "png", "tiff" ]
+    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
     panel.beginSheetModal(for: window, completionHandler: { result in
       if result == NSFileHandlingPanelOKButton {
         if let url = panel.url {

@@ -22,8 +22,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     NSWorkspace.shared().open(URL(string: "http://www.astrometry.net")!)
   }
   
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
+  func applicationWillFinishLaunching(_ notification: Notification) {
     NSImageRep.registerClass(RawImageRep.self)
+  }
+
+  func applicationDidFinishLaunching(_ aNotification: Notification) {
     if !FILE_NAMANGER.fileExists(atPath: CONFIG) {
       if let config = "cpulimit 300\nadd_path \(FOLDER)\nautoindex\n".data(using: String.Encoding.ascii) {
         try? config.write(to: URL(fileURLWithPath: CONFIG), options: [.atomic])

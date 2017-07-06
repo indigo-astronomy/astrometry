@@ -11,13 +11,21 @@
 #include "fitsio.h"
 
 bool Convert(NSString *input, NSString *output) {
-  NSError *error = NULL;
-  NSData *data = [NSData dataWithContentsOfFile:input options:NSDataReadingUncached error:&error];
-  if (error == NULL) {
-    NSBitmapImageRep* imageRep = (NSBitmapImageRep *)[[[NSImage alloc] initWithData:data].representations firstObject];
-    CGImageRef image = [imageRep CGImage];
-    int width = (int)CGImageGetWidth(image);
-    int height = (int)CGImageGetHeight(image);
+  NSImage *image;
+  if ([input hasSuffix:@".nef"] || [input hasSuffix:@".cr2"])
+    image = [[NSImage alloc] initWithContentsOfFile:input];
+  else
+    image = [[NSImage alloc] initWithData:[NSData dataWithContentsOfFile:input]];
+  if (image != NULL) {
+    NSBitmapImageRep *imageRep = nil;
+    for (NSBitmapImageRep *rep in image.representations) {
+      if ([rep isKindOfClass:NSBitmapImageRep.class]) {
+        imageRep = rep;
+        break;
+      }
+    }
+    int width = (int)imageRep.pixelsWide;
+    int height = (int)imageRep.pixelsHigh;
     int length = 2*width*height;
     uint16_t *body = malloc(length);
     int i = 0;
@@ -30,9 +38,10 @@ bool Convert(NSString *input, NSString *output) {
       }
     } else if ([imageRep bitsPerPixel] == 16) {
       for (int y = 0; y < height; y++) {
-        uint8_t *data = (uint8_t *)([imageRep bitmapData]+y*[imageRep bytesPerRow]);
-        memcpy(body + i, data, 2 * width);
-        i += width;
+        uint16_t *data = (uint16_t *)([imageRep bitmapData]+y*[imageRep bytesPerRow]);
+        for (int x = 0; x < width; x++) {
+          body[i++] = *data++;
+        }
       }
     } else if ([imageRep bitsPerPixel] == 24) {
       for (int y = 0; y < height; y++) {
@@ -75,10 +84,10 @@ bool Convert(NSString *input, NSString *output) {
       fits_create_img(fptr, bitpix, naxis, naxes, &status);
       fits_write_pix(fptr, TUSHORT, fpixel, width * height, body, &status);
       fits_close_file(fptr, &status);
+      free(body);
       return true;
     }
-  } else {
-    NSLog(@"%@", error);
+    free(body);
   }
   return false;
 }

@@ -444,7 +444,6 @@
 		595605B41C2364B1004AEB4C /* image2xy-main.c in Sources */ = {isa = PBXBuildFile; fileRef = 595605B11C2364B1004AEB4C /* image2xy-main.c */; };
 		595605B71C2488C3004AEB4C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 595605B61C2488C3004AEB4C /* Credits.rtf */; };
 		595605BA1C248AB5004AEB4C /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595605B91C248AB5004AEB4C /* StreamReader.swift */; };
-		595B4F361E897309006C859C /* RawImageRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B4F351E897309006C859C /* RawImageRep.swift */; };
 		5982059D1E788DE000EE4ACD /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 5982059B1E788DE000EE4ACD /* LICENSE.md */; };
 		5982059E1E788DE000EE4ACD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5982059C1E788DE000EE4ACD /* README.md */; };
 		598F44FA1C249CFD00F769DD /* image2xy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 595605AE1C236469004AEB4C /* image2xy */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -473,6 +472,7 @@
 		9D78C4151AA6149C00234AE1 /* libanutil.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D78C1451AA60F5B00234AE1 /* libanutil.dylib */; };
 		9D78C46B1AA6165F00234AE1 /* libkd.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D78C4141AA6148600234AE1 /* libkd.dylib */; };
 		9D78C5FF1AA620CD00234AE1 /* libblind.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D78C50A1AA619E300234AE1 /* libblind.dylib */; };
+		9DE6CCAB1F0E59D60086A9DD /* RawImageRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */; };
 		9DF426561C24657500DEF999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF426551C24657500DEF999 /* AppDelegate.swift */; };
 		9DF426581C24657500DEF999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF426571C24657500DEF999 /* Assets.xcassets */; };
 		9DF4265B1C24657500DEF999 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF426591C24657500DEF999 /* MainMenu.xib */; };
@@ -1267,7 +1267,6 @@
 		595605B11C2364B1004AEB4C /* image2xy-main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "image2xy-main.c"; path = "../blind/image2xy-main.c"; sourceTree = "<group>"; };
 		595605B61C2488C3004AEB4C /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		595605B91C248AB5004AEB4C /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
-		595B4F351E897309006C859C /* RawImageRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawImageRep.swift; sourceTree = "<group>"; };
 		5982059B1E788DE000EE4ACD /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		5982059C1E788DE000EE4ACD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9D0602741C27FF7100787E2A /* wcsinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wcsinfo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1288,6 +1287,7 @@
 		9D78C50A1AA619E300234AE1 /* libblind.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libblind.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D78C51C1AA61C2E00234AE1 /* astrometry-engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "astrometry-engine"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D78C5F61AA620AE00234AE1 /* build-astrometry-index */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "build-astrometry-index"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawImageRep.swift; sourceTree = "<group>"; };
 		9DF426531C24657500DEF999 /* Astrometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF426551C24657500DEF999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF426571C24657500DEF999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -2181,9 +2181,9 @@
 				9D0602801C280BE700787E2A /* SolverDelegate.swift */,
 				9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */,
 				594564B21C2871A200FEA745 /* Constants.swift */,
+				9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */,
 				9DFC687A1E12BDE400F979AB /* Convert.h */,
 				9DFC68781E12BDB700F979AB /* Convert.m */,
-				595B4F351E897309006C859C /* RawImageRep.swift */,
 				9DF426631C24660700DEF999 /* Swifter */,
 				595605B81C248AB5004AEB4C /* StreamReader */,
 				9DF426601C24658D00DEF999 /* Supporting Files */,
@@ -3378,7 +3378,6 @@
 				9DF426561C24657500DEF999 /* AppDelegate.swift in Sources */,
 				9DF426701C24660700DEF999 /* DemoServer.swift in Sources */,
 				9DFC68791E12BDB700F979AB /* Convert.m in Sources */,
-				595B4F361E897309006C859C /* RawImageRep.swift in Sources */,
 				9DF426711C24660700DEF999 /* HttpHandlers.swift in Sources */,
 				9DF426721C24660700DEF999 /* HttpParser.swift in Sources */,
 				9DF426751C24660700DEF999 /* HttpRouter.swift in Sources */,
@@ -3386,6 +3385,7 @@
 				594564B31C2871A200FEA745 /* Constants.swift in Sources */,
 				9DF426781C24660700DEF999 /* Socket.swift in Sources */,
 				9DF426771C24660700DEF999 /* HttpServerIO.swift in Sources */,
+				9DE6CCAB1F0E59D60086A9DD /* RawImageRep.swift in Sources */,
 				9DF4266F1C24660700DEF999 /* Const.swift in Sources */,
 				9DF426741C24660700DEF999 /* HttpResponse.swift in Sources */,
 				9DF426791C24660700DEF999 /* String+Misc.swift in Sources */,
