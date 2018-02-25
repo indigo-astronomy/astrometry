@@ -207,7 +207,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     let panel = NSOpenPanel()
     panel.canChooseFiles = true
     panel.prompt = "Select image file"
-    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "png", "tiff" ]
+    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
     panel.beginSheetModal(for: window, completionHandler: { result in
       if result == NSFileHandlingPanelOKButton {
         if let url = panel.url {
