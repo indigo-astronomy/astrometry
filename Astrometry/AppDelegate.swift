@@ -8,6 +8,8 @@
 
 import Cocoa
 
+private var activity: NSObjectProtocol?
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -29,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         try? config.write(to: URL(fileURLWithPath: CONFIG), options: [.atomic])
       }
     }
+    activity = ProcessInfo().beginActivity(options: ProcessInfo.ActivityOptions.background, reason: "Good Reason")
     indexManager.showIfNoIndexFound()
     solver.show(self)
     solver.startServer()
