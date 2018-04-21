@@ -12,10 +12,12 @@
 
 bool Convert(NSString *input, NSString *output) {
   NSImage *image;
-  if ([input hasSuffix:@".nef"] || [input hasSuffix:@".cr2"])
-    image = [[NSImage alloc] initWithContentsOfFile:input];
-  else
+  if ([input hasSuffix:@".nef"] || [input hasSuffix:@".cr2"]) {
+    NSURL *url = [NSURL fileURLWithPath:input];
+    image = [[NSImage alloc] initWithContentsOfURL:url];
+  } else {
     image = [[NSImage alloc] initWithData:[NSData dataWithContentsOfFile:input]];
+  }
   NSBitmapImageRep* imageRep = (NSBitmapImageRep *)[image.representations firstObject];
   if (imageRep != NULL) {
     int width = (int)imageRep.pixelsWide;
