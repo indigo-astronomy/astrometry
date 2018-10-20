@@ -6,38 +6,6 @@
 	objectVersion = 47;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		59217F651AA66CD000C6EA41 /* All */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 59217F661AA66CD000C6EA41 /* Build configuration list for PBXAggregateTarget "All" */;
-			buildPhases = (
-			);
-			dependencies = (
-				598F45201C24C67A00F769DD /* PBXTargetDependency */,
-				595603CD1C233528004AEB4C /* PBXTargetDependency */,
-				9DF426261C243FD300DEF999 /* PBXTargetDependency */,
-				9DF426281C243FD300DEF999 /* PBXTargetDependency */,
-				9DF4262A1C243FD300DEF999 /* PBXTargetDependency */,
-				9DF4262C1C243FD300DEF999 /* PBXTargetDependency */,
-				9DF4262E1C243FD300DEF999 /* PBXTargetDependency */,
-				9DF426301C243FD300DEF999 /* PBXTargetDependency */,
-				9DF426321C243FD300DEF999 /* PBXTargetDependency */,
-				9DF426341C243FD300DEF999 /* PBXTargetDependency */,
-				9DF426361C243FD300DEF999 /* PBXTargetDependency */,
-				9DF426381C243FD300DEF999 /* PBXTargetDependency */,
-				9DF4263A1C243FD300DEF999 /* PBXTargetDependency */,
-				595603C91C233528004AEB4C /* PBXTargetDependency */,
-				595603CB1C233528004AEB4C /* PBXTargetDependency */,
-				9D49B4231AA76AF90006E6A7 /* PBXTargetDependency */,
-				59217F6A1AA66CDA00C6EA41 /* PBXTargetDependency */,
-				59217F6C1AA66CDA00C6EA41 /* PBXTargetDependency */,
-				59217F6E1AA66CDA00C6EA41 /* PBXTargetDependency */,
-			);
-			name = All;
-			productName = All;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		59217D811AA65AA800C6EA41 /* buffers.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217D411AA65AA800C6EA41 /* buffers.c */; };
 		59217D821AA65AA800C6EA41 /* cfileio.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217D421AA65AA800C6EA41 /* cfileio.c */; };
@@ -263,11 +231,6 @@
 		59217F4D1AA6604000C6EA41 /* qfits_tools.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217F3E1AA6604000C6EA41 /* qfits_tools.c */; };
 		59217F4F1AA6609F00C6EA41 /* sparsematrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217F4E1AA6609F00C6EA41 /* sparsematrix.c */; };
 		59217F751AA77EB000C6EA41 /* libblind.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D78C50A1AA619E300234AE1 /* libblind.dylib */; };
-		59217F9E1AA7833200C6EA41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59217F9D1AA7833200C6EA41 /* AppDelegate.m */; };
-		59217FA01AA7833200C6EA41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59217F9F1AA7833200C6EA41 /* main.m */; };
-		59217FA21AA7833200C6EA41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59217FA11AA7833200C6EA41 /* Images.xcassets */; };
-		59217FA51AA7833200C6EA41 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59217FA31AA7833200C6EA41 /* MainMenu.xib */; };
-		59217FBB1AA7A65500C6EA41 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59217FBA1AA7A65500C6EA41 /* WebKit.framework */; };
 		59217FBC1AA7B04100C6EA41 /* hpsplit.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217F7D1AA77F4200C6EA41 /* hpsplit.c */; };
 		59217FC51AA7B15E00C6EA41 /* libblind.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D78C50A1AA619E300234AE1 /* libblind.dylib */; };
 		59217FCC1AA7B18000C6EA41 /* fitscopy.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FBE1AA7B15B00C6EA41 /* fitscopy.c */; };
@@ -276,19 +239,6 @@
 		59217FD41AA7B3AE00C6EA41 /* scamp-catalog.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FCF1AA7B3AE00C6EA41 /* scamp-catalog.c */; };
 		59217FD51AA7B3AE00C6EA41 /* scamp.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FD01AA7B3AE00C6EA41 /* scamp.c */; };
 		59217FD61AA7B3AE00C6EA41 /* starxy.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FD11AA7B3AE00C6EA41 /* starxy.c */; };
-		59217FE01AA7B47400C6EA41 /* libcfitsio.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78BEE51AA5C2E900234AE1 /* libcfitsio.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE11AA7B47400C6EA41 /* libanbase.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78BFA31AA5F3FA00234AE1 /* libanbase.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE21AA7B47400C6EA41 /* libqfits.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C1111AA60CD300234AE1 /* libqfits.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE31AA7B47400C6EA41 /* libanutil.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C1451AA60F5B00234AE1 /* libanutil.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE41AA7B47400C6EA41 /* libgsl.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C1621AA6113F00234AE1 /* libgsl.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE51AA7B47400C6EA41 /* libkd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C4141AA6148600234AE1 /* libkd.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE61AA7B47400C6EA41 /* libanfiles.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C46A1AA6165000234AE1 /* libanfiles.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE71AA7B47400C6EA41 /* libcatalogs.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C4DD1AA6187D00234AE1 /* libcatalogs.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE81AA7B47400C6EA41 /* libblind.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C50A1AA619E300234AE1 /* libblind.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FE91AA7B47400C6EA41 /* build-astrometry-index in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C5F61AA620AE00234AE1 /* build-astrometry-index */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FEA1AA7B47500C6EA41 /* ucac3tofits in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D49B41B1AA76A9F0006E6A7 /* ucac3tofits */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FEB1AA7B47500C6EA41 /* hpsplit in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59217F7B1AA77EB000C6EA41 /* hpsplit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59217FEC1AA7B47500C6EA41 /* fitscopy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59217FCB1AA7B15E00C6EA41 /* fitscopy */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		59217FEE1AAA281800C6EA41 /* view.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FED1AAA281800C6EA41 /* view.c */; };
 		5921805B1AAA28B000C6EA41 /* caxpy.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FEF1AAA28B000C6EA41 /* caxpy.c */; };
 		5921805C1AAA28B000C6EA41 /* ccopy.c in Sources */ = {isa = PBXBuildFile; fileRef = 59217FF01AAA28B000C6EA41 /* ccopy.c */; };
@@ -493,27 +443,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		59217F691AA66CDA00C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78BE391AA5C08200234AE1;
-			remoteInfo = "solve-field";
-		};
-		59217F6B1AA66CDA00C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C51B1AA61C2E00234AE1;
-			remoteInfo = "astrometry-engine";
-		};
-		59217F6D1AA66CDA00C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C5F51AA620AE00234AE1;
-			remoteInfo = "build-astrometry-index";
-		};
 		59217F711AA77EB000C6EA41 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
@@ -528,34 +457,6 @@
 			remoteGlobalIDString = 9D78C4F21AA619E300234AE1;
 			remoteInfo = blind;
 		};
-		59217FD71AA7B43500C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C5F51AA620AE00234AE1;
-			remoteInfo = "build-astrometry-index";
-		};
-		59217FD91AA7B43500C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D49B4101AA76A9F0006E6A7;
-			remoteInfo = ucac3tofits;
-		};
-		59217FDB1AA7B43500C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59217F6F1AA77EB000C6EA41;
-			remoteInfo = hpsplit;
-		};
-		59217FDD1AA7B43500C6EA41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59217FBF1AA7B15E00C6EA41;
-			remoteInfo = fitscopy;
-		};
 		5936CE3D1D01F7EB00855FD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
@@ -569,27 +470,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5936CE3B1D01F7EB00855FD0;
 			remoteInfo = newwcs;
-		};
-		595603C81C233528004AEB4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59217F6F1AA77EB000C6EA41;
-			remoteInfo = hpsplit;
-		};
-		595603CA1C233528004AEB4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59217FBF1AA7B15E00C6EA41;
-			remoteInfo = fitscopy;
-		};
-		595603CC1C233528004AEB4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59217F971AA7833200C6EA41;
-			remoteInfo = "Build UCAC3 Catalog";
 		};
 		595605251C234DD8004AEB4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -661,13 +541,6 @@
 			remoteGlobalIDString = 9D78C51B1AA61C2E00234AE1;
 			remoteInfo = "astrometry-engine";
 		};
-		598F451F1C24C67A00F769DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DF426521C24657500DEF999;
-			remoteInfo = Astrometry;
-		};
 		9D0602831C280E1500787E2A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
@@ -681,13 +554,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 595604DA1C234B04004AEB4C;
 			remoteInfo = astrometry;
-		};
-		9D49B4221AA76AF90006E6A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D49B4101AA76A9F0006E6A7;
-			remoteInfo = ucac3tofits;
 		};
 		9D49B4261AA76BA10006E6A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -738,108 +604,9 @@
 			remoteGlobalIDString = 9D78C4F21AA619E300234AE1;
 			remoteInfo = blind;
 		};
-		9DF426251C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5956059E1C236469004AEB4C;
-			remoteInfo = image2xy;
-		};
-		9DF426271C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 595604DA1C234B04004AEB4C;
-			remoteInfo = astrometry;
-		};
-		9DF426291C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C4C71AA6187D00234AE1;
-			remoteInfo = catalogs;
-		};
-		9DF4262B1C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C4531AA6165000234AE1;
-			remoteInfo = anfiles;
-		};
-		9DF4262D1C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C3FE1AA6148600234AE1;
-			remoteInfo = kd;
-		};
-		9DF4262F1C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C1221AA60F5B00234AE1;
-			remoteInfo = anutils;
-		};
-		9DF426311C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C1521AA6113F00234AE1;
-			remoteInfo = gsl;
-		};
-		9DF426331C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C0EE1AA60CD300234AE1;
-			remoteInfo = qfits;
-		};
-		9DF426351C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78BF4F1AA5F3FA00234AE1;
-			remoteInfo = anbase;
-		};
-		9DF426371C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78C4F21AA619E300234AE1;
-			remoteInfo = blind;
-		};
-		9DF426391C243FD300DEF999 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D78BEE41AA5C2E900234AE1;
-			remoteInfo = cfitsio;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		59217FDF1AA7B45800C6EA41 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				59217FE01AA7B47400C6EA41 /* libcfitsio.dylib in CopyFiles */,
-				59217FE11AA7B47400C6EA41 /* libanbase.dylib in CopyFiles */,
-				59217FE21AA7B47400C6EA41 /* libqfits.dylib in CopyFiles */,
-				59217FE31AA7B47400C6EA41 /* libanutil.dylib in CopyFiles */,
-				59217FE41AA7B47400C6EA41 /* libgsl.dylib in CopyFiles */,
-				59217FE51AA7B47400C6EA41 /* libkd.dylib in CopyFiles */,
-				59217FE61AA7B47400C6EA41 /* libanfiles.dylib in CopyFiles */,
-				59217FE71AA7B47400C6EA41 /* libcatalogs.dylib in CopyFiles */,
-				59217FE81AA7B47400C6EA41 /* libblind.dylib in CopyFiles */,
-				59217FE91AA7B47400C6EA41 /* build-astrometry-index in CopyFiles */,
-				59217FEA1AA7B47500C6EA41 /* ucac3tofits in CopyFiles */,
-				59217FEB1AA7B47500C6EA41 /* hpsplit in CopyFiles */,
-				59217FEC1AA7B47500C6EA41 /* fitscopy in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		598F44F91C249CF300F769DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1105,13 +872,6 @@
 		59217F641AA6668200C6EA41 /* util_wrap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = util_wrap.c; sourceTree = "<group>"; };
 		59217F7B1AA77EB000C6EA41 /* hpsplit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hpsplit; sourceTree = BUILT_PRODUCTS_DIR; };
 		59217F7D1AA77F4200C6EA41 /* hpsplit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hpsplit.c; sourceTree = "<group>"; };
-		59217F981AA7833200C6EA41 /* Build UCAC3 Catalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Build UCAC3 Catalog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59217F9B1AA7833200C6EA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59217F9C1AA7833200C6EA41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		59217F9D1AA7833200C6EA41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		59217F9F1AA7833200C6EA41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		59217FA11AA7833200C6EA41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		59217FA41AA7833200C6EA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		59217FBA1AA7A65500C6EA41 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		59217FBE1AA7B15B00C6EA41 /* fitscopy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = fitscopy.c; path = ../blind/fitscopy.c; sourceTree = "<group>"; };
 		59217FCB1AA7B15E00C6EA41 /* fitscopy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fitscopy; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1316,14 +1076,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				59217F751AA77EB000C6EA41 /* libblind.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59217F951AA7833200C6EA41 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59217FBB1AA7A65500C6EA41 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,7 +1317,7 @@
 				59217D801AA65AA800C6EA41 /* wcsutil.c */,
 			);
 			name = cfitsio;
-			path = ../cfitsio3390;
+			path = ../cfitsio;
 			sourceTree = "<group>";
 		};
 		59217DD91AA65AF500C6EA41 /* anbase */ = {
@@ -1997,27 +1749,6 @@
 			path = util;
 			sourceTree = "<group>";
 		};
-		59217F991AA7833200C6EA41 /* Build UCAC3 Catalog */ = {
-			isa = PBXGroup;
-			children = (
-				59217F9C1AA7833200C6EA41 /* AppDelegate.h */,
-				59217F9D1AA7833200C6EA41 /* AppDelegate.m */,
-				59217F9A1AA7833200C6EA41 /* Supporting Files */,
-			);
-			path = "Build UCAC3 Catalog";
-			sourceTree = "<group>";
-		};
-		59217F9A1AA7833200C6EA41 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				59217FA11AA7833200C6EA41 /* Images.xcassets */,
-				59217FA31AA7833200C6EA41 /* MainMenu.xib */,
-				59217F9B1AA7833200C6EA41 /* Info.plist */,
-				59217F9F1AA7833200C6EA41 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		59217FBD1AA7B14500C6EA41 /* fitscopy */ = {
 			isa = PBXGroup;
 			children = (
@@ -2110,7 +1841,6 @@
 				5982059B1E788DE000EE4ACD /* LICENSE.md */,
 				5982059C1E788DE000EE4ACD /* README.md */,
 				9DF426541C24657500DEF999 /* Astrometry */,
-				59217F991AA7833200C6EA41 /* Build UCAC3 Catalog */,
 				9DF426241C243DF900DEF999 /* astrometry.net */,
 				59217D401AA65A6000C6EA41 /* cfitsio */,
 				59217F511AA6665100C6EA41 /* fixes */,
@@ -2137,7 +1867,6 @@
 				9D78C5F61AA620AE00234AE1 /* build-astrometry-index */,
 				9D49B41B1AA76A9F0006E6A7 /* ucac3tofits */,
 				59217F7B1AA77EB000C6EA41 /* hpsplit */,
-				59217F981AA7833200C6EA41 /* Build UCAC3 Catalog.app */,
 				59217FCB1AA7B15E00C6EA41 /* fitscopy */,
 				595605081C234B04004AEB4C /* libastrometry.dylib */,
 				595605AE1C236469004AEB4C /* image2xy */,
@@ -2314,28 +2043,6 @@
 			productName = "build-astrometry-index";
 			productReference = 59217F7B1AA77EB000C6EA41 /* hpsplit */;
 			productType = "com.apple.product-type.tool";
-		};
-		59217F971AA7833200C6EA41 /* Build UCAC3 Catalog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59217FB21AA7833300C6EA41 /* Build configuration list for PBXNativeTarget "Build UCAC3 Catalog" */;
-			buildPhases = (
-				59217F941AA7833200C6EA41 /* Sources */,
-				59217F951AA7833200C6EA41 /* Frameworks */,
-				59217F961AA7833200C6EA41 /* Resources */,
-				59217FDF1AA7B45800C6EA41 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				59217FD81AA7B43500C6EA41 /* PBXTargetDependency */,
-				59217FDA1AA7B43500C6EA41 /* PBXTargetDependency */,
-				59217FDC1AA7B43500C6EA41 /* PBXTargetDependency */,
-				59217FDE1AA7B43500C6EA41 /* PBXTargetDependency */,
-			);
-			name = "Build UCAC3 Catalog";
-			productName = "Build UCAC3 Catalog";
-			productReference = 59217F981AA7833200C6EA41 /* Build UCAC3 Catalog.app */;
-			productType = "com.apple.product-type.application";
 		};
 		59217FBF1AA7B15E00C6EA41 /* fitscopy */ = {
 			isa = PBXNativeTarget;
@@ -2682,108 +2389,95 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "CloudMakers, s. r. o.";
 				TargetAttributes = {
-					59217F651AA66CD000C6EA41 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
 					59217F6F1AA77EB000C6EA41 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
-					};
-					59217F971AA7833200C6EA41 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.Mac = {
-								enabled = 0;
-							};
-						};
+						ProvisioningStyle = Manual;
 					};
 					59217FBF1AA7B15E00C6EA41 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5936CE3B1D01F7EB00855FD0 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					595604DA1C234B04004AEB4C = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					5956059E1C236469004AEB4C = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D0602731C27FF7100787E2A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D49B4101AA76A9F0006E6A7 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78BE391AA5C08200234AE1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78BEE41AA5C2E900234AE1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78BF4F1AA5F3FA00234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C0EE1AA60CD300234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C1221AA60F5B00234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C1521AA6113F00234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C3FE1AA6148600234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C4531AA6165000234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C4C71AA6187D00234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C4F21AA619E300234AE1 = {
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C51B1AA61C2E00234AE1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9D78C5F51AA620AE00234AE1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = AG8BXW65A2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9DF426521C24657500DEF999 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = AG8BXW65A2;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -2824,23 +2518,12 @@
 				9D78BF4F1AA5F3FA00234AE1 /* anbase */,
 				9D78C4F21AA619E300234AE1 /* blind */,
 				9D78BEE41AA5C2E900234AE1 /* cfitsio */,
-				59217F971AA7833200C6EA41 /* Build UCAC3 Catalog */,
 				9DF426521C24657500DEF999 /* Astrometry */,
-				59217F651AA66CD000C6EA41 /* All */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		59217F961AA7833200C6EA41 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59217FA21AA7833200C6EA41 /* Images.xcassets in Resources */,
-				59217FA51AA7833200C6EA41 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9DF426511C24657500DEF999 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2860,15 +2543,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				59217FBC1AA7B04100C6EA41 /* hpsplit.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59217F941AA7833200C6EA41 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59217FA01AA7833200C6EA41 /* main.m in Sources */,
-				59217F9E1AA7833200C6EA41 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3399,21 +3073,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		59217F6A1AA66CDA00C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78BE391AA5C08200234AE1 /* solve-field */;
-			targetProxy = 59217F691AA66CDA00C6EA41 /* PBXContainerItemProxy */;
-		};
-		59217F6C1AA66CDA00C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C51B1AA61C2E00234AE1 /* astrometry-engine */;
-			targetProxy = 59217F6B1AA66CDA00C6EA41 /* PBXContainerItemProxy */;
-		};
-		59217F6E1AA66CDA00C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C5F51AA620AE00234AE1 /* build-astrometry-index */;
-			targetProxy = 59217F6D1AA66CDA00C6EA41 /* PBXContainerItemProxy */;
-		};
 		59217F701AA77EB000C6EA41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9D78C4F21AA619E300234AE1 /* blind */;
@@ -3424,26 +3083,6 @@
 			target = 9D78C4F21AA619E300234AE1 /* blind */;
 			targetProxy = 59217FC11AA7B15E00C6EA41 /* PBXContainerItemProxy */;
 		};
-		59217FD81AA7B43500C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C5F51AA620AE00234AE1 /* build-astrometry-index */;
-			targetProxy = 59217FD71AA7B43500C6EA41 /* PBXContainerItemProxy */;
-		};
-		59217FDA1AA7B43500C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D49B4101AA76A9F0006E6A7 /* ucac3tofits */;
-			targetProxy = 59217FD91AA7B43500C6EA41 /* PBXContainerItemProxy */;
-		};
-		59217FDC1AA7B43500C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59217F6F1AA77EB000C6EA41 /* hpsplit */;
-			targetProxy = 59217FDB1AA7B43500C6EA41 /* PBXContainerItemProxy */;
-		};
-		59217FDE1AA7B43500C6EA41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59217FBF1AA7B15E00C6EA41 /* fitscopy */;
-			targetProxy = 59217FDD1AA7B43500C6EA41 /* PBXContainerItemProxy */;
-		};
 		5936CE3C1D01F7EB00855FD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 595604DA1C234B04004AEB4C /* astrometry */;
@@ -3453,21 +3092,6 @@
 			isa = PBXTargetDependency;
 			target = 5936CE3B1D01F7EB00855FD0 /* new-wcs */;
 			targetProxy = 5936CE4A1D01F99600855FD0 /* PBXContainerItemProxy */;
-		};
-		595603C91C233528004AEB4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59217F6F1AA77EB000C6EA41 /* hpsplit */;
-			targetProxy = 595603C81C233528004AEB4C /* PBXContainerItemProxy */;
-		};
-		595603CB1C233528004AEB4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59217FBF1AA7B15E00C6EA41 /* fitscopy */;
-			targetProxy = 595603CA1C233528004AEB4C /* PBXContainerItemProxy */;
-		};
-		595603CD1C233528004AEB4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59217F971AA7833200C6EA41 /* Build UCAC3 Catalog */;
-			targetProxy = 595603CC1C233528004AEB4C /* PBXContainerItemProxy */;
 		};
 		595605261C234DD8004AEB4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3519,11 +3143,6 @@
 			target = 9D78C51B1AA61C2E00234AE1 /* astrometry-engine */;
 			targetProxy = 598F45071C24B04900F769DD /* PBXContainerItemProxy */;
 		};
-		598F45201C24C67A00F769DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DF426521C24657500DEF999 /* Astrometry */;
-			targetProxy = 598F451F1C24C67A00F769DD /* PBXContainerItemProxy */;
-		};
 		9D0602841C280E1500787E2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9D0602731C27FF7100787E2A /* wcsinfo */;
@@ -3533,11 +3152,6 @@
 			isa = PBXTargetDependency;
 			target = 595604DA1C234B04004AEB4C /* astrometry */;
 			targetProxy = 9D06028E1C2810BC00787E2A /* PBXContainerItemProxy */;
-		};
-		9D49B4231AA76AF90006E6A7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D49B4101AA76A9F0006E6A7 /* ucac3tofits */;
-			targetProxy = 9D49B4221AA76AF90006E6A7 /* PBXContainerItemProxy */;
 		};
 		9D49B4271AA76BA10006E6A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3574,72 +3188,9 @@
 			target = 9D78C4F21AA619E300234AE1 /* blind */;
 			targetProxy = 9D78C5FD1AA620BA00234AE1 /* PBXContainerItemProxy */;
 		};
-		9DF426261C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5956059E1C236469004AEB4C /* image2xy */;
-			targetProxy = 9DF426251C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF426281C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 595604DA1C234B04004AEB4C /* astrometry */;
-			targetProxy = 9DF426271C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF4262A1C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C4C71AA6187D00234AE1 /* catalogs */;
-			targetProxy = 9DF426291C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF4262C1C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C4531AA6165000234AE1 /* anfiles */;
-			targetProxy = 9DF4262B1C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF4262E1C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C3FE1AA6148600234AE1 /* kd */;
-			targetProxy = 9DF4262D1C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF426301C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C1221AA60F5B00234AE1 /* anutils */;
-			targetProxy = 9DF4262F1C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF426321C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C1521AA6113F00234AE1 /* gsl */;
-			targetProxy = 9DF426311C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF426341C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C0EE1AA60CD300234AE1 /* qfits */;
-			targetProxy = 9DF426331C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF426361C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78BF4F1AA5F3FA00234AE1 /* anbase */;
-			targetProxy = 9DF426351C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF426381C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78C4F21AA619E300234AE1 /* blind */;
-			targetProxy = 9DF426371C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
-		9DF4263A1C243FD300DEF999 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D78BEE41AA5C2E900234AE1 /* cfitsio */;
-			targetProxy = 9DF426391C243FD300DEF999 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		59217FA31AA7833200C6EA41 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				59217FA41AA7833200C6EA41 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		9DF426591C24657500DEF999 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3651,29 +3202,17 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		59217F671AA66CD000C6EA41 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		59217F681AA66CD000C6EA41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		59217F791AA77EB000C6EA41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = hpsplit;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3682,73 +3221,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = hpsplit;
-			};
-			name = Release;
-		};
-		59217FB31AA7833300C6EA41 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AG8BXW65A2;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Build UCAC3 Catalog/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		59217FB41AA7833300C6EA41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = AG8BXW65A2;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Build UCAC3 Catalog/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -3757,10 +3236,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = fitscopy;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3769,11 +3250,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = fitscopy;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -3788,7 +3271,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3803,6 +3287,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3817,7 +3302,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3828,6 +3314,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -3840,7 +3327,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3859,6 +3347,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3871,7 +3360,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3890,26 +3380,31 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		595605AC1C236469004AEB4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				OTHER_LDFLAGS = "${inherited}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		595605AD1C236469004AEB4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				OTHER_LDFLAGS = "${inherited}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -3924,7 +3419,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3939,6 +3435,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3953,7 +3450,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3964,6 +3462,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -3972,10 +3471,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = ucac3tofits;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3984,11 +3485,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = ucac3tofits;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -3999,18 +3502,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = NO;
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = NO;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -4038,7 +3549,7 @@
 					"$(inherited)",
 					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"../Astrometry/**",
-					"../cfitsio3390/**",
+					"../cfitsio/**",
 					"../astrometry.net/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -4060,18 +3571,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = NO;
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = NO;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -4096,7 +3615,7 @@
 					"$(inherited)",
 					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"../Astrometry/**",
-					"../cfitsio3390/**",
+					"../cfitsio/**",
 					"../astrometry.net/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -4114,20 +3633,24 @@
 		9D78BE3F1AA5C08200234AE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				OTHER_LDFLAGS = "${inherited}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		9D78BE401AA5C08200234AE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				OTHER_LDFLAGS = "${inherited}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4140,7 +3663,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4164,6 +3688,7 @@
 				);
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4176,7 +3701,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4200,6 +3726,7 @@
 				);
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4212,7 +3739,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4231,6 +3759,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = anbase;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4243,7 +3772,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4262,6 +3792,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = anbase;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4274,7 +3805,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4293,6 +3825,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = qfits;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4305,7 +3838,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4324,6 +3858,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = qfits;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4336,7 +3871,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4355,6 +3891,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = anutil;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4367,7 +3904,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4386,6 +3924,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = anutil;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4398,7 +3937,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4417,6 +3957,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = gsl;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4429,7 +3970,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4448,6 +3990,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = gsl;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4460,7 +4003,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4479,6 +4023,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = kd;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4491,7 +4036,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4510,6 +4056,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = kd;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4522,7 +4069,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4541,6 +4089,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = anfiles;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4553,7 +4102,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4572,6 +4122,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = anfiles;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4584,7 +4135,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4603,6 +4155,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = catalogs;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4615,7 +4168,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4634,6 +4188,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = catalogs;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4646,7 +4201,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4665,6 +4221,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = blind;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4677,7 +4234,8 @@
 				CLANG_WARN_ENUM_CONVERSION = NO;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -4696,6 +4254,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LD_DYLIB_INSTALL_NAME = "@executable_path/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = blind;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4704,10 +4263,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4716,11 +4277,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4729,10 +4292,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4741,11 +4306,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -4762,7 +4329,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
@@ -4781,6 +4349,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry/Astrometry-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -4800,7 +4369,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
@@ -4815,6 +4385,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry/Astrometry-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -4823,29 +4394,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		59217F661AA66CD000C6EA41 /* Build configuration list for PBXAggregateTarget "All" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59217F671AA66CD000C6EA41 /* Debug */,
-				59217F681AA66CD000C6EA41 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		59217F781AA77EB000C6EA41 /* Build configuration list for PBXNativeTarget "hpsplit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59217F791AA77EB000C6EA41 /* Debug */,
 				59217F7A1AA77EB000C6EA41 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59217FB21AA7833300C6EA41 /* Build configuration list for PBXNativeTarget "Build UCAC3 Catalog" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59217FB31AA7833300C6EA41 /* Debug */,
-				59217FB41AA7833300C6EA41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
