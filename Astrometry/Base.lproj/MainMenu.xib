@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -166,43 +166,42 @@
         <window title="Solver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="solver" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="360" height="226"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="360" height="200"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="360" height="226"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-gn-CrD">
+                    <box borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-gn-CrD">
                         <rect key="frame" x="17" y="61" width="326" height="147"/>
                         <view key="contentView" id="Qft-8d-2EU">
-                            <rect key="frame" x="1" y="1" width="324" height="145"/>
+                            <rect key="frame" x="3" y="3" width="320" height="141"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiD-E6-9sE">
-                                    <rect key="frame" x="5" y="5" width="314" height="135"/>
+                                    <rect key="frame" x="5" y="5" width="310" height="131"/>
                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="uSC-NP-NVX">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="131"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="WwY-Vg-SnC">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="135"/>
+                                            <textView editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="WwY-Vg-SnC">
+                                                <rect key="frame" x="0.0" y="0.0" width="310" height="131"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="minSize" width="314" height="135"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <size key="minSize" width="310" height="131"/>
                                                 <size key="maxSize" width="654" height="10000000"/>
                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <size key="minSize" width="314" height="135"/>
-                                                <size key="maxSize" width="654" height="10000000"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </clipView>
-                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="o4e-eO-kR6">
+                                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="o4e-eO-kR6">
                                         <rect key="frame" x="-100" y="-100" width="314" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
-                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Pgr-NR-T8o">
-                                        <rect key="frame" x="298" y="0.0" width="16" height="135"/>
+                                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Pgr-NR-T8o">
+                                        <rect key="frame" x="294" y="0.0" width="16" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
@@ -214,11 +213,9 @@
                                 <constraint firstAttribute="bottom" secondItem="KiD-E6-9sE" secondAttribute="bottom" constant="5" id="afl-Of-k5A"/>
                             </constraints>
                         </view>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="shr-Me-ZXE">
-                        <rect key="frame" x="266" y="9" width="79" height="28"/>
+                        <rect key="frame" x="266" y="9" width="79" height="27"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="M3A-RU-Okv"/>
                             <constraint firstAttribute="width" constant="69" id="fp4-v4-zZr"/>
@@ -235,7 +232,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0L8-cV-8tQ">
-                        <rect key="frame" x="189" y="9" width="79" height="28"/>
+                        <rect key="frame" x="189" y="9" width="79" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="69" id="2kU-DM-mrF"/>
                             <constraint firstAttribute="height" constant="18" id="bUb-b0-KC0"/>
@@ -292,22 +289,22 @@ DQ
             </view>
             <point key="canvasLocation" x="177" y="278"/>
         </window>
-        <window title="Index Manager" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="index-manager" animationBehavior="default" id="f7s-VD-xpR">
+        <window title="Index Manager" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="index-manager" animationBehavior="default" id="f7s-VD-xpR">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="360" height="570"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="OUF-sZ-H30">
                 <rect key="frame" x="0.0" y="0.0" width="360" height="570"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box title="2MASS catalog" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="yTC-rE-sQf">
+                    <box borderType="line" title="2MASS catalog" translatesAutoresizingMaskIntoConstraints="NO" id="yTC-rE-sQf">
                         <rect key="frame" x="17" y="116" width="160" height="434"/>
                         <view key="contentView" id="Il2-m6-3cV">
-                            <rect key="frame" x="1" y="1" width="158" height="418"/>
+                            <rect key="frame" x="3" y="3" width="154" height="416"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="bwA-nU-JxD">
-                                    <rect key="frame" x="17" y="391" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="389" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="Kzr-T2-qCX"/>
                                         <constraint firstAttribute="height" constant="14" id="hOc-pA-gIE"/>
@@ -318,7 +315,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="Iel-XW-6v7">
-                                    <rect key="frame" x="17" y="371" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="369" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="8sV-Eo-4SH"/>
                                         <constraint firstAttribute="width" constant="115" id="w7M-x6-lW5"/>
@@ -329,7 +326,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="4NI-C7-qmT">
-                                    <rect key="frame" x="17" y="351" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="349" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="lXi-GT-k2Q"/>
                                         <constraint firstAttribute="height" constant="14" id="xvp-9N-SzX"/>
@@ -340,7 +337,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="4at-Lf-4BV">
-                                    <rect key="frame" x="17" y="331" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="329" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="61u-3N-jM4"/>
                                         <constraint firstAttribute="width" constant="115" id="acL-Cd-Qky"/>
@@ -351,7 +348,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="UCT-SK-u9g">
-                                    <rect key="frame" x="17" y="311" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="309" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="BeS-RU-HcV"/>
                                         <constraint firstAttribute="height" constant="14" id="cbt-cu-8Yh"/>
@@ -362,7 +359,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="aWe-xN-60W">
-                                    <rect key="frame" x="17" y="291" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="289" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="9fL-uc-ElZ"/>
                                         <constraint firstAttribute="width" constant="115" id="i1D-xO-EdK"/>
@@ -373,7 +370,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="RU1-JR-tFC">
-                                    <rect key="frame" x="17" y="271" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="269" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="VFA-un-bOW"/>
                                         <constraint firstAttribute="width" constant="115" id="Yks-RY-J8p"/>
@@ -384,7 +381,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="8mU-kN-8xb">
-                                    <rect key="frame" x="17" y="251" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="249" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="0I3-dS-oy8"/>
                                         <constraint firstAttribute="height" constant="14" id="zxV-3U-dh9"/>
@@ -395,7 +392,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="B4E-Gq-4lx">
-                                    <rect key="frame" x="17" y="231" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="229" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="PeJ-r2-aTg"/>
                                         <constraint firstAttribute="height" constant="14" id="XAV-TM-CNy"/>
@@ -406,7 +403,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="lVG-f5-SgV">
-                                    <rect key="frame" x="17" y="211" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="209" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="YmZ-av-Hse"/>
                                         <constraint firstAttribute="width" constant="115" id="kiq-QE-rjC"/>
@@ -417,7 +414,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-GA-C8z">
-                                    <rect key="frame" x="17" y="191" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="189" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="uR0-za-LPl"/>
                                         <constraint firstAttribute="width" constant="115" id="xBf-ab-mJf"/>
@@ -428,7 +425,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="S8P-Bq-pMD">
-                                    <rect key="frame" x="17" y="171" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="169" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="ESx-d7-g43"/>
                                         <constraint firstAttribute="height" constant="14" id="vOA-yE-FOo"/>
@@ -439,7 +436,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="iwV-T8-lC7">
-                                    <rect key="frame" x="17" y="151" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="149" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="STG-H7-0yk"/>
                                         <constraint firstAttribute="width" constant="115" id="TW3-X8-xCB"/>
@@ -453,7 +450,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="0Kl-vL-5Nz">
-                                    <rect key="frame" x="17" y="131" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="129" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="XJc-zG-fjs"/>
                                         <constraint firstAttribute="width" constant="115" id="do5-OK-PHR"/>
@@ -467,7 +464,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="cmr-gT-Efd">
-                                    <rect key="frame" x="17" y="111" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="109" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="LAx-F8-zAq"/>
                                         <constraint firstAttribute="width" constant="115" id="yuA-aK-CJO"/>
@@ -481,7 +478,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="YnJ-ew-cv5">
-                                    <rect key="frame" x="17" y="91" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="89" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="0Ya-Nr-dkL"/>
                                         <constraint firstAttribute="height" constant="14" id="gqP-2I-BID"/>
@@ -495,7 +492,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="dBM-FQ-Bzm">
-                                    <rect key="frame" x="17" y="71" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="69" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="NWH-FC-1by"/>
                                         <constraint firstAttribute="height" constant="14" id="w9T-PM-HXC"/>
@@ -509,7 +506,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="Ks5-Yl-p4F">
-                                    <rect key="frame" x="17" y="51" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="49" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="crU-BT-Nhn"/>
                                         <constraint firstAttribute="width" constant="115" id="wdi-CV-yBW"/>
@@ -523,7 +520,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="98j-Rk-1Ip">
-                                    <rect key="frame" x="17" y="31" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="29" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="KDf-sS-RW9"/>
                                         <constraint firstAttribute="width" constant="115" id="xKQ-cr-gkn"/>
@@ -537,7 +534,7 @@ DQ
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="WiA-QO-8BG">
-                                    <rect key="frame" x="17" y="11" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="9" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="uRz-mJ-Vlt"/>
                                         <constraint firstAttribute="height" constant="14" id="vMe-3G-RqW"/>
@@ -598,17 +595,15 @@ DQ
                             <constraint firstAttribute="width" constant="154" id="5LJ-G8-cB9"/>
                             <constraint firstAttribute="height" constant="430" id="fpu-bP-Alx"/>
                         </constraints>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
-                    <box title="Tycho-2 catalog" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-Bd-IlD">
+                    <box borderType="line" title="Tycho-2 catalog" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-Bd-IlD">
                         <rect key="frame" x="183" y="117" width="160" height="433"/>
                         <view key="contentView" id="HAl-wc-Kai">
-                            <rect key="frame" x="1" y="1" width="158" height="417"/>
+                            <rect key="frame" x="3" y="3" width="154" height="415"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="CaA-a1-3la">
-                                    <rect key="frame" x="17" y="390" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="388" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="BRA-dX-kwf"/>
                                         <constraint firstAttribute="width" constant="115" id="qwO-Xg-sar"/>
@@ -619,7 +614,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="DPK-HD-tjA">
-                                    <rect key="frame" x="17" y="150" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="148" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="0FJ-jT-gZY"/>
                                         <constraint firstAttribute="width" constant="115" id="cFY-Tr-drJ"/>
@@ -630,7 +625,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="tia-QM-DgX">
-                                    <rect key="frame" x="17" y="370" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="368" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="EYv-bW-hEj"/>
                                         <constraint firstAttribute="height" constant="14" id="FHr-8w-SfQ"/>
@@ -641,7 +636,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="jdU-Ig-QlV">
-                                    <rect key="frame" x="17" y="350" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="348" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="Gi6-JM-GUl"/>
                                         <constraint firstAttribute="height" constant="14" id="gMs-gp-Qe7"/>
@@ -652,7 +647,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="8vN-CF-eqj">
-                                    <rect key="frame" x="17" y="330" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="328" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="fWC-tZ-rhK"/>
                                         <constraint firstAttribute="height" constant="14" id="xEH-wI-r0p"/>
@@ -663,7 +658,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="qlm-Iu-wXh">
-                                    <rect key="frame" x="17" y="310" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="308" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="P7V-yZ-0vI"/>
                                         <constraint firstAttribute="height" constant="14" id="hVi-vl-e3N"/>
@@ -674,7 +669,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="b4B-qM-nRe">
-                                    <rect key="frame" x="17" y="290" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="288" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="Jie-p9-G8T"/>
                                         <constraint firstAttribute="height" constant="14" id="K4Y-yf-DYh"/>
@@ -685,7 +680,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="rbe-cq-BJt">
-                                    <rect key="frame" x="17" y="270" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="268" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="G8C-gS-88K"/>
                                         <constraint firstAttribute="width" constant="115" id="gXd-8l-Mbj"/>
@@ -696,7 +691,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="B1y-c8-wUb">
-                                    <rect key="frame" x="17" y="250" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="248" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="Cti-Dg-VHc"/>
                                         <constraint firstAttribute="height" constant="14" id="dcp-6o-Qw1"/>
@@ -707,7 +702,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="uXS-wY-aKL">
-                                    <rect key="frame" x="17" y="230" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="228" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="pYa-ZQ-2OF"/>
                                         <constraint firstAttribute="width" constant="115" id="zOo-1G-zCY"/>
@@ -718,7 +713,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="RV5-0g-E6k">
-                                    <rect key="frame" x="17" y="210" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="208" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="9rY-Hl-eS5"/>
                                         <constraint firstAttribute="height" constant="14" id="Q7i-fU-ntz"/>
@@ -729,7 +724,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="lOz-FV-N7A">
-                                    <rect key="frame" x="17" y="190" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="188" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="5WG-AN-PcW"/>
                                         <constraint firstAttribute="width" constant="115" id="WrO-FF-mLm"/>
@@ -740,7 +735,7 @@ DQ
                                     </buttonCell>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="tFs-vD-cDE">
-                                    <rect key="frame" x="17" y="170" width="120" height="20"/>
+                                    <rect key="frame" x="17" y="168" width="120" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="Pxy-2f-bed"/>
                                         <constraint firstAttribute="height" constant="14" id="efO-kI-BHC"/>
@@ -784,11 +779,9 @@ DQ
                             <constraint firstAttribute="height" constant="429" id="Loy-zQ-Gth"/>
                             <constraint firstAttribute="width" constant="154" id="vcF-Om-0DW"/>
                         </constraints>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dxy-E4-hpt">
-                        <rect key="frame" x="15" y="14" width="90" height="28"/>
+                        <rect key="frame" x="15" y="14" width="90" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="J69-Za-to0"/>
                             <constraint firstAttribute="height" constant="18" id="RzA-Vl-7F5"/>
@@ -809,7 +802,7 @@ DQ
                         <levelIndicatorCell key="cell" controlSize="small" alignment="left" maxValue="33" id="h6H-8A-kOD"/>
                     </levelIndicator>
                     <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D1u-Cf-vIz">
-                        <rect key="frame" x="20" y="72" width="320" height="16"/>
+                        <rect key="frame" x="20" y="70" width="320" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="BZa-kT-DWG"/>
                         </constraints>
@@ -827,7 +820,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nw1-zv-2Sr">
-                        <rect key="frame" x="127" y="14" width="90" height="28"/>
+                        <rect key="frame" x="127" y="14" width="90" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="3ek-l3-eny"/>
                             <constraint firstAttribute="height" constant="18" id="Ugs-eG-zx5"/>
@@ -844,7 +837,7 @@ Gw
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d4F-uk-6nC">
-                        <rect key="frame" x="215" y="14" width="130" height="28"/>
+                        <rect key="frame" x="215" y="14" width="130" height="27"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="EsD-wD-FZK"/>
                             <constraint firstAttribute="height" constant="18" id="WZb-fO-aas"/>

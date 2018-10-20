@@ -409,6 +409,7 @@
 		598F45061C24AB9A00F769DD /* solve-field in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78BE3A1AA5C08200234AE1 /* solve-field */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		598F45091C24B05100F769DD /* astrometry-engine in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D78C51C1AA61C2E00234AE1 /* astrometry-engine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		598F450C1C24B4A200F769DD /* libastrometry.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 595605081C234B04004AEB4C /* libastrometry.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		59B76A3F217BD23C0023C5F7 /* radix.c in Sources */ = {isa = PBXBuildFile; fileRef = 59B76A3E217BD23C0023C5F7 /* radix.c */; };
 		9D06027D1C27FFB100787E2A /* wcsinfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D06027C1C27FFB100787E2A /* wcsinfo.c */; };
 		9D06027F1C2808CB00787E2A /* IndexManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */; };
 		9D0602811C280BE700787E2A /* SolverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0602801C280BE700787E2A /* SolverDelegate.swift */; };
@@ -1029,10 +1030,11 @@
 		595605B91C248AB5004AEB4C /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		5982059B1E788DE000EE4ACD /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		5982059C1E788DE000EE4ACD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		59B76A3E217BD23C0023C5F7 /* radix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = radix.c; sourceTree = "<group>"; };
 		9D0602741C27FF7100787E2A /* wcsinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wcsinfo; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D06027C1C27FFB100787E2A /* wcsinfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = wcsinfo.c; path = util/wcsinfo.c; sourceTree = "<group>"; };
 		9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexManagerDelegate.swift; sourceTree = "<group>"; };
-		9D0602801C280BE700787E2A /* SolverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolverDelegate.swift; sourceTree = "<group>"; };
+		9D0602801C280BE700787E2A /* SolverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SolverDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9D49B41B1AA76A9F0006E6A7 /* ucac3tofits */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ucac3tofits; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D49B4201AA76AEE0006E6A7 /* ucac3tofits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ucac3tofits.c; sourceTree = "<group>"; };
 		9D78BE3A1AA5C08200234AE1 /* solve-field */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "solve-field"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1378,6 +1380,7 @@
 				595605561C2354B4004AEB4C /* dpeaks.c */,
 				595605571C2354B4004AEB4C /* dselip.c */,
 				595605581C2354B4004AEB4C /* dsigma.c */,
+				59B76A3E217BD23C0023C5F7 /* radix.c */,
 				595605591C2354B4004AEB4C /* dsmooth.c */,
 			);
 			name = anutils;
@@ -2771,6 +2774,7 @@
 				59217E8D1AA65D8B00C6EA41 /* sip.c in Sources */,
 				5956054F1C235467004AEB4C /* image2xy.c in Sources */,
 				59217E8C1AA65D8B00C6EA41 /* sip-utils.c in Sources */,
+				59B76A3F217BD23C0023C5F7 /* radix.c in Sources */,
 				595605601C2354B4004AEB4C /* dobjects.c in Sources */,
 				595605631C2354B4004AEB4C /* dsigma.c in Sources */,
 				59217E8B1AA65D8B00C6EA41 /* gslutils.c in Sources */,

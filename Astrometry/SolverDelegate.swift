@@ -154,6 +154,9 @@ class SolverDelegate: NSObject, NetServiceDelegate {
   }
   
   func solvePath(_ path: String) {
+    let removeFiles = DispatchQueue.main.sync {
+      return removeFilesButton.state == NSOnState
+    }
     DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async {
       self.busy()
       let base = (path as NSString).deletingPathExtension
@@ -191,7 +194,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
       } catch {
         self.failed("\nFailed to solve file")
       }
-      if self.removeFilesButton.state == NSOnState {
+      if removeFiles {
         var files = [xy, wcs, "\(base).axy", "\(base).corr", "\(base).match", "\(base).rdls", "\(base).solved", "\(base)-indx.xyls" ]
         if rmFITS {
           files.append(fits)
