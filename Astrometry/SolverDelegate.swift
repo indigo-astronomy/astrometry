@@ -32,7 +32,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     DispatchQueue.main.async {
       let stringToAppend = string + "\n"
       if let color = color {
-        self.logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSForegroundColorAttributeName: color]))
+        self.logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: color]))
       } else {
         self.logText.textStorage!.append(NSAttributedString(string: stringToAppend))
       }
@@ -89,7 +89,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     }
     busy(cmd)
     task = Process()
-    if let task = self.task {
+    if let task = task {
       let pipe = Pipe()
       task.launchPath = Bundle.main.path(forAuxiliaryExecutable: executable)
       task.arguments = arguments
@@ -174,7 +174,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
           }
         }
         try self.execute("image2xy", arguments: [ "-O", "-o", xy, fits ])
-        try self.execute("solve-field", arguments: self.addArgs("solve-field-args", [ "--overwrite", "--no-fits2fits", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0", "--config", CONFIG, xy ]))
+        try self.execute("solve-field", arguments: self.addArgs("solve-field-args", [ "--overwrite", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0", "--config", CONFIG, xy ]))
         if FileManager.default.fileExists(atPath: wcs) {
           if DEFAULTS.bool(forKey: "writeWCSHeaders") {
             try self.execute("new-wcs", arguments: [ "-v", "-d", "-i", fits, "-o", wcs_fits, "-w", wcs ])
@@ -192,7 +192,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
         self.failed("\nFailed to solve file")
       }
       let removeFiles = DispatchQueue.main.sync {
-        return self.removeFilesButton.state == NSOnState
+        return self.removeFilesButton.state == .on
       }
       if removeFiles {
         var files = [xy, wcs, "\(base).axy", "\(base).corr", "\(base).match", "\(base).rdls", "\(base).solved", "\(base)-indx.xyls" ]
@@ -200,7 +200,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
           files.append(fits)
         }
         for file in files {
-          WORKSPACE.performFileOperation(NSWorkspaceRecycleOperation, source: "", destination: "", files: [file], tag: nil)
+          WORKSPACE.performFileOperation(NSWorkspace.FileOperationName.recycleOperation, source: "", destination: "", files: [file], tag: nil)
         }
       }
     }
@@ -212,7 +212,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     panel.prompt = "Select image file"
     panel.allowedFileTypes = [ "fit", "fits", "jpeg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
     panel.beginSheetModal(for: window, completionHandler: { result in
-      if result == NSFileHandlingPanelOKButton {
+      if result.rawValue == NSFileHandlingPanelOKButton {
         if let url = panel.url {
           self.solvePath(url.path)
         }
@@ -227,14 +227,14 @@ class SolverDelegate: NSObject, NetServiceDelegate {
   }
   
   @IBAction func show(_ sender: AnyObject) {
-    removeFilesButton.state = DEFAULTS.bool(forKey: "removeCreatedFiles") ? NSOnState : NSOffState
-    writeWCSHeadersButton.state = DEFAULTS.bool(forKey: "writeWCSHeaders") ? NSOnState : NSOffState
+    removeFilesButton.state = DEFAULTS.bool(forKey: "removeCreatedFiles") ? .on : .off
+    writeWCSHeadersButton.state = DEFAULTS.bool(forKey: "writeWCSHeaders") ? .on : .off
     window.makeKeyAndOrderFront(self)
   }
   
   @IBAction func saveState(_ sender: AnyObject) {
-    DEFAULTS.set(removeFilesButton.state == NSOnState, forKey: "removeCreatedFiles")
-    DEFAULTS.set(writeWCSHeadersButton.state == NSOnState, forKey: "writeWCSHeaders")
+    DEFAULTS.set(removeFilesButton.state == .on, forKey: "removeCreatedFiles")
+    DEFAULTS.set(writeWCSHeadersButton.state == .on, forKey: "writeWCSHeaders")
   }
   
   func startServer() {
@@ -310,7 +310,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     do {
       try server.start()
       server.publish("", type: "_astrometry._tcp", name: "Astrometry", delegate: self)
-      self.append("HTTP server started on port \(server.port)", color: GREEN)
+      try self.append("HTTP server started on port \(server.port())", color: GREEN)
     } catch {
       self.append("Can't start HTTP server", color: RED)
     }

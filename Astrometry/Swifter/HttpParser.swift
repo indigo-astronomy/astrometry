@@ -1,83 +1,64 @@
 //
 //  HttpParser.swift
 //  Swifter
-//  Copyright (c) 2015 Damian Kołakowski. All rights reserved.
+// 
+//  Copyright (c) 2014-2016 Damian Kołakowski. All rights reserved.
 //
 
-#if os(Linux)
-  import Glibc
-#else
-  import Foundation
-#endif
+import Foundation
 
-
-enum HttpParserError: Error {
-  case readBodyFailed(String)
-  case invalidStatusLine(String)
+enum HttpParserError: Error, Equatable {
+    case invalidStatusLine(String)
+    case negativeContentLength
 }
 
-class HttpParser {
-  
-  func readHttpRequest(_ socket: Socket) throws -> HttpRequest {
-    let statusLine = try socket.readLine()
-    let statusLineTokens = statusLine.split(" ")
-    //print(statusLineTokens)
-    if statusLineTokens.count < 3 {
-      throw HttpParserError.invalidStatusLine(statusLine)
+public class HttpParser {
+
+    public init() { }
+
+    public func readHttpRequest(_ socket: Socket) throws -> HttpRequest {
+        let statusLine = try socket.readLine()
+        let statusLineTokens = statusLine.components(separatedBy: " ")
+        if statusLineTokens.count < 3 {
+            throw HttpParserError.invalidStatusLine(statusLine)
+        }
+        let request = HttpRequest()
+        request.method = statusLineTokens[0]
+        let encodedPath = statusLineTokens[1].addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? statusLineTokens[1]
+        let urlComponents = URLComponents(string: encodedPath)
+        request.path = urlComponents?.path ?? ""
+        request.queryParams = urlComponents?.queryItems?.map { ($0.name, $0.value ?? "") } ?? []
+        request.headers = try readHeaders(socket)
+        if let contentLength = request.headers["content-length"], let contentLengthValue = Int(contentLength) {
+            // Prevent a buffer overflow and runtime error trying to create an `UnsafeMutableBufferPointer` with
+            // a negative length
+            guard contentLengthValue >= 0 else {
+                throw HttpParserError.negativeContentLength
+            }
+            request.body = try readBody(socket, size: contentLengthValue)
+        }
+        return request
+        }
+
+    private func readBody(_ socket: Socket, size: Int) throws -> [UInt8] {
+        return try socket.read(length: size)
     }
-    var request = HttpRequest()
-    request.method = statusLineTokens[0]
-    request.url = statusLineTokens[1]
-    request.queryParams = extractUrlParams(request.url)
-    request.headers = try readHeaders(socket)
-    if let contentLength = request.headers["content-length"], let contentLengthValue = Int(contentLength) {
-      request.body = try readBody(socket, size: contentLengthValue)
+
+    private func readHeaders(_ socket: Socket) throws -> [String: String] {
+        var headers = [String: String]()
+        while case let headerLine = try socket.readLine(), !headerLine.isEmpty {
+            let headerTokens = headerLine.split(separator: ":", maxSplits: 1, omittingEmptySubsequences: true).map(String.init)
+            if let name = headerTokens.first, let value = headerTokens.last {
+                headers[name.lowercased()] = value.trimmingCharacters(in: .whitespaces)
+            }
+        }
+        return headers
     }
-    return request
-  }
-  
-  fileprivate func extractUrlParams(_ url: String) -> [(String, String)] {
-    guard let query = url.split("?").last else {
-      return []
+
+    func supportsKeepAlive(_ headers: [String: String]) -> Bool {
+        if let value = headers["connection"] {
+            return "keep-alive" == value.trimmingCharacters(in: .whitespaces)
+        }
+        return false
     }
-    return query.split("&").map { (param: String) -> (String, String) in
-      let tokens = param.split("=")
-      guard let name = tokens.first, let value = tokens.last else {
-        return ("", "")
-      }
-      return (name.removePercentEncoding(), value.removePercentEncoding())
-    }
-  }
-  
-  fileprivate func readBody(_ socket: Socket, size: Int) throws -> [UInt8] {
-    var body = [UInt8]()
-    var counter = 0
-    while counter < size {
-      body.append(try socket.read())
-      counter += 1
-    }
-    return body
-  }
-  
-  fileprivate func readHeaders(_ socket: Socket) throws -> [String: String] {
-    var requestHeaders = [String: String]()
-    repeat {
-      let headerLine = try socket.readLine()
-      if headerLine.isEmpty {
-        return requestHeaders
-      }
-      let headerTokens = headerLine.split(":")
-      if let name = headerTokens.first, headerTokens.count >= 2 {
-        let value = headerTokens.dropFirst().joined(separator: ":")
-        requestHeaders[name.lowercased()] = value.trim()
-      }
-    } while true
-  }
-  
-  func supportsKeepAlive(_ headers: [String: String]) -> Bool {
-    if let value = headers["connection"] {
-      return "keep-alive" == value.trim()
-    }
-    return false
-  }
 }

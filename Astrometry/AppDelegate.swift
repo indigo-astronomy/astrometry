@@ -17,11 +17,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet var indexManager: IndexManagerDelegate!
 
   @IBAction func openProductPage(_ sender: AnyObject) {
-    NSWorkspace.shared().open(URL(string: "http://www.cloudmakers.eu/astrometry")!)
+    NSWorkspace.shared.open(URL(string: "http://www.cloudmakers.eu/astrometry")!)
   }
   
   @IBAction func openAstrometryNet(_ sender: AnyObject) {
-    NSWorkspace.shared().open(URL(string: "http://www.astrometry.net")!)
+    NSWorkspace.shared.open(URL(string: "http://www.astrometry.net")!)
   }
   
   func applicationWillFinishLaunching(_ notification: Notification) {

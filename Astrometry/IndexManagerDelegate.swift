@@ -33,11 +33,11 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
         }
       }
       if count == 0 {
-        checkbox.state = 0
+        checkbox.state = NSControl.StateValue(rawValue: 0)
       } else if count == files.count {
-        checkbox.state = 1
+        checkbox.state = NSControl.StateValue(rawValue: 1)
       } else {
-        checkbox.state = -1
+        checkbox.state = NSControl.StateValue(rawValue: -1)
       }
     }
   }
@@ -114,12 +114,12 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
       for file in files {
         let path = "\(FOLDER)/\(file)"
         if FILE_NAMANGER.fileExists(atPath: path) {
-          if checkbox.state == 0 {
-            WORKSPACE.performFileOperation(NSWorkspaceRecycleOperation, source: FOLDER, destination: "", files: [file], tag: nil)
+            if checkbox.state.rawValue == 0 {
+                WORKSPACE.performFileOperation(NSWorkspace.FileOperationName.recycleOperation, source: FOLDER, destination: "", files: [file], tag: nil)
             self.statusText.stringValue = "Removed \(file)"
           }
         } else {
-          if checkbox.state == 1 {
+            if checkbox.state.rawValue == 1 {
             queue.append(file)
           }
         }
@@ -129,13 +129,13 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
   
   @IBAction func skip2(_ sender: AnyObject) {
     let button = sender as! NSButton
-    if button.state == -1 {
-      button.state = 1
+    if button.state.rawValue == -1 {
+        button.state = NSControl.StateValue(rawValue: 1)
     }
   }
 
   @IBAction func readme(_ sender: AnyObject) {
-    NSWorkspace.shared().open(URL(string: "http://astrometry.net/doc/readme.html")!)
+    NSWorkspace.shared.open(URL(string: "http://astrometry.net/doc/readme.html")!)
   }
 
   @IBAction func abort(_ sender: AnyObject) {

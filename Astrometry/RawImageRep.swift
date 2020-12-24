@@ -33,13 +33,13 @@ class RawImageRep: NSBitmapImageRep {
     planes.pointee = UnsafeMutablePointer<UInt8>(OpaquePointer(bytes.advanced(by: 12)))
     switch indigo_raw_type(type) {
     case INDIGO_RAW_MONO8:
-      super.init(bitmapDataPlanes: planes, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 1, hasAlpha: false, isPlanar: false, colorSpaceName: NSCalibratedWhiteColorSpace, bitmapFormat:NSBitmapFormat(rawValue: 0), bytesPerRow: width, bitsPerPixel: 8)
+        super.init(bitmapDataPlanes: planes, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 1, hasAlpha: false, isPlanar: false, colorSpaceName: NSColorSpaceName.calibratedWhite, bitmapFormat:NSBitmapImageRep.Format(rawValue: 0), bytesPerRow: width, bitsPerPixel: 8)
       self.data = data
     case INDIGO_RAW_MONO16:
-      super.init(bitmapDataPlanes: planes, pixelsWide: width, pixelsHigh: height, bitsPerSample: 16, samplesPerPixel: 1, hasAlpha: false, isPlanar: false, colorSpaceName: NSCalibratedWhiteColorSpace, bitmapFormat:NSBitmapFormat(rawValue: 0), bytesPerRow: 2 * width, bitsPerPixel: 16)
+        super.init(bitmapDataPlanes: planes, pixelsWide: width, pixelsHigh: height, bitsPerSample: 16, samplesPerPixel: 1, hasAlpha: false, isPlanar: false, colorSpaceName: NSColorSpaceName.calibratedWhite, bitmapFormat:NSBitmapImageRep.Format(rawValue: 0), bytesPerRow: 2 * width, bitsPerPixel: 16)
       self.data = data
     case INDIGO_RAW_RGB24:
-      super.init(bitmapDataPlanes: planes, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bitmapFormat:NSBitmapFormat(rawValue: 0), bytesPerRow: 3 * width, bitsPerPixel: 24)
+        super.init(bitmapDataPlanes: planes, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 3, hasAlpha: false, isPlanar: false, colorSpaceName: NSColorSpaceName.deviceRGB, bitmapFormat:NSBitmapImageRep.Format(rawValue: 0), bytesPerRow: 3 * width, bitsPerPixel: 24)
       self.data = data
     default:
       return nil
@@ -51,6 +51,6 @@ class RawImageRep: NSBitmapImageRep {
   }
   
   deinit {
-    planes.deallocate(capacity: 1)
+    planes.deallocate()
   }
 }
