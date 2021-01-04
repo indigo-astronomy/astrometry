@@ -69,13 +69,11 @@
 		59110C2725A2870A00CE0DB3 /* solve-field */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "solve-field"; sourceTree = "<group>"; };
 		59110C2825A2870A00CE0DB3 /* new-wcs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "new-wcs"; sourceTree = "<group>"; };
 		59110C2F25A2879900CE0DB3 /* libqfits.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libqfits.a; sourceTree = "<group>"; };
-		59110C3025A2879900CE0DB3 /* libanfiles.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libanfiles.a; sourceTree = "<group>"; };
-		59110C3125A2879900CE0DB3 /* libanbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libanbase.a; sourceTree = "<group>"; };
+		59110C3025A2879900CE0DB3 /* liban.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liban.a; sourceTree = "<group>"; };
 		59110C3225A2879900CE0DB3 /* libkd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkd.a; sourceTree = "<group>"; };
 		59110C3325A2879900CE0DB3 /* libcfitsio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcfitsio.a; sourceTree = "<group>"; };
 		59110C3425A2879900CE0DB3 /* libengine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libengine.a; sourceTree = "<group>"; };
 		59110C3525A2879900CE0DB3 /* libgsl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgsl.a; sourceTree = "<group>"; };
-		59110C3625A2879900CE0DB3 /* libanutils.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libanutils.a; sourceTree = "<group>"; };
 		59110C3725A2879900CE0DB3 /* libcat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcat.a; sourceTree = "<group>"; };
 		59110C3A25A288D800CE0DB3 /* astrometry-engine */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "astrometry-engine"; sourceTree = "<group>"; };
 		59217F571AA6668200C6EA41 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
@@ -105,6 +103,7 @@
 		59395B4C259510E100AF5042 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		59395B4D259510E100AF5042 /* Socket+Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Socket+Server.swift"; sourceTree = "<group>"; };
 		593AC44E25A325400016525C /* image2xy-main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "image2xy-main.c"; sourceTree = "<group>"; };
+		593AC45525A35EF10016525C /* Astrometry.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Astrometry.entitlements; sourceTree = "<group>"; };
 		594564B21C2871A200FEA745 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		595603CF1C233875004AEB4C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		595605B61C2488C3004AEB4C /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -152,13 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				59110C2F25A2879900CE0DB3 /* libqfits.a */,
-				59110C3025A2879900CE0DB3 /* libanfiles.a */,
-				59110C3125A2879900CE0DB3 /* libanbase.a */,
+				59110C3025A2879900CE0DB3 /* liban.a */,
 				59110C3225A2879900CE0DB3 /* libkd.a */,
 				59110C3325A2879900CE0DB3 /* libcfitsio.a */,
 				59110C3425A2879900CE0DB3 /* libengine.a */,
 				59110C3525A2879900CE0DB3 /* libgsl.a */,
-				59110C3625A2879900CE0DB3 /* libanutils.a */,
 				59110C3725A2879900CE0DB3 /* libcat.a */,
 			);
 			path = lib;
@@ -264,6 +261,7 @@
 		9DF426601C24658D00DEF999 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				593AC45525A35EF10016525C /* Astrometry.entitlements */,
 				595605B61C2488C3004AEB4C /* Credits.rtf */,
 				9DF426571C24657500DEF999 /* Assets.xcassets */,
 				9DF426591C24657500DEF999 /* MainMenu.xib */,
@@ -334,7 +332,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = AG8BXW65A2;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -597,13 +595,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -643,13 +642,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

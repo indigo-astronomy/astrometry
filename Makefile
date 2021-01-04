@@ -60,6 +60,8 @@ AWK = awk
 ASTROMETRY = ../astrometry.net
 CFITSIO = ../cfitsio
 
+VERSION = 0.84
+
 CFLAGS += -I $(ASTROMETRY)/include -I $(ASTROMETRY)/include/astrometry -I $(ASTROMETRY)/gsl-an -I $(ASTROMETRY)/util \
 	-I $(CFITSIO) \
 	-I include -isysteminclude
@@ -159,9 +161,7 @@ CFITSIO_FILES = buffers cfileio checksum drvrfile drvrmem \
 	zlib/inffast zlib/inflate zlib/inftrees zlib/trees \
 	zlib/uncompr zlib/zcompress zlib/zuncompress zlib/zutil
 
-ANBASE_LIB = lib/libanbase.a
-ANUTILS_LIB = lib/libanutils.a
-ANFILES_LIB = lib/libanfiles.a
+AN_LIB = lib/liban.a
 QFITS_LIB = lib/libqfits.a
 KD_LIB = lib/libkd.a
 GSL_LIB = lib/libgsl.a
@@ -169,7 +169,7 @@ ENGINE_LIB = lib/libengine.a
 CAT_LIB = lib/libcat.a
 CFITSIO_LIB = lib/libcfitsio.a
 
-LIBS = $(CFITSIO_LIB) $(ENGINE_LIB) $(CAT_LIB) $(ANBASE_LIB) $(ANUTILS_LIB) $(ANFILES_LIB) $(QFITS_LIB) $(GSL_LIB) $(KD_LIB)
+LIBS = $(ENGINE_LIB) $(KD_LIB) $(CAT_LIB) $(AN_LIB) $(QFITS_LIB) $(GSL_LIB) $(CFITSIO_LIB)
 
 IMAGE2XY = bin/image2xy
 NEWWCS = bin/new-wcs
@@ -185,13 +185,7 @@ init:
 	install -d lib
 	install -d bin
 
-$(ANBASE_LIB): $(addsuffix .o, $(addprefix $(ASTROMETRY)/util/, $(ANBASE_FILES)))
-	$(AR) $(ARFLAGS) $@ $^
-	
-$(ANUTILS_LIB): $(addsuffix .o, $(addprefix $(ASTROMETRY)/util/, $(ANUTILS_FILES)))
-	$(AR) $(ARFLAGS) $@ $^
-
-$(ANFILES_LIB): $(addsuffix .o, $(addprefix $(ASTROMETRY)/util/, $(ANFILES_FILES)))
+$(AN_LIB): $(addsuffix .o, $(addprefix $(ASTROMETRY)/util/, $(ANBASE_FILES) $(ANUTILS_FILES) $(ANFILES_FILES)))
 	$(AR) $(ARFLAGS) $@ $^
 
 $(QFITS_LIB): $(addsuffix .o, $(addprefix $(ASTROMETRY)/qfits-an/, $(QFITS_FILES)))
@@ -241,6 +235,25 @@ $(ASTROMETRYENGINE): $(ASTROMETRY)/solver/engine-main.o $(LIBS)
 
 $(WCSINFO): $(ASTROMETRY)/util/wcsinfo.o $(LIBS)
 	$(CC) -o $@ $(LDFLAGS) $^
+
+package: ROOT = indigo-astrometry_$(VERSION)_$(DEBIAN_ARCH)
+package: all
+	rm -rf $(ROOT) $(ROOT).deb
+	install -d $(ROOT)
+	install -d $(ROOT)/usr/bin
+	install -m 0755 bin/* $(ROOT)/usr/bin
+	install -d $(ROOT)/DEBIAN
+	printf "Package: indigo-astrometry\n" > $(ROOT)/DEBIAN/control
+	printf "Version: $(VERSION)\n" >> $(ROOT)/DEBIAN/control
+	printf "Installed-Size: $(shell echo `du -s $$(ROOT) | cut -f1`)\n" >> $(ROOT)/DEBIAN/control
+	printf "Priority: optional\n" >> $(ROOT)/DEBIAN/control
+	printf "Architecture: $(DEBIAN_ARCH)\n" >> $(ROOT)/DEBIAN/control
+	printf "Maintainer: CloudMakers, s. r. o. <indigo@cloudmakers.eu>\n" >> $(ROOT)/DEBIAN/control
+	printf "Homepage: http://www.indigo-astronomy.org\n" >> $(ROOT)/DEBIAN/control
+	printf "Description: Astrometry.net for INDIGO\n" >> $(ROOT)/DEBIAN/control
+	printf " Automatic recognition of astronomical images; or standards-compliant astrometric metadata from data.\n" >> $(ROOT)/DEBIAN/control
+	fakeroot dpkg --build $(ROOT)
+	rm -rf $(ROOT)
 
 clean:
 	rm -rf lib bin
