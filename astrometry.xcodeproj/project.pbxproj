@@ -163,13 +163,10 @@
 		592A10A225A391C6005AD445 /* solve-field.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "solve-field.plist"; sourceTree = "<group>"; };
 		592A10AD25A3922B005AD445 /* astrometry-engine.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "astrometry-engine.plist"; sourceTree = "<group>"; };
 		592A10BD25A39232005AD445 /* astrometry-engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "astrometry-engine"; sourceTree = BUILT_PRODUCTS_DIR; };
-		592A10BE25A39232005AD445 /* solve-field copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "solve-field copy-Info.plist"; path = "/Users/polakovic/Development/astrometry/solve-field copy-Info.plist"; sourceTree = "<absolute>"; };
 		592A10E825A3A847005AD445 /* wcsinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wcsinfo; sourceTree = BUILT_PRODUCTS_DIR; };
-		592A10E925A3A847005AD445 /* image2xy copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "image2xy copy2-Info.plist"; path = "/Users/polakovic/Development/astrometry/image2xy copy2-Info.plist"; sourceTree = "<absolute>"; };
 		592A10F025A3A8A4005AD445 /* wcsinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wcsinfo.plist; sourceTree = "<group>"; };
 		592A10FB25A3A913005AD445 /* new-wcs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "new-wcs.plist"; sourceTree = "<group>"; };
 		592A110B25A3A91A005AD445 /* new-wcs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "new-wcs"; sourceTree = BUILT_PRODUCTS_DIR; };
-		592A110C25A3A91A005AD445 /* wcsinfo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "wcsinfo copy-Info.plist"; path = "/Users/polakovic/Development/astrometry/wcsinfo copy-Info.plist"; sourceTree = "<absolute>"; };
 		59395B3A259510E000AF5042 /* SwifterProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterProcess.swift; sourceTree = "<group>"; };
 		59395B3C259510E000AF5042 /* MimeTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeTypes.swift; sourceTree = "<group>"; };
 		59395B3D259510E000AF5042 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
@@ -209,7 +206,6 @@
 		5972887125A38B27004E6388 /* image2xy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image2xy.plist; sourceTree = "<group>"; };
 		5972887C25A38FBA004E6388 /* fake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fake.c; sourceTree = "<group>"; };
 		5972889825A39077004E6388 /* solve-field */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "solve-field"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5972889925A39077004E6388 /* image2xy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "image2xy copy-Info.plist"; path = "/Users/polakovic/Development/astrometry/image2xy copy-Info.plist"; sourceTree = "<absolute>"; };
 		5982059B1E788DE000EE4ACD /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		5982059C1E788DE000EE4ACD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexManagerDelegate.swift; sourceTree = "<group>"; };
@@ -405,10 +401,6 @@
 				595603D11C2338C8004AEB4C /* Libraries */,
 				9D78BE2D1AA5BF7900234AE1 /* Products */,
 				5972885F25A389D9004E6388 /* Frameworks */,
-				5972889925A39077004E6388 /* image2xy copy-Info.plist */,
-				592A10BE25A39232005AD445 /* solve-field copy-Info.plist */,
-				592A10E925A3A847005AD445 /* image2xy copy2-Info.plist */,
-				592A110C25A3A91A005AD445 /* wcsinfo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 			wrapsLines = 0;
