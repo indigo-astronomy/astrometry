@@ -7,13 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		59110C2925A2871800CE0DB3 /* wcsinfo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59110C2525A2870A00CE0DB3 /* wcsinfo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59110C2A25A2871800CE0DB3 /* image2xy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59110C2625A2870A00CE0DB3 /* image2xy */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59110C2B25A2871800CE0DB3 /* solve-field in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59110C2725A2870A00CE0DB3 /* solve-field */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		59110C2C25A2871800CE0DB3 /* new-wcs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59110C2825A2870A00CE0DB3 /* new-wcs */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		59110C3825A287A400CE0DB3 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
-		59110C3B25A288D800CE0DB3 /* astrometry-engine in Resources */ = {isa = PBXBuildFile; fileRef = 59110C3A25A288D800CE0DB3 /* astrometry-engine */; };
-		59110C3D25A288EE00CE0DB3 /* astrometry-engine in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59110C3A25A288D800CE0DB3 /* astrometry-engine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		592A10A625A391EA005AD445 /* solve-field in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5972889825A39077004E6388 /* solve-field */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		592A10B025A39232005AD445 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
+		592A10B325A39232005AD445 /* liban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3025A2879900CE0DB3 /* liban.a */; };
+		592A10B425A39232005AD445 /* libcat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3725A2879900CE0DB3 /* libcat.a */; };
+		592A10B525A39232005AD445 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
+		592A10B625A39232005AD445 /* libengine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3425A2879900CE0DB3 /* libengine.a */; };
+		592A10B725A39232005AD445 /* libgsl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3525A2879900CE0DB3 /* libgsl.a */; };
+		592A10B825A39232005AD445 /* libkd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3225A2879900CE0DB3 /* libkd.a */; };
+		592A10B925A39232005AD445 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C2F25A2879900CE0DB3 /* libqfits.a */; };
+		592A10C325A39290005AD445 /* astrometry-engine in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A10BD25A39232005AD445 /* astrometry-engine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		592A10C825A392CD005AD445 /* libastrometry-engine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885E25A38988004E6388 /* libastrometry-engine.a */; };
+		592A10DB25A3A847005AD445 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
+		592A10DD25A3A847005AD445 /* liban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3025A2879900CE0DB3 /* liban.a */; };
+		592A10DE25A3A847005AD445 /* libcat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3725A2879900CE0DB3 /* libcat.a */; };
+		592A10DF25A3A847005AD445 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
+		592A10E025A3A847005AD445 /* libengine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3425A2879900CE0DB3 /* libengine.a */; };
+		592A10E125A3A847005AD445 /* libgsl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3525A2879900CE0DB3 /* libgsl.a */; };
+		592A10E225A3A847005AD445 /* libkd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3225A2879900CE0DB3 /* libkd.a */; };
+		592A10E325A3A847005AD445 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C2F25A2879900CE0DB3 /* libqfits.a */; };
+		592A10EF25A3A85E005AD445 /* libwcsinfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885A25A38988004E6388 /* libwcsinfo.a */; };
+		592A10F525A3A8D2005AD445 /* wcsinfo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A10E825A3A847005AD445 /* wcsinfo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		592A10FE25A3A91A005AD445 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
+		592A110125A3A91A005AD445 /* liban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3025A2879900CE0DB3 /* liban.a */; };
+		592A110225A3A91A005AD445 /* libcat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3725A2879900CE0DB3 /* libcat.a */; };
+		592A110325A3A91A005AD445 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
+		592A110425A3A91A005AD445 /* libengine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3425A2879900CE0DB3 /* libengine.a */; };
+		592A110525A3A91A005AD445 /* libgsl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3525A2879900CE0DB3 /* libgsl.a */; };
+		592A110625A3A91A005AD445 /* libkd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3225A2879900CE0DB3 /* libkd.a */; };
+		592A110725A3A91A005AD445 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C2F25A2879900CE0DB3 /* libqfits.a */; };
+		592A111525A3A960005AD445 /* new-wcs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A110B25A3A91A005AD445 /* new-wcs */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		592A111C25A3AA08005AD445 /* libnew-wcs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885C25A38988004E6388 /* libnew-wcs.a */; };
 		59395B50259510E100AF5042 /* MimeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59395B3C259510E000AF5042 /* MimeTypes.swift */; };
 		59395B51259510E100AF5042 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59395B3D259510E000AF5042 /* Socket.swift */; };
 		59395B52259510E100AF5042 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59395B3E259510E000AF5042 /* HttpServer.swift */; };
@@ -36,6 +61,25 @@
 		594564B31C2871A200FEA745 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594564B21C2871A200FEA745 /* Constants.swift */; };
 		595605B71C2488C3004AEB4C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 595605B61C2488C3004AEB4C /* Credits.rtf */; };
 		595605BA1C248AB5004AEB4C /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595605B91C248AB5004AEB4C /* StreamReader.swift */; };
+		5972886025A389D9004E6388 /* liban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3025A2879900CE0DB3 /* liban.a */; };
+		5972886125A389D9004E6388 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
+		5972886225A389D9004E6388 /* libimage2xy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885B25A38988004E6388 /* libimage2xy.a */; };
+		5972886E25A38A82004E6388 /* image2xy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5972885125A387B1004E6388 /* image2xy */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5972887D25A38FBA004E6388 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
+		5972888025A39016004E6388 /* libengine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3425A2879900CE0DB3 /* libengine.a */; };
+		5972888325A39062004E6388 /* libcat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3725A2879900CE0DB3 /* libcat.a */; };
+		5972888425A39062004E6388 /* libgsl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3525A2879900CE0DB3 /* libgsl.a */; };
+		5972888525A39062004E6388 /* libkd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3225A2879900CE0DB3 /* libkd.a */; };
+		5972888625A39062004E6388 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C2F25A2879900CE0DB3 /* libqfits.a */; };
+		5972888B25A39077004E6388 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
+		5972888D25A39077004E6388 /* liban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3025A2879900CE0DB3 /* liban.a */; };
+		5972888E25A39077004E6388 /* libcat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3725A2879900CE0DB3 /* libcat.a */; };
+		5972888F25A39077004E6388 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
+		5972889025A39077004E6388 /* libengine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3425A2879900CE0DB3 /* libengine.a */; };
+		5972889125A39077004E6388 /* libgsl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3525A2879900CE0DB3 /* libgsl.a */; };
+		5972889225A39077004E6388 /* libkd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3225A2879900CE0DB3 /* libkd.a */; };
+		5972889325A39077004E6388 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C2F25A2879900CE0DB3 /* libqfits.a */; };
+		597288B125A390F3004E6388 /* libsolve-field.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885D25A38988004E6388 /* libsolve-field.a */; };
 		9D06027F1C2808CB00787E2A /* IndexManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */; };
 		9D0602811C280BE700787E2A /* SolverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0602801C280BE700787E2A /* SolverDelegate.swift */; };
 		9DE6CCAB1F0E59D60086A9DD /* RawImageRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */; };
@@ -45,6 +89,44 @@
 		9DFC68791E12BDB700F979AB /* Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC68781E12BDB700F979AB /* Convert.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		592A10F125A3A8CA005AD445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592A10AE25A39232005AD445;
+			remoteInfo = "astrometry-engine";
+		};
+		592A10F325A3A8CA005AD445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592A10D925A3A847005AD445;
+			remoteInfo = wcsinfo;
+		};
+		592A111325A3A959005AD445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592A10FC25A3A91A005AD445;
+			remoteInfo = "new-wcs";
+		};
+		5972886C25A38A7C004E6388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5972885025A387B1004E6388;
+			remoteInfo = image2xy;
+		};
+		597288A925A390C1004E6388 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5972888925A39077004E6388;
+			remoteInfo = "solve-field";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		598F44F91C249CF300F769DD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -52,11 +134,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				59110C3D25A288EE00CE0DB3 /* astrometry-engine in CopyFiles */,
-				59110C2925A2871800CE0DB3 /* wcsinfo in CopyFiles */,
-				59110C2A25A2871800CE0DB3 /* image2xy in CopyFiles */,
-				59110C2B25A2871800CE0DB3 /* solve-field in CopyFiles */,
-				59110C2C25A2871800CE0DB3 /* new-wcs in CopyFiles */,
+				592A111525A3A960005AD445 /* new-wcs in CopyFiles */,
+				592A10F525A3A8D2005AD445 /* wcsinfo in CopyFiles */,
+				592A10C325A39290005AD445 /* astrometry-engine in CopyFiles */,
+				592A10A625A391EA005AD445 /* solve-field in CopyFiles */,
+				5972886E25A38A82004E6388 /* image2xy in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,10 +146,6 @@
 
 /* Begin PBXFileReference section */
 		59110BC525A2521F00CE0DB3 /* Makefile */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; tabWidth = 2; };
-		59110C2525A2870A00CE0DB3 /* wcsinfo */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = wcsinfo; sourceTree = "<group>"; };
-		59110C2625A2870A00CE0DB3 /* image2xy */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = image2xy; sourceTree = "<group>"; };
-		59110C2725A2870A00CE0DB3 /* solve-field */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "solve-field"; sourceTree = "<group>"; };
-		59110C2825A2870A00CE0DB3 /* new-wcs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "new-wcs"; sourceTree = "<group>"; };
 		59110C2F25A2879900CE0DB3 /* libqfits.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libqfits.a; sourceTree = "<group>"; };
 		59110C3025A2879900CE0DB3 /* liban.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liban.a; sourceTree = "<group>"; };
 		59110C3225A2879900CE0DB3 /* libkd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libkd.a; sourceTree = "<group>"; };
@@ -75,7 +153,6 @@
 		59110C3425A2879900CE0DB3 /* libengine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libengine.a; sourceTree = "<group>"; };
 		59110C3525A2879900CE0DB3 /* libgsl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgsl.a; sourceTree = "<group>"; };
 		59110C3725A2879900CE0DB3 /* libcat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcat.a; sourceTree = "<group>"; };
-		59110C3A25A288D800CE0DB3 /* astrometry-engine */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "astrometry-engine"; sourceTree = "<group>"; };
 		59217F571AA6668200C6EA41 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		59217F5A1AA6668200C6EA41 /* nomad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nomad.h; sourceTree = "<group>"; };
 		59217F5B1AA6668200C6EA41 /* os-features-config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "os-features-config.h"; sourceTree = "<group>"; };
@@ -83,6 +160,16 @@
 		59217F5D1AA6668200C6EA41 /* svn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svn.h; sourceTree = "<group>"; };
 		59217F5E1AA6668200C6EA41 /* usnob-fits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "usnob-fits.h"; sourceTree = "<group>"; };
 		59217FBA1AA7A65500C6EA41 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		592A10A225A391C6005AD445 /* solve-field.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "solve-field.plist"; sourceTree = "<group>"; };
+		592A10AD25A3922B005AD445 /* astrometry-engine.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "astrometry-engine.plist"; sourceTree = "<group>"; };
+		592A10BD25A39232005AD445 /* astrometry-engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "astrometry-engine"; sourceTree = BUILT_PRODUCTS_DIR; };
+		592A10BE25A39232005AD445 /* solve-field copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "solve-field copy-Info.plist"; path = "/Users/polakovic/Development/astrometry/solve-field copy-Info.plist"; sourceTree = "<absolute>"; };
+		592A10E825A3A847005AD445 /* wcsinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wcsinfo; sourceTree = BUILT_PRODUCTS_DIR; };
+		592A10E925A3A847005AD445 /* image2xy copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "image2xy copy2-Info.plist"; path = "/Users/polakovic/Development/astrometry/image2xy copy2-Info.plist"; sourceTree = "<absolute>"; };
+		592A10F025A3A8A4005AD445 /* wcsinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = wcsinfo.plist; sourceTree = "<group>"; };
+		592A10FB25A3A913005AD445 /* new-wcs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "new-wcs.plist"; sourceTree = "<group>"; };
+		592A110B25A3A91A005AD445 /* new-wcs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "new-wcs"; sourceTree = BUILT_PRODUCTS_DIR; };
+		592A110C25A3A91A005AD445 /* wcsinfo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "wcsinfo copy-Info.plist"; path = "/Users/polakovic/Development/astrometry/wcsinfo copy-Info.plist"; sourceTree = "<absolute>"; };
 		59395B3A259510E000AF5042 /* SwifterProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterProcess.swift; sourceTree = "<group>"; };
 		59395B3C259510E000AF5042 /* MimeTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeTypes.swift; sourceTree = "<group>"; };
 		59395B3D259510E000AF5042 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
@@ -108,6 +195,21 @@
 		595603CF1C233875004AEB4C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		595605B61C2488C3004AEB4C /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		595605B91C248AB5004AEB4C /* StreamReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
+		5972884625A3793E004E6388 /* image2xy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = image2xy.entitlements; sourceTree = "<group>"; };
+		5972884725A37A6E004E6388 /* wcsinfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wcsinfo.entitlements; sourceTree = "<group>"; };
+		5972884825A37A7F004E6388 /* astrometry-engine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "astrometry-engine.entitlements"; sourceTree = "<group>"; };
+		5972884925A37A8F004E6388 /* solve-field.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "solve-field.entitlements"; sourceTree = "<group>"; };
+		5972884A25A37A9D004E6388 /* new-wcs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "new-wcs.entitlements"; sourceTree = "<group>"; };
+		5972885125A387B1004E6388 /* image2xy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = image2xy; sourceTree = BUILT_PRODUCTS_DIR; };
+		5972885A25A38988004E6388 /* libwcsinfo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwcsinfo.a; sourceTree = "<group>"; };
+		5972885B25A38988004E6388 /* libimage2xy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libimage2xy.a; sourceTree = "<group>"; };
+		5972885C25A38988004E6388 /* libnew-wcs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libnew-wcs.a"; sourceTree = "<group>"; };
+		5972885D25A38988004E6388 /* libsolve-field.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libsolve-field.a"; sourceTree = "<group>"; };
+		5972885E25A38988004E6388 /* libastrometry-engine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libastrometry-engine.a"; sourceTree = "<group>"; };
+		5972887125A38B27004E6388 /* image2xy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = image2xy.plist; sourceTree = "<group>"; };
+		5972887C25A38FBA004E6388 /* fake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fake.c; sourceTree = "<group>"; };
+		5972889825A39077004E6388 /* solve-field */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "solve-field"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5972889925A39077004E6388 /* image2xy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "image2xy copy-Info.plist"; path = "/Users/polakovic/Development/astrometry/image2xy copy-Info.plist"; sourceTree = "<absolute>"; };
 		5982059B1E788DE000EE4ACD /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		5982059C1E788DE000EE4ACD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexManagerDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +226,81 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		592A10B125A39232005AD445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592A10C825A392CD005AD445 /* libastrometry-engine.a in Frameworks */,
+				592A10B325A39232005AD445 /* liban.a in Frameworks */,
+				592A10B425A39232005AD445 /* libcat.a in Frameworks */,
+				592A10B525A39232005AD445 /* libcfitsio.a in Frameworks */,
+				592A10B625A39232005AD445 /* libengine.a in Frameworks */,
+				592A10B725A39232005AD445 /* libgsl.a in Frameworks */,
+				592A10B825A39232005AD445 /* libkd.a in Frameworks */,
+				592A10B925A39232005AD445 /* libqfits.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		592A10DC25A3A847005AD445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592A10EF25A3A85E005AD445 /* libwcsinfo.a in Frameworks */,
+				592A10DD25A3A847005AD445 /* liban.a in Frameworks */,
+				592A10DE25A3A847005AD445 /* libcat.a in Frameworks */,
+				592A10DF25A3A847005AD445 /* libcfitsio.a in Frameworks */,
+				592A10E025A3A847005AD445 /* libengine.a in Frameworks */,
+				592A10E125A3A847005AD445 /* libgsl.a in Frameworks */,
+				592A10E225A3A847005AD445 /* libkd.a in Frameworks */,
+				592A10E325A3A847005AD445 /* libqfits.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		592A10FF25A3A91A005AD445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592A110125A3A91A005AD445 /* liban.a in Frameworks */,
+				592A110225A3A91A005AD445 /* libcat.a in Frameworks */,
+				592A110325A3A91A005AD445 /* libcfitsio.a in Frameworks */,
+				592A110425A3A91A005AD445 /* libengine.a in Frameworks */,
+				592A110525A3A91A005AD445 /* libgsl.a in Frameworks */,
+				592A110625A3A91A005AD445 /* libkd.a in Frameworks */,
+				592A111C25A3AA08005AD445 /* libnew-wcs.a in Frameworks */,
+				592A110725A3A91A005AD445 /* libqfits.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5972884E25A387B1004E6388 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5972886025A389D9004E6388 /* liban.a in Frameworks */,
+				5972888325A39062004E6388 /* libcat.a in Frameworks */,
+				5972886125A389D9004E6388 /* libcfitsio.a in Frameworks */,
+				5972888025A39016004E6388 /* libengine.a in Frameworks */,
+				5972888425A39062004E6388 /* libgsl.a in Frameworks */,
+				5972888525A39062004E6388 /* libkd.a in Frameworks */,
+				5972888625A39062004E6388 /* libqfits.a in Frameworks */,
+				5972886225A389D9004E6388 /* libimage2xy.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5972888C25A39077004E6388 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597288B125A390F3004E6388 /* libsolve-field.a in Frameworks */,
+				5972888D25A39077004E6388 /* liban.a in Frameworks */,
+				5972888E25A39077004E6388 /* libcat.a in Frameworks */,
+				5972888F25A39077004E6388 /* libcfitsio.a in Frameworks */,
+				5972889025A39077004E6388 /* libengine.a in Frameworks */,
+				5972889125A39077004E6388 /* libgsl.a in Frameworks */,
+				5972889225A39077004E6388 /* libkd.a in Frameworks */,
+				5972889325A39077004E6388 /* libqfits.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DF426501C24657500DEF999 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,21 +312,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		59110C2425A2870A00CE0DB3 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				59110C3A25A288D800CE0DB3 /* astrometry-engine */,
-				59110C2525A2870A00CE0DB3 /* wcsinfo */,
-				59110C2625A2870A00CE0DB3 /* image2xy */,
-				59110C2725A2870A00CE0DB3 /* solve-field */,
-				59110C2825A2870A00CE0DB3 /* new-wcs */,
-			);
-			path = bin;
-			sourceTree = "<group>";
-		};
 		59110C2E25A2879900CE0DB3 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				5972885E25A38988004E6388 /* libastrometry-engine.a */,
+				5972885B25A38988004E6388 /* libimage2xy.a */,
+				5972885C25A38988004E6388 /* libnew-wcs.a */,
+				5972885D25A38988004E6388 /* libsolve-field.a */,
+				5972885A25A38988004E6388 /* libwcsinfo.a */,
 				59110C2F25A2879900CE0DB3 /* libqfits.a */,
 				59110C3025A2879900CE0DB3 /* liban.a */,
 				59110C3225A2879900CE0DB3 /* libkd.a */,
@@ -216,6 +386,13 @@
 			path = StreamReader;
 			sourceTree = "<group>";
 		};
+		5972885F25A389D9004E6388 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D78BE231AA5BF7900234AE1 = {
 			isa = PBXGroup;
 			children = (
@@ -224,10 +401,14 @@
 				59110BC525A2521F00CE0DB3 /* Makefile */,
 				9DF426541C24657500DEF999 /* Astrometry */,
 				59217F511AA6665100C6EA41 /* fixes */,
-				59110C2425A2870A00CE0DB3 /* bin */,
 				59110C2E25A2879900CE0DB3 /* lib */,
 				595603D11C2338C8004AEB4C /* Libraries */,
 				9D78BE2D1AA5BF7900234AE1 /* Products */,
+				5972885F25A389D9004E6388 /* Frameworks */,
+				5972889925A39077004E6388 /* image2xy copy-Info.plist */,
+				592A10BE25A39232005AD445 /* solve-field copy-Info.plist */,
+				592A10E925A3A847005AD445 /* image2xy copy2-Info.plist */,
+				592A110C25A3A91A005AD445 /* wcsinfo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 			wrapsLines = 0;
@@ -236,6 +417,11 @@
 			isa = PBXGroup;
 			children = (
 				9DF426531C24657500DEF999 /* Astrometry.app */,
+				5972885125A387B1004E6388 /* image2xy */,
+				5972889825A39077004E6388 /* solve-field */,
+				592A10BD25A39232005AD445 /* astrometry-engine */,
+				592A10E825A3A847005AD445 /* wcsinfo */,
+				592A110B25A3A91A005AD445 /* new-wcs */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +440,7 @@
 				595605B81C248AB5004AEB4C /* StreamReader */,
 				9DF426601C24658D00DEF999 /* Supporting Files */,
 				9DFC68771E12BDB700F979AB /* Astrometry-Bridging-Header.h */,
+				5972887C25A38FBA004E6388 /* fake.c */,
 			);
 			path = Astrometry;
 			sourceTree = "<group>";
@@ -262,10 +449,20 @@
 			isa = PBXGroup;
 			children = (
 				593AC45525A35EF10016525C /* Astrometry.entitlements */,
+				5972884625A3793E004E6388 /* image2xy.entitlements */,
+				5972884725A37A6E004E6388 /* wcsinfo.entitlements */,
+				5972884825A37A7F004E6388 /* astrometry-engine.entitlements */,
+				5972884925A37A8F004E6388 /* solve-field.entitlements */,
+				5972884A25A37A9D004E6388 /* new-wcs.entitlements */,
 				595605B61C2488C3004AEB4C /* Credits.rtf */,
 				9DF426571C24657500DEF999 /* Assets.xcassets */,
 				9DF426591C24657500DEF999 /* MainMenu.xib */,
 				9DF4265C1C24657500DEF999 /* Info.plist */,
+				5972887125A38B27004E6388 /* image2xy.plist */,
+				592A10A225A391C6005AD445 /* solve-field.plist */,
+				592A10AD25A3922B005AD445 /* astrometry-engine.plist */,
+				592A10F025A3A8A4005AD445 /* wcsinfo.plist */,
+				592A10FB25A3A913005AD445 /* new-wcs.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -299,6 +496,86 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		592A10AE25A39232005AD445 /* astrometry-engine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 592A10BA25A39232005AD445 /* Build configuration list for PBXNativeTarget "astrometry-engine" */;
+			buildPhases = (
+				592A10AF25A39232005AD445 /* Sources */,
+				592A10B125A39232005AD445 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "astrometry-engine";
+			productName = image2xy;
+			productReference = 592A10BD25A39232005AD445 /* astrometry-engine */;
+			productType = "com.apple.product-type.tool";
+		};
+		592A10D925A3A847005AD445 /* wcsinfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 592A10E525A3A847005AD445 /* Build configuration list for PBXNativeTarget "wcsinfo" */;
+			buildPhases = (
+				592A10DA25A3A847005AD445 /* Sources */,
+				592A10DC25A3A847005AD445 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wcsinfo;
+			productName = image2xy;
+			productReference = 592A10E825A3A847005AD445 /* wcsinfo */;
+			productType = "com.apple.product-type.tool";
+		};
+		592A10FC25A3A91A005AD445 /* new-wcs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 592A110825A3A91A005AD445 /* Build configuration list for PBXNativeTarget "new-wcs" */;
+			buildPhases = (
+				592A10FD25A3A91A005AD445 /* Sources */,
+				592A10FF25A3A91A005AD445 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "new-wcs";
+			productName = image2xy;
+			productReference = 592A110B25A3A91A005AD445 /* new-wcs */;
+			productType = "com.apple.product-type.tool";
+		};
+		5972885025A387B1004E6388 /* image2xy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5972885525A387B1004E6388 /* Build configuration list for PBXNativeTarget "image2xy" */;
+			buildPhases = (
+				5972884D25A387B1004E6388 /* Sources */,
+				5972884E25A387B1004E6388 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = image2xy;
+			productName = image2xy;
+			productReference = 5972885125A387B1004E6388 /* image2xy */;
+			productType = "com.apple.product-type.tool";
+		};
+		5972888925A39077004E6388 /* solve-field */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5972889525A39077004E6388 /* Build configuration list for PBXNativeTarget "solve-field" */;
+			buildPhases = (
+				5972888A25A39077004E6388 /* Sources */,
+				5972888C25A39077004E6388 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "solve-field";
+			productName = image2xy;
+			productReference = 5972889825A39077004E6388 /* solve-field */;
+			productType = "com.apple.product-type.tool";
+		};
 		9DF426521C24657500DEF999 /* Astrometry */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry" */;
@@ -312,6 +589,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				592A111425A3A959005AD445 /* PBXTargetDependency */,
+				592A10F225A3A8CA005AD445 /* PBXTargetDependency */,
+				592A10F425A3A8CA005AD445 /* PBXTargetDependency */,
+				597288AA25A390C1004E6388 /* PBXTargetDependency */,
+				5972886D25A38A7C004E6388 /* PBXTargetDependency */,
 			);
 			name = Astrometry;
 			productName = Astrometry;
@@ -328,6 +610,27 @@
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "CloudMakers, s. r. o.";
 				TargetAttributes = {
+					592A10AE25A39232005AD445 = {
+						DevelopmentTeam = AG8BXW65A2;
+						ProvisioningStyle = Automatic;
+					};
+					592A10D925A3A847005AD445 = {
+						DevelopmentTeam = AG8BXW65A2;
+						ProvisioningStyle = Automatic;
+					};
+					592A10FC25A3A91A005AD445 = {
+						DevelopmentTeam = AG8BXW65A2;
+						ProvisioningStyle = Automatic;
+					};
+					5972885025A387B1004E6388 = {
+						CreatedOnToolsVersion = 12.3;
+						DevelopmentTeam = AG8BXW65A2;
+						ProvisioningStyle = Automatic;
+					};
+					5972888925A39077004E6388 = {
+						DevelopmentTeam = AG8BXW65A2;
+						ProvisioningStyle = Automatic;
+					};
 					9DF426521C24657500DEF999 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = AG8BXW65A2;
@@ -355,6 +658,11 @@
 			projectRoot = "";
 			targets = (
 				9DF426521C24657500DEF999 /* Astrometry */,
+				5972885025A387B1004E6388 /* image2xy */,
+				5972888925A39077004E6388 /* solve-field */,
+				592A10AE25A39232005AD445 /* astrometry-engine */,
+				592A10D925A3A847005AD445 /* wcsinfo */,
+				592A10FC25A3A91A005AD445 /* new-wcs */,
 			);
 		};
 /* End PBXProject section */
@@ -366,7 +674,6 @@
 			files = (
 				9DF426581C24657500DEF999 /* Assets.xcassets in Resources */,
 				9DF4265B1C24657500DEF999 /* MainMenu.xib in Resources */,
-				59110C3B25A288D800CE0DB3 /* astrometry-engine in Resources */,
 				595605B71C2488C3004AEB4C /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +701,46 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		592A10AF25A39232005AD445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592A10B025A39232005AD445 /* fake.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		592A10DA25A3A847005AD445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592A10DB25A3A847005AD445 /* fake.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		592A10FD25A3A91A005AD445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592A10FE25A3A91A005AD445 /* fake.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5972884D25A387B1004E6388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5972887D25A38FBA004E6388 /* fake.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5972888A25A39077004E6388 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5972888B25A39077004E6388 /* fake.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9DF4264F1C24657500DEF999 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +776,34 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		592A10F225A3A8CA005AD445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592A10AE25A39232005AD445 /* astrometry-engine */;
+			targetProxy = 592A10F125A3A8CA005AD445 /* PBXContainerItemProxy */;
+		};
+		592A10F425A3A8CA005AD445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592A10D925A3A847005AD445 /* wcsinfo */;
+			targetProxy = 592A10F325A3A8CA005AD445 /* PBXContainerItemProxy */;
+		};
+		592A111425A3A959005AD445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592A10FC25A3A91A005AD445 /* new-wcs */;
+			targetProxy = 592A111325A3A959005AD445 /* PBXContainerItemProxy */;
+		};
+		5972886D25A38A7C004E6388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5972885025A387B1004E6388 /* image2xy */;
+			targetProxy = 5972886C25A38A7C004E6388 /* PBXContainerItemProxy */;
+		};
+		597288AA25A390C1004E6388 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5972888925A39077004E6388 /* solve-field */;
+			targetProxy = 597288A925A390C1004E6388 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		9DF426591C24657500DEF999 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
@@ -441,6 +816,431 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		592A10BB25A39232005AD445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry/astrometry-engine.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Astrometry/astrometry-engine.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.astrometry-engine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		592A10BC25A39232005AD445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry/astrometry-engine.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Astrometry/astrometry-engine.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.astrometry-engine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		592A10E625A3A847005AD445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = Astrometry/wcsinfo.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Astrometry/wcsinfo.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.wcsinfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		592A10E725A3A847005AD445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = Astrometry/wcsinfo.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Astrometry/wcsinfo.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.wcsinfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		592A110925A3A91A005AD445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry/new-wcs.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Astrometry/new-wcs.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.new-wcs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		592A110A25A3A91A005AD445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry/new-wcs.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Astrometry/new-wcs.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.new-wcs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5972885625A387B1004E6388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = Astrometry/image2xy.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Astrometry/image2xy.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.image2xy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5972885725A387B1004E6388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = Astrometry/image2xy.entitlements;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Astrometry/image2xy.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.image2xy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5972889625A39077004E6388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry/solve-field.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Astrometry/solve-field.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.solve-field";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5972889725A39077004E6388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry/solve-field.entitlements";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 14;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AG8BXW65A2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Astrometry/solve-field.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.solve-field";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9D78BE311AA5BF7900234AE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,12 +1277,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"AN_GIT_REVISION=\\\"a58cec68e3bb94ae20d5863baae75e93feb2a399\\\"",
-					"AN_GIT_DATE=\\\"03-mar-2015\\\"",
-					"AN_GIT_URL=\\\"https://github.com/polakovic/astrometry.net\\\"",
-					macintosh,
-				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
@@ -547,12 +1341,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"AN_GIT_REVISION=\\\"a58cec68e3bb94ae20d5863baae75e93feb2a399\\\"",
-					"AN_GIT_DATE=\\\"03-mar-2015\\\"",
-					"AN_GIT_URL=\\\"https://github.com/polakovic/astrometry.net\\\"",
-					macintosh,
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -602,7 +1390,7 @@
 				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -649,7 +1437,7 @@
 				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
-				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -674,6 +1462,51 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		592A10BA25A39232005AD445 /* Build configuration list for PBXNativeTarget "astrometry-engine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592A10BB25A39232005AD445 /* Debug */,
+				592A10BC25A39232005AD445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		592A10E525A3A847005AD445 /* Build configuration list for PBXNativeTarget "wcsinfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592A10E625A3A847005AD445 /* Debug */,
+				592A10E725A3A847005AD445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		592A110825A3A91A005AD445 /* Build configuration list for PBXNativeTarget "new-wcs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592A110925A3A91A005AD445 /* Debug */,
+				592A110A25A3A91A005AD445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5972885525A387B1004E6388 /* Build configuration list for PBXNativeTarget "image2xy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5972885625A387B1004E6388 /* Debug */,
+				5972885725A387B1004E6388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5972889525A39077004E6388 /* Build configuration list for PBXNativeTarget "solve-field" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5972889625A39077004E6388 /* Debug */,
+				5972889725A39077004E6388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9D78BE271AA5BF7900234AE1 /* Build configuration list for PBXProject "astrometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -168,6 +168,11 @@ GSL_LIB = lib/libgsl.a
 ENGINE_LIB = lib/libengine.a
 CAT_LIB = lib/libcat.a
 CFITSIO_LIB = lib/libcfitsio.a
+IMAGE2XY_LIB = lib/libimage2xy.a
+NEWWCS_LIB = lib/libnew-wcs.a
+SOLVEFIELD_LIB = lib/libsolve-field.a
+ASTROMETRYENGINE_LIB = lib/libastrometry-engine.a
+WCSINFO_LIB = lib/libwcsinfo.a
 
 LIBS = $(ENGINE_LIB) $(KD_LIB) $(CAT_LIB) $(AN_LIB) $(QFITS_LIB) $(GSL_LIB) $(CFITSIO_LIB)
 
@@ -178,8 +183,9 @@ ASTROMETRYENGINE = bin/astrometry-engine
 WCSINFO = bin/wcsinfo
 
 all: init $(ANBASE_LIB) $(ANUTILS_LIB) $(ANFILES_LIB) $(QFITS_LIB) $(KD_LIB) $(GSL_LIB) $(CFITSIO_LIB) $(ENGINE_LIB) \
-	$(ASTROMETRY)/catalogs/openngc-names.c $(ASTROMETRY)/catalogs/openngc-entries.c $(CAT_LIB) $(IMAGE2XY) \
-	$(NEWWCS) $(SOLVEFIELD) $(ASTROMETRYENGINE) $(WCSINFO)
+	$(ASTROMETRY)/catalogs/openngc-names.c $(ASTROMETRY)/catalogs/openngc-entries.c $(CAT_LIB) \
+	$(IMAGE2XY_LIB) $(NEWWCS_LIB) $(SOLVEFIELD_LIB) $(ASTROMETRYENGINE_LIB) $(WCSINFO_LIB) \
+	$(IMAGE2XY) $(NEWWCS) $(SOLVEFIELD) $(ASTROMETRYENGINE) $(WCSINFO)
 
 init:
 	install -d lib
@@ -220,6 +226,21 @@ $(CFITSIO_LIB): $(addsuffix .o, $(addprefix $(CFITSIO)/, $(CFITSIO_FILES)))
 
 #src/image2xy-main.c: $(ASTROMETRY)/solver/image2xy-main.c
 #	sed "s/^int main/int main_image2xy/" $(ASTROMETRY)/solver/image2xy-main.c >src/image2xy-main.c
+
+$(IMAGE2XY_LIB): $(ASTROMETRY)/solver/image2xy-main.o
+	$(AR) $(ARFLAGS) $@ $^
+
+$(NEWWCS_LIB): $(ASTROMETRY)/solver/new-wcs-main.o
+	$(AR) $(ARFLAGS) $@ $^
+
+$(SOLVEFIELD_LIB): $(ASTROMETRY)/solver/solve-field.o
+	$(AR) $(ARFLAGS) $@ $^
+
+$(ASTROMETRYENGINE_LIB): $(ASTROMETRY)/solver/engine-main.o
+	$(AR) $(ARFLAGS) $@ $^
+
+$(WCSINFO_LIB): $(ASTROMETRY)/util/wcsinfo.o
+	$(AR) $(ARFLAGS) $@ $^
 
 $(IMAGE2XY): $(ASTROMETRY)/solver/image2xy-main.o $(LIBS)
 	$(CC) -o $@ $(LDFLAGS) $^

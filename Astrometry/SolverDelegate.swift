@@ -154,31 +154,31 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     return args;
   }
   
-  func solvePath(_ path: String) {
-    DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.background).async {
+  func solvePath(_ input: String, _ output: String?) {
+    DispatchQueue.global(qos: .default).async {
       self.busy()
-      let base = (path as NSString).deletingPathExtension
-      let xy =  "\(base).xy"
-      let wcs = "\(base).wcs"
-      let wcs_fits = "\(base)_wcs.fits"
-      var fits = path
+      let base = input.hash
+      let xy =  "\(NSTemporaryDirectory())\(base).xy"
+      let axy =  "\(NSTemporaryDirectory())\(base).axy"
+      let wcs = "\(NSTemporaryDirectory())\(base).wcs"
+      var fits = input
       var rmFITS = false
       do {
         let start = Date().timeIntervalSince1970
-        if !path.hasSuffix(".fit") && !path.hasSuffix(".fits") {
-          fits = "\(base).fits"
+        if !input.hasSuffix(".fit") && !input.hasSuffix(".fits") {
+          fits = "\(NSTemporaryDirectory())\(base).fits"
           rmFITS = true
-          self.busy("\nConverting \(path) to \(fits)...")
-          if !Convert(path, fits) {
-            self.failed("\nFailed to convert \(path) to FITS")
+          self.busy("\nConverting \(input) to \(fits)...")
+          if !Convert(input, fits) {
+            self.failed("\nFailed to convert \(input) to FITS")
             return
           }
         }
         try self.execute("image2xy", arguments: [ "-O", "-o", xy, fits ])
-        try self.execute("solve-field", arguments: self.addArgs("solve-field-args", [ "--overwrite", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0", "--config", CONFIG, xy ]))
+        try self.execute("solve-field", arguments: self.addArgs("solve-field-args", [ "--overwrite", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0", "--axy", axy, "--config", CONFIG, xy ]))
         if FileManager.default.fileExists(atPath: wcs) {
-          if DEFAULTS.bool(forKey: "writeWCSHeaders") {
-            try self.execute("new-wcs", arguments: [ "-v", "-d", "-i", fits, "-o", wcs_fits, "-w", wcs ])
+          if let output = output {
+            try self.execute("new-wcs", arguments: [ "-d", "-i", fits, "-o", output, "-w", wcs ])
           }
           self.raCenter = nil
           self.decCenter = nil
@@ -196,7 +196,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
         return self.removeFilesButton.state == .on
       }
       if removeFiles {
-        var files = [xy, wcs, "\(base).axy", "\(base).corr", "\(base).match", "\(base).rdls", "\(base).solved", "\(base)-indx.xyls" ]
+        var files = [xy, wcs, axy, "\(NSTemporaryDirectory())\(base).corr", "\(NSTemporaryDirectory())\(base).match", "\(NSTemporaryDirectory())\(base).rdls", "\(NSTemporaryDirectory())\(base).solved", "\(NSTemporaryDirectory())\(base)-indx.xyls" ]
         if rmFITS {
           files.append(fits)
         }
@@ -208,14 +208,29 @@ class SolverDelegate: NSObject, NetServiceDelegate {
   }
   
   @IBAction func solve(_ sender: AnyObject) {
-    let panel = NSOpenPanel()
-    panel.canChooseFiles = true
-    panel.prompt = "Select image file"
-    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "jpg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
-    panel.beginSheetModal(for: window, completionHandler: { result in
+    let openPanel = NSOpenPanel()
+    openPanel.canChooseFiles = true
+    openPanel.prompt = "Select image file"
+    openPanel.allowedFileTypes = [ "fit", "fits", "jpeg", "jpg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
+    openPanel.beginSheetModal(for: window, completionHandler: { result in
       if result.rawValue == NSFileHandlingPanelOKButton {
-        if let url = panel.url {
-          self.solvePath(url.path)
+        if let openURL = openPanel.url {
+          if DEFAULTS.bool(forKey: "writeWCSHeaders") {
+            let savePanel = NSSavePanel()
+            savePanel.directoryURL = openPanel.directoryURL
+            savePanel.nameFieldStringValue = openURL.deletingPathExtension().lastPathComponent + "_wcs"
+            savePanel.allowedFileTypes = [ "fits" ]
+            savePanel.prompt = "Select output file"
+            savePanel.beginSheetModal(for: self.window, completionHandler: { result in
+              if result.rawValue == NSFileHandlingPanelOKButton {
+                if let saveURL = savePanel.url {
+                  self.solvePath(openURL.path, saveURL.path)
+                }
+              }
+            })
+          } else {
+            self.solvePath(openURL.path, nil)
+          }
         }
       }
     })
@@ -252,7 +267,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
           let path = "\(NSTemporaryDirectory())image.fits"
           try? Data(bytes: UnsafePointer<UInt8>(data[0].body), count: data[0].body.count).write(to: URL(fileURLWithPath: path), options: [.atomic])
           self.append("\nFile uploaded to \(path) (\(data[0].body.count) bytes)", color: YELLOW)
-          self.solvePath(path)
+          self.solvePath(path, nil)
           return HttpResponse.ok(HttpResponseBody.json(["status":"success"] as AnyObject))
         } else {
           self.append("Solver busy", color: RED)
@@ -276,7 +291,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
         let path = "\(NSTemporaryDirectory())\(fileName)"
         try? Data(bytes: UnsafePointer<UInt8>(request.body), count: request.body.count).write(to: URL(fileURLWithPath: path), options: [.atomic])
         self.busy("\nFile uploaded to \(path) (\(request.body.count) bytes)")
-        self.solvePath(path)
+        self.solvePath(path, nil)
         return HttpResponse.ok(HttpResponseBody.json(["status":"success"] as AnyObject))
       } else {
         self.append("Solver busy", color: RED)
