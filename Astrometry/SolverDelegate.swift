@@ -34,7 +34,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
       if let color = color {
         self.logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: color]))
       } else {
-        self.logText.textStorage!.append(NSAttributedString(string: stringToAppend))
+        self.logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: NSColor.controlTextColor]))
       }
       self.logText.scrollToEndOfDocument(self)
     }
@@ -92,6 +92,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     if let task = task {
       let pipe = Pipe()
       task.launchPath = Bundle.main.path(forAuxiliaryExecutable: executable)
+      task.environment = [ "TMP": NSTemporaryDirectory()]
       task.arguments = arguments
       task.standardOutput = pipe
       task.standardError = pipe
@@ -210,7 +211,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     let panel = NSOpenPanel()
     panel.canChooseFiles = true
     panel.prompt = "Select image file"
-    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
+    panel.allowedFileTypes = [ "fit", "fits", "jpeg", "jpg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
     panel.beginSheetModal(for: window, completionHandler: { result in
       if result.rawValue == NSFileHandlingPanelOKButton {
         if let url = panel.url {

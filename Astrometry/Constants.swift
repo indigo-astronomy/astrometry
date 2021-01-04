@@ -10,7 +10,7 @@ import Cocoa
 
 let GREEN = NSColor(calibratedRed: 0.0, green: 0.6, blue: 0.0, alpha: 1.0)
 let YELLOW = NSColor(calibratedRed: 1.0, green: 0.5, blue: 0.0, alpha: 1.0)
-let RED = NSColor(calibratedRed: 0.5, green: 0.0, blue: 0.0, alpha: 1.0)
+let RED = NSColor(calibratedRed: 0.8, green: 0.0, blue: 0.0, alpha: 1.0)
 
 let FILE_NAMANGER = FileManager.default
 let WORKSPACE = NSWorkspace.shared
