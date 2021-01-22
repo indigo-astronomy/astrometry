@@ -74,7 +74,7 @@ CFLAGS += -I $(ASTROMETRY)/include -I $(ASTROMETRY)/include/astrometry -I $(ASTR
 #CFLAGS += -DAN_GIT_DATE='"$(AN_GIT_DATE)"'
 #CFLAGS += -DAN_GIT_URL='"$(AN_GIT_URL)"'
 
-CFLAGS += -DAN_GIT_REVISION="c1782b82a2723673fdf120e6ddc31b1d253c12e6" -DAN_GIT_DATE="Thu_Jan_7_07:49:26_2021_-0500" -DAN_GIT_URL="https://github.com/dstndstn/astrometry.net.git"
+CFLAGS += -DAN_GIT_REVISION='"c1782b82a2723673fdf120e6ddc31b1d253c12e6"' -DAN_GIT_DATE='"Thu_Jan_7_07:49:26_2021_-0500"' -DAN_GIT_URL='"https://github.com/dstndstn/astrometry.net.git"'
 
 ANBASE_FILES = starutil mathutil bl-sort bl bt healpix-utils \
 	healpix permutedsort ioutils fileutils md5 \
