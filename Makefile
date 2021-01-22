@@ -60,7 +60,7 @@ AWK = awk
 ASTROMETRY = ../astrometry.net
 CFITSIO = ../cfitsio
 
-VERSION = 0.84
+VERSION = 0.85
 
 CFLAGS += -I $(ASTROMETRY)/include -I $(ASTROMETRY)/include/astrometry -I $(ASTROMETRY)/gsl-an -I $(ASTROMETRY)/util \
 	-I $(CFITSIO) \
@@ -257,7 +257,7 @@ $(ASTROMETRYENGINE): $(ASTROMETRY)/solver/engine-main.o $(LIBS)
 $(WCSINFO): $(ASTROMETRY)/util/wcsinfo.o $(LIBS)
 	$(CC) -o $@ $(LDFLAGS) $^
 
-package: ROOT = indigo-astrometry_$(VERSION)_$(DEBIAN_ARCH)
+package: ROOT = indigo-astrometry-$(VERSION)-$(DEBIAN_ARCH)
 package: all
 	rm -rf $(ROOT) $(ROOT).deb
 	install -d $(ROOT)
@@ -275,6 +275,16 @@ package: all
 	printf " Automatic recognition of astronomical images; or standards-compliant astrometric metadata from data.\n" >> $(ROOT)/DEBIAN/control
 	fakeroot dpkg --build $(ROOT)
 	rm -rf $(ROOT)
+
+debs-docker:
+	cd ../cfitsio; git archive --format=tar --prefix=cfitsio/ HEAD | gzip >../astrometry/cfitsio.tar.gz
+	cd ../astrometry.net; git archive --format=tar --prefix=astrometry.net/ HEAD | gzip >../astrometry/astrometry.net.tar.gz
+	cd ../astrometry; git archive --format=tar --prefix=indigo-astrometry-$1/ HEAD | gzip >indigo-astrometry.tar.gz
+	sh tools/build_debs.sh "i386/debian:stretch-slim" "indigo-astrometry-$(VERSION)-i386.deb" $(VERSION)
+	sh tools/build_debs.sh "amd64/debian:stretch-slim" "indigo-astrometry-$(VERSION)-amd64.deb" $(VERSION)
+	sh tools/build_debs.sh "arm32v7/debian:buster-slim" "indigo-astrometry-$(VERSION)-armhf.deb" $(VERSION)
+	sh tools/build_debs.sh "arm64v8/debian:buster-slim" "indigo-astrometry-$(VERSION)-arm64.deb" $(VERSION)
+	rm indigo-astrometry.tar.gz cfitsio.tar.gz astrometry.net.tar.gz
 
 clean:
 	rm -rf lib bin
