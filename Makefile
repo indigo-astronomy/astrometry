@@ -66,13 +66,15 @@ CFLAGS += -I $(ASTROMETRY)/include -I $(ASTROMETRY)/include/astrometry -I $(ASTR
 	-I $(CFITSIO) \
 	-I include -isysteminclude
 
-AN_GIT_REVISION = $(shell git rev-parse HEAD)
-AN_GIT_DATE = $(shell git log -n 1 --format=%cd | sed 's/ /_/g')
-AN_GIT_URL = $(shell git remote get-url origin)
+#AN_GIT_REVISION = $(shell git rev-parse HEAD)
+#AN_GIT_DATE = $(shell git log -n 1 --format=%cd | sed 's/ /_/g')
+#AN_GIT_URL = $(shell git remote get-url origin)
 
-CFLAGS += -DAN_GIT_REVISION='"$(AN_GIT_REVISION)"'
-CFLAGS += -DAN_GIT_DATE='"$(AN_GIT_DATE)"'
-CFLAGS += -DAN_GIT_URL='"$(AN_GIT_URL)"'
+#CFLAGS += -DAN_GIT_REVISION='"$(AN_GIT_REVISION)"'
+#CFLAGS += -DAN_GIT_DATE='"$(AN_GIT_DATE)"'
+#CFLAGS += -DAN_GIT_URL='"$(AN_GIT_URL)"'
+
+CFLAGS += -DAN_GIT_REVISION="c1782b82a2723673fdf120e6ddc31b1d253c12e6" -DAN_GIT_DATE="Thu_Jan_7_07:49:26_2021_-0500" -DAN_GIT_URL="https://github.com/dstndstn/astrometry.net.git"
 
 ANBASE_FILES = starutil mathutil bl-sort bl bt healpix-utils \
 	healpix permutedsort ioutils fileutils md5 \
@@ -279,7 +281,7 @@ package: all
 debs-docker:
 	cd ../cfitsio; git archive --format=tar --prefix=cfitsio/ HEAD | gzip >../astrometry/cfitsio.tar.gz
 	cd ../astrometry.net; git archive --format=tar --prefix=astrometry.net/ HEAD | gzip >../astrometry/astrometry.net.tar.gz
-	cd ../astrometry; git archive --format=tar --prefix=indigo-astrometry-$1/ HEAD | gzip >indigo-astrometry.tar.gz
+	cd ../astrometry; git archive --format=tar --prefix=indigo-astrometry/ HEAD | gzip >indigo-astrometry.tar.gz
 	sh tools/build_debs.sh "i386/debian:stretch-slim" "indigo-astrometry-$(VERSION)-i386.deb" $(VERSION)
 	sh tools/build_debs.sh "amd64/debian:stretch-slim" "indigo-astrometry-$(VERSION)-amd64.deb" $(VERSION)
 	sh tools/build_debs.sh "arm32v7/debian:buster-slim" "indigo-astrometry-$(VERSION)-armhf.deb" $(VERSION)

@@ -23,10 +23,19 @@ echo FROM $1 >Dockerfile
 cat >>Dockerfile <<EOF
 LABEL maintainer="peter.polakovic@cloudmakers.eu"
 RUN apt-get -y update && apt-get -y install wget unzip build-essential autoconf autotools-dev libtool
-COPY indigo-astrometry-$3.tar.gz .
-RUN tar -zxf indigo-astrometry-$3.tar.gz
-RUN rm indigo-astrometry-$3.tar.gz
-WORKDIR indigo-astrometry-$3
+
+COPY astrometry.net.tar.gz .
+RUN tar -zxf astrometry.net.tar.gz
+RUN rm astrometry.net.tar.gz
+
+COPY cfitsio.tar.gz .
+RUN tar -zxf cfitsio.tar.gz
+RUN rm cfitsio.tar.gz
+
+COPY indigo-astrometry.tar.gz .
+RUN tar -zxf indigo-astrometry.tar.gz
+RUN rm indigo-astrometry.tar.gz
+WORKDIR indigo-astrometry
 RUN make package
 EOF
 docker build -t indigo-astrometry .
