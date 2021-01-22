@@ -50,7 +50,7 @@ else
 		else
 			CFLAGS = $(DEBUG_BUILD) -fPIC -O3 -std=gnu11 -pthread
 		endif
-		LDFLAGS = -lm -lrt -lusb-1.0 -pthread -L$(BUILD_LIB) -Wl,-rpath=\\\$$\$$ORIGIN/../lib,-rpath=\\\$$\$$ORIGIN/../drivers,-rpath=.
+		LDFLAGS = -lm -lrt -pthread -L$(BUILD_LIB) -Wl,-rpath=\\\$$\$$ORIGIN/../lib,-rpath=\\\$$\$$ORIGIN/../drivers,-rpath=.
 		ARFLAGS = -rv
 	endif
 endif
