@@ -40,7 +40,7 @@ RUN make package
 EOF
 docker build -t indigo-astrometry .
 docker create --name indigo-astrometry indigo-astrometry
-docker cp indigo:/indigo-astrometry-$3/$2 .
+docker cp indigo-astrometryT:/indigo-astrometry/$2 .
 docker container rm indigo-astrometry
 docker image rm indigo-astrometry
 rm Dockerfile
