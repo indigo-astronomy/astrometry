@@ -12,12 +12,13 @@ let GREEN = NSColor(calibratedRed: 0.0, green: 0.6, blue: 0.0, alpha: 1.0)
 let YELLOW = NSColor(calibratedRed: 1.0, green: 0.5, blue: 0.0, alpha: 1.0)
 let RED = NSColor(calibratedRed: 0.8, green: 0.0, blue: 0.0, alpha: 1.0)
 
-let FILE_NAMANGER = FileManager.default
+let FILE_MANAGER = FileManager.default
 let WORKSPACE = NSWorkspace.shared
 let DEFAULTS = UserDefaults.standard
 
-let FOLDER = "\(FileManager().urls(for: FileManager.SearchPathDirectory.applicationSupportDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!.path)/Astrometry"
-let CONFIG = "\(FOLDER)/astrometry.cfg"
+let LEGACY_FOLDER = FILE_MANAGER.urls(for: FileManager.SearchPathDirectory.applicationSupportDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!.appendingPathComponent("/Astrometry")
+let FOLDER = FILE_MANAGER.containerURL(forSecurityApplicationGroupIdentifier: "AG8BXW65A2.INDIGO")!.appendingPathComponent("Data/Library/Application Support/Astrometry")
+let CONFIG = FOLDER.appendingPathComponent("astrometry-0.cfg")
 
 let FILES = [
   "index-4219.fits": [ "index-4219.fits" ],

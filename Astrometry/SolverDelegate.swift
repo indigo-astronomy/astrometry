@@ -27,63 +27,64 @@ class SolverDelegate: NSObject, NetServiceDelegate {
   fileprivate var decCenter: Double?
   fileprivate var orientation: Double?
   fileprivate var pixelScale: Double?
+  fileprivate var parity: Double?
   
   func append(_ string: String, color: NSColor? = nil) {
-    DispatchQueue.main.async {
+    DispatchQueue.main.async { [self] in
       let stringToAppend = string + "\n"
       if let color = color {
-        self.logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: color]))
+        logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: color]))
       } else {
-        self.logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: NSColor.controlTextColor]))
+        logText.textStorage!.append(NSAttributedString(string: stringToAppend, attributes: [NSAttributedString.Key.foregroundColor: NSColor.controlTextColor]))
       }
-      self.logText.scrollToEndOfDocument(self)
+      logText.scrollToEndOfDocument(self)
     }
   }
   
   func done(_ message: String? = nil) {
-    DispatchQueue.main.async {
+    DispatchQueue.main.async { [self] in
       if let message = message {
-        self.append(message, color: GREEN)
+        append(message, color: GREEN)
         self.message = message.replacingOccurrences(of: "\n", with: "")
       }
-      self.status = "done"
-      self.solveMenu.isEnabled = true
-      self.solveButton.isEnabled = true
-      self.abortMenu.isEnabled = false
-      self.abortButton.isEnabled = false
+      status = "done"
+      solveMenu.isEnabled = true
+      solveButton.isEnabled = true
+      abortMenu.isEnabled = false
+      abortButton.isEnabled = false
     }
   }
   
   func busy(_ message: String? = nil) {
-    DispatchQueue.main.async {
+    DispatchQueue.main.async { [self] in
       if let message = message {
-        self.append(message, color: YELLOW)
+        append(message, color: YELLOW)
         self.message = message.replacingOccurrences(of: "\n", with: "")
       }
-      self.status = "busy"
-      self.solveMenu.isEnabled = false
-      self.solveButton.isEnabled = false
-      self.abortMenu.isEnabled = true
-      self.abortButton.isEnabled = true
+      status = "busy"
+      solveMenu.isEnabled = false
+      solveButton.isEnabled = false
+      abortMenu.isEnabled = true
+      abortButton.isEnabled = true
     }
   }
   
   func failed(_ message: String? = nil) {
-    DispatchQueue.main.async {
+    DispatchQueue.main.async { [self] in
       if let message = message {
-        self.append(message, color: RED)
+        append(message, color: RED)
         self.message = message.replacingOccurrences(of: "\n", with: "")
       }
-      self.status = "failed"
-      self.solveMenu.isEnabled = true
-      self.solveButton.isEnabled = true
-      self.abortMenu.isEnabled = false
-      self.abortButton.isEnabled = false
+      status = "failed"
+      solveMenu.isEnabled = true
+      solveButton.isEnabled = true
+      abortMenu.isEnabled = false
+      abortButton.isEnabled = false
     }
   }
   
-  func execute(_ executable: String, arguments: [String], parse: Bool = false) throws {
-    var cmd = "\n" + executable
+  func execute(_ executable: String, arguments: [String], result: FileHandle? = nil) throws {
+    var cmd =  "\n" + executable
     for arg in arguments {
       cmd += " " + arg
     }
@@ -92,74 +93,77 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     if let task = task {
       let pipe = Pipe()
       task.launchPath = Bundle.main.path(forAuxiliaryExecutable: executable)
+      task.currentDirectoryPath = FOLDER.path
       task.environment = [ "TMP": NSTemporaryDirectory()]
       task.arguments = arguments
       task.standardOutput = pipe
       task.standardError = pipe
       task.launch()
-      if let output = StreamReader(fileHandle: pipe.fileHandleForReading) {
-        while true {
-          if let line = output.nextLine() {
-            if !line.isEmpty {
-              if parse {
-                if line.hasPrefix("ra_center ") {
-                  raCenter = Double(line.split(" ")[1])
-                  self.append(line, color: GREEN)
-                } else if line.hasPrefix("dec_center ") {
-                  decCenter = Double(line.split(" ")[1])
-                  self.append(line, color: GREEN)
-                } else if line.hasPrefix("orientation ") {
-                  orientation = Double(line.split(" ")[1])
-                  self.append(line, color: GREEN)
-                } else if line.hasPrefix("pixscale ") {
-                  pixelScale = Double(line.split(" ")[1])
-                  self.append(line, color: GREEN)
-                } else {
-                  self.append(line)
-                }
-              } else {
-                self.append(line)
-              }
+      while true {
+        if let line = pipe.fileHandleForReading.readLine() {
+          if !line.isEmpty {
+            if line.hasPrefix("ra_center ") {
+              raCenter = Double(line.split(" ")[1])
+              append(line, color: GREEN)
+            } else if line.hasPrefix("dec_center ") {
+              decCenter = Double(line.split(" ")[1])
+              append(line, color: GREEN)
+            } else if line.hasPrefix("orientation ") {
+              orientation = Double(line.split(" ")[1])
+              append(line, color: GREEN)
+            } else if line.hasPrefix("pixscale ") {
+              pixelScale = Double(line.split(" ")[1])
+              append(line, color: GREEN)
+            } else if line.hasPrefix("parity ") {
+              parity = Double(line.split(" ")[1])
+            } else {
+              append(line)
             }
-          } else {
-            break
           }
-        }
-        usleep(100000)
-        if task.terminationStatus == 0 {
-          busy("\(executable) done")
+          result?.writeLine(line)
         } else {
-          if task.terminationStatus == 15 {
-            failed("\(executable) aborted")
-            throw NSError(domain: "aborted", code: 0, userInfo: nil)
-          } else {
-            failed("\(executable) terminated (status \(task.terminationStatus))")
-            throw NSError(domain: "terminated", code: 0, userInfo: nil)
-          }
+          break
         }
+      }
+      usleep(100000)
+      if task.terminationStatus == 0 {
+        busy("\(executable) done")
       } else {
-        failed("\(executable) failed to start")
-        throw NSError(domain: "failed", code: 0, userInfo: nil)
+        if task.terminationStatus == 15 {
+          failed("\(executable) aborted")
+          throw NSError(domain: "aborted", code: 0, userInfo: nil)
+        } else {
+          failed("\(executable) terminated (status \(task.terminationStatus))")
+          throw NSError(domain: "terminated", code: 0, userInfo: nil)
+        }
       }
     }
     task = nil
   }
   
-  func addArgs(_ name: String, _ args: [String]) -> [String] {
-    if let defaults = DEFAULTS.string(forKey: name) {
-      var additional = defaults.split(" ")
-      additional.append(contentsOf: args)
-      return additional
-    }
-    return args;
-  }
-  
-  func solvePath(_ input: String, _ output: String?) {
-    DispatchQueue.global(qos: .default).async {
-      self.busy()
+  func solvePath(_ input: String, _ output: String?, _ image2xyArgs: [String]? = nil, _ solverArgs: [String]? = nil) {
+    DispatchQueue.global(qos: .default).async { [self] in
+      busy()
+      do {
+        var config = "cpulimit 300\nadd_path \(FOLDER.path)\n"
+        for key in FILES.keys {
+          if let files = FILES[key] {
+            for file in files {
+              if FILE_MANAGER.fileExists(atPath: FOLDER.appendingPathComponent(file).path) {
+                config += "index \(file)\n"
+              }
+            }
+          }
+        }
+        if let config = config.data(using: String.Encoding.ascii) {
+          try config.write(to: CONFIG, options: [.atomic])
+        }
+      } catch {
+        failed("\nFailed to create configuration file")
+      }
       let base = input.hash
-      let xy =  "\(NSTemporaryDirectory())\(base).xy"
-      let axy =  "\(NSTemporaryDirectory())\(base).axy"
+      let xy = "\(NSTemporaryDirectory())\(base).xy"
+      let axy = "\(NSTemporaryDirectory())\(base).axy"
       let wcs = "\(NSTemporaryDirectory())\(base).wcs"
       var fits = input
       var rmFITS = false
@@ -168,32 +172,43 @@ class SolverDelegate: NSObject, NetServiceDelegate {
         if !input.hasSuffix(".fit") && !input.hasSuffix(".fits") {
           fits = "\(NSTemporaryDirectory())\(base).fits"
           rmFITS = true
-          self.busy("\nConverting \(input) to \(fits)...")
+          busy("\nConverting \(input) to \(fits)...")
           if !Convert(input, fits) {
-            self.failed("\nFailed to convert \(input) to FITS")
+            failed("\nFailed to convert \(input) to FITS")
             return
           }
         }
-        try self.execute("image2xy", arguments: [ "-O", "-o", xy, fits ])
-        try self.execute("solve-field", arguments: self.addArgs("solve-field-args", [ "--overwrite", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0", "--axy", axy, "--config", CONFIG, xy ]))
+        var args = [ "-O" ]
+        if let additionalArgs = image2xyArgs {
+          args.append(contentsOf: additionalArgs)
+        }
+        args.append(contentsOf: [ "-o", xy, fits ])
+        try execute("image2xy", arguments: args)
+        args = [ "--overwrite", "--no-plots", "--no-remove-lines", "--no-verify-uniformize", "--sort-column", "FLUX", "--uniformize", "0" ]
+        if let additionalArgs = solverArgs {
+          args.append(contentsOf: additionalArgs)
+        }
+        args.append(contentsOf: [ "--axy", axy, "--config", CONFIG.path, xy ])
+        try execute("solve-field", arguments: args)
         if FileManager.default.fileExists(atPath: wcs) {
           if let output = output {
-            try self.execute("new-wcs", arguments: [ "-d", "-i", fits, "-o", output, "-w", wcs ])
+            try execute("new-wcs", arguments: [ "-d", "-i", fits, "-o", output, "-w", wcs ])
           }
-          self.raCenter = nil
-          self.decCenter = nil
-          self.orientation = nil
-          self.pixelScale = nil
-          try self.execute("wcsinfo", arguments: [ wcs ], parse: true)
-          self.done("\nDone in \(round((Date().timeIntervalSince1970 - start) * 100) / 100) seconds")
+          raCenter = nil
+          decCenter = nil
+          orientation = nil
+          pixelScale = nil
+          parity = nil
+          try execute("wcsinfo", arguments: [ wcs ])
+          done("\nDone in \(round((Date().timeIntervalSince1970 - start) * 100) / 100) seconds")
         } else {
-          self.failed("\nFailed to solve file")
+          failed("\nFailed to solve file")
         }
       } catch {
-        self.failed("\nFailed to solve file")
+        failed("\nFailed to solve file")
       }
       let removeFiles = DispatchQueue.main.sync {
-        return self.removeFilesButton.state == .on
+        return removeFilesButton.state == .on
       }
       if removeFiles {
         var files = [xy, wcs, axy, "\(NSTemporaryDirectory())\(base).corr", "\(NSTemporaryDirectory())\(base).match", "\(NSTemporaryDirectory())\(base).rdls", "\(NSTemporaryDirectory())\(base).solved", "\(NSTemporaryDirectory())\(base)-indx.xyls" ]
@@ -212,24 +227,25 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     openPanel.canChooseFiles = true
     openPanel.prompt = "Select image file"
     openPanel.allowedFileTypes = [ "fit", "fits", "jpeg", "jpg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
-    openPanel.beginSheetModal(for: window, completionHandler: { result in
+    openPanel.beginSheetModal(for: window, completionHandler: { [self] result in
       if result.rawValue == NSFileHandlingPanelOKButton {
         if let openURL = openPanel.url {
+          busy("\nProcessing manual request")
           if DEFAULTS.bool(forKey: "writeWCSHeaders") {
             let savePanel = NSSavePanel()
             savePanel.directoryURL = openPanel.directoryURL
             savePanel.nameFieldStringValue = openURL.deletingPathExtension().lastPathComponent + "_wcs"
             savePanel.allowedFileTypes = [ "fits" ]
             savePanel.prompt = "Select output file"
-            savePanel.beginSheetModal(for: self.window, completionHandler: { result in
+            savePanel.beginSheetModal(for: window, completionHandler: { result in
               if result.rawValue == NSFileHandlingPanelOKButton {
                 if let saveURL = savePanel.url {
-                  self.solvePath(openURL.path, saveURL.path)
+                  solvePath(openURL.path, saveURL.path)
                 }
               }
             })
           } else {
-            self.solvePath(openURL.path, nil)
+            solvePath(openURL.path, nil)
           }
         }
       }
@@ -237,7 +253,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
   }
 
   @IBAction func abort(_ sender: AnyObject) {
-    if let task = self.task {
+    if let task = task {
       task.terminate()
     }
   }
@@ -260,26 +276,45 @@ class SolverDelegate: NSObject, NetServiceDelegate {
       return HttpResponse.ok(HttpResponseBody.html("<form action='/api/upload' method='post' enctype='multipart/form-data'>Submit FITS file: <input type='file' name='image'><input type='submit' value='Submit'></form>"))
     }
     
-    server.POST["/api/upload"] = { (request: HttpRequest) in
-      let data = request.parseMultiPartFormData()
-      if data.count == 1 {
-        if self.status != "busy" {
+    server.POST["/api/upload"] = { [self] (request: HttpRequest) in
+      if status != "busy" {
+        busy("\nProcessing HTTP request")
+        let data = request.parseMultiPartFormData()
+        if data.count == 1 {
           let path = "\(NSTemporaryDirectory())image.fits"
-          try? Data(bytes: UnsafePointer<UInt8>(data[0].body), count: data[0].body.count).write(to: URL(fileURLWithPath: path), options: [.atomic])
-          self.append("\nFile uploaded to \(path) (\(data[0].body.count) bytes)", color: YELLOW)
-          self.solvePath(path, nil)
+          try? Data(bytes: data[0].body, count: data[0].body.count).write(to: URL(fileURLWithPath: path), options: [.atomic])
+          busy("\nFile uploaded to \(path) (\(data[0].body.count) bytes)")
+          solvePath(path, nil)
           return HttpResponse.ok(HttpResponseBody.json(["status":"success"] as AnyObject))
-        } else {
-          self.append("Solver busy", color: RED)
-          return HttpResponse.ok(HttpResponseBody.json(["status":"error", "errormessage":"Solver busy"] as AnyObject))
         }
+        return HttpResponse.ok(HttpResponseBody.json(["status":"error", "errormessage":"Invalid request"] as AnyObject))
+      } else {
+        append("Solver busy", color: RED)
+        return HttpResponse.ok(HttpResponseBody.json(["status":"error", "errormessage":"Solver busy"] as AnyObject))
       }
-      return HttpResponse.ok(HttpResponseBody.json(["status":"error", "errormessage":"Invalid request"] as AnyObject))
     }
     
-    server.PUT["/api/upload"] = { (request: HttpRequest) in
-      if self.status != "busy" {
+    server.PUT["/api/upload"] = { [self] (request: HttpRequest) in
+      if status != "busy" {
+        busy("\nProcessing HTTP request")
         var fileName = "image.fits"
+        var image2xyArgs = [String]()
+        var solverArgs = [String]()
+        if let downsample = request.headers["downsample_factor"] {
+          image2xyArgs = ["-d", downsample]
+        }
+        if let radius = request.headers["radius"], let ra = request.headers["ra_center"], let dec = request.headers["dec_center"] {
+          solverArgs = ["--ra",  ra, "--dec", dec, "--radius", radius]
+        }
+        if let parity = request.headers["parity"] {
+          solverArgs.append(contentsOf: ["--parity",  parity])
+        }
+        if let cpu = request.headers["cpulimit"] {
+          solverArgs.append(contentsOf: ["--cpulimit",  cpu])
+        }
+        if let depth = request.headers["depth"] {
+          solverArgs.append(contentsOf: ["--depth",  depth])
+        }
         if let contentDisposition = request.headers["content-disposition"] {
           let components = contentDisposition.components(separatedBy: "; ")
           for component in components {
@@ -289,36 +324,39 @@ class SolverDelegate: NSObject, NetServiceDelegate {
           }
         }
         let path = "\(NSTemporaryDirectory())\(fileName)"
-        try? Data(bytes: UnsafePointer<UInt8>(request.body), count: request.body.count).write(to: URL(fileURLWithPath: path), options: [.atomic])
-        self.busy("\nFile uploaded to \(path) (\(request.body.count) bytes)")
-        self.solvePath(path, nil)
+        try? Data(bytes: request.body, count: request.body.count).write(to: URL(fileURLWithPath: path), options: [.atomic])
+        busy("\nFile uploaded to \(path) (\(request.body.count) bytes)")
+        solvePath(path, nil, image2xyArgs, solverArgs)
         return HttpResponse.ok(HttpResponseBody.json(["status":"success"] as AnyObject))
       } else {
-        self.append("Solver busy", color: RED)
+        append("Solver busy", color: RED)
         return HttpResponse.ok(HttpResponseBody.json(["status":"error", "errormessage":"Solver busy"] as AnyObject))
       }
     }
     
-    server.GET["/api/status"] = { (request: HttpRequest) in
-      var response: [String:AnyObject] = [ "status": self.status as AnyObject]
+    server.GET["/api/status"] = { [self] (request: HttpRequest) in
+      var response: [String:AnyObject] = [ "status": status as AnyObject]
       var calibration: [String:AnyObject] = [:]
-      if self.status == "ready" {
-      } else if self.status == "done" {
-        if let raCenter = self.raCenter {
+      if status == "ready" {
+      } else if status == "done" {
+        if let raCenter = raCenter {
           calibration["ra"] = raCenter as AnyObject?
         }
-        if let decCenter = self.decCenter {
+        if let decCenter = decCenter {
           calibration["dec"] = decCenter as AnyObject?
         }
-        if let orientation = self.orientation {
+        if let orientation = orientation {
           calibration["orientation"] = orientation as AnyObject?
         }
-        if let pixelScale = self.pixelScale {
+        if let pixelScale = pixelScale {
           calibration["pixscale"] = pixelScale as AnyObject?
+        }
+        if let parity = parity {
+          calibration["parity"] = parity as AnyObject?
         }
         response["calibration"] = calibration as AnyObject?
       } else {
-        response["message"] = self.message as AnyObject?
+        response["message"] = message as AnyObject?
       }
       return HttpResponse.ok(HttpResponseBody.json(response as AnyObject))
     }
@@ -326,18 +364,64 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     do {
       try server.start()
       server.publish("", type: "_astrometry._tcp", name: "Astrometry", delegate: self)
-      try self.append("HTTP server started on port \(server.port())", color: GREEN)
+      try append("HTTP server started on port \(server.port())", color: GREEN)
     } catch {
-      self.append("Can't start HTTP server", color: RED)
+      append("Can't start HTTP server", color: RED)
+    }
+    
+    DispatchQueue.global(qos: .default).async { [self] in
+      append("IPC listener started", color: GREEN)
+      let requestURL = FOLDER.appendingPathComponent("request")
+      let responseURL = FOLDER.appendingPathComponent("response")
+      mkfifo(requestURL.path, 0o666)
+      mkfifo(responseURL.path, 0o666)
+      while true {
+        if let requestHandle = try? FileHandle(forReadingFrom: requestURL), let responseHandle = try? FileHandle(forWritingTo: responseURL) {
+          if status == "busy" {
+            responseHandle.writeLine("message: Solver is busy")
+            responseHandle.writeLine("<<<EOF>>>")
+            responseHandle.closeFile()
+            requestHandle.closeFile()
+          } else {
+            busy("\nProcessing IPC request")
+            var args = [String]()
+            while true {
+              if let line = requestHandle.readLine() {
+                if line == "<<<EOF>>>" {
+                  let command = args.removeFirst()
+                  let start = Date().timeIntervalSince1970
+                  do {
+                    try execute(command, arguments: args, result: responseHandle)
+                    done("\nDone in \(round((Date().timeIntervalSince1970 - start) * 100) / 100) seconds")
+                  } catch {
+                    failed("Failed to execute \(command)")
+                  }
+                  responseHandle.writeLine("<<<EOF>>>")
+                  responseHandle.closeFile()
+                  requestHandle.closeFile()
+                  break
+                } else {
+                  args.append(line)
+                }
+              } else {
+                break
+              }
+            }
+          }
+        } else {
+          break
+        }
+      }
+      failed("Failed to create named pipe for interprocess communication")
     }
   }
   
   func netServiceDidPublish(_ sender: NetService) {
-    append("Bonjour service did publish", color: GREEN)
+    append("Bonjour service started", color: GREEN)
   }
   
   func netService(_ sender: NetService, didNotPublish errorDict: [String : NSNumber]) {
-    append("Bonjour service did not publish", color: RED)
+    append("Bonjour service failed", color: RED)
     append("\(errorDict)", color: RED)
   }
   

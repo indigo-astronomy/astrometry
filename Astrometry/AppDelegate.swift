@@ -29,10 +29,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    if !FILE_NAMANGER.fileExists(atPath: CONFIG) {
-      if let config = "cpulimit 300\nadd_path \(FOLDER)\nautoindex\n".data(using: String.Encoding.ascii) {
-        try? config.write(to: URL(fileURLWithPath: CONFIG), options: [.atomic])
+    do {
+      try FILE_MANAGER.createDirectory(at: FOLDER, withIntermediateDirectories: true, attributes: nil)
+      if let legacyFiles = try? FILE_MANAGER.contentsOfDirectory(at: LEGACY_FOLDER, includingPropertiesForKeys: nil, options: .skipsHiddenFiles), legacyFiles.count > 0 {
+        for file in legacyFiles {
+          if file.lastPathComponent.hasSuffix(".fits") {
+            try FILE_MANAGER.moveItem(at: file, to: FOLDER.appendingPathComponent(file.lastPathComponent) )
+          } else {
+            try FILE_MANAGER.removeItem(at: file)
+          }
+        }
       }
+    } catch {
+      NSLog("I/O failed \(error)")
     }
     activity = ProcessInfo().beginActivity(options: ProcessInfo.ActivityOptions.background, reason: "Good Reason")
     indexManager.showIfNoIndexFound()

@@ -27,8 +27,7 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
     if let files = FILES[checkbox.title] {
       var count = 0
       for file in files {
-        let path = "\(FOLDER)/\(file)"
-        if FILE_NAMANGER.fileExists(atPath: path) {
+        if FILE_MANAGER.fileExists(atPath: FOLDER.appendingPathComponent(file).path) {
           count += 1
         }
       }
@@ -93,7 +92,7 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
         download = NSURLDownload(request: URLRequest(url: url), delegate: self)
         if let download = download {
           download.deletesFileUponFailure = true
-          download.setDestination("\(FOLDER)/\(file)", allowOverwrite: true)
+          download.setDestination(FOLDER.appendingPathComponent(file).path, allowOverwrite: true)
         } else {
           statusText.stringValue = "Failed to download \(file)"
           goButton.isEnabled = true
@@ -112,10 +111,9 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
     let title = checkbox.title
     if let files = FILES[title] {
       for file in files {
-        let path = "\(FOLDER)/\(file)"
-        if FILE_NAMANGER.fileExists(atPath: path) {
+        if FILE_MANAGER.fileExists(atPath: FOLDER.appendingPathComponent(file).path) {
             if checkbox.state.rawValue == 0 {
-                WORKSPACE.performFileOperation(NSWorkspace.FileOperationName.recycleOperation, source: FOLDER, destination: "", files: [file], tag: nil)
+              WORKSPACE.performFileOperation(NSWorkspace.FileOperationName.recycleOperation, source: FOLDER.path, destination: "", files: [file], tag: nil)
             self.statusText.stringValue = "Removed \(file)"
           }
         } else {
@@ -170,14 +168,6 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
   }
   
    @IBAction func show(_ sender: AnyObject) {
-    if !FILE_NAMANGER.fileExists(atPath: FOLDER) {
-      do {
-        try FILE_NAMANGER.createDirectory(atPath: FOLDER, withIntermediateDirectories: true, attributes: nil)
-      } catch {
-        NSLog("Can't create \(FOLDER)")
-        exit(1)
-      }
-    }
     for checkbox in series4100.subviews {
       validate(checkbox as! NSButton)
     }
@@ -192,8 +182,7 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
     for key in FILES.keys {
       if let files = FILES[key] {
         for file in files {
-          let path = "\(FOLDER)/\(file)"
-          if FILE_NAMANGER.fileExists(atPath: path) {
+          if FILE_MANAGER.fileExists(atPath: FOLDER.appendingPathComponent(file).path) {
             count += 1
           }
         }
