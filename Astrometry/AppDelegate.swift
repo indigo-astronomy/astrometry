@@ -50,6 +50,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func applicationWillTerminate(_ aNotification: Notification) {
+    unlink(FOLDER.appendingPathComponent("request").path)
+    unlink(FOLDER.appendingPathComponent("response").path)
   }
 }
 
