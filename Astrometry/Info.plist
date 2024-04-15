@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015-2021 CloudMakers, s. r. o. All rights reserved.</string>
+	<string>Copyright © 2015-2024 CloudMakers, s. r. o. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
