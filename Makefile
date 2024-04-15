@@ -7,7 +7,7 @@ else
 	ifeq ($(OS_DETECTED),Darwin)
 		CC = /usr/bin/clang
 		AR = /usr/bin/libtool
-		ifeq ($(findstring arm64e,$(shell file $(CC) | head -1)),arm64e)
+		ifeq ($(findstring arm64e,$(shell file $(CC))),arm64e)
 			MAC_ARCH = -arch x86_64 -arch arm64
 		else
 			MAC_ARCH = -arch x86_64
