@@ -60,7 +60,7 @@ AWK = awk
 ASTROMETRY = ../astrometry.net
 CFITSIO = ../cfitsio
 
-VERSION = 0.85
+VERSION = 0.95
 
 CFLAGS += -I $(ASTROMETRY)/include -I $(ASTROMETRY)/include/astrometry -I $(ASTROMETRY)/gsl-an -I $(ASTROMETRY)/util \
 	-I $(CFITSIO) \
@@ -74,7 +74,7 @@ CFLAGS += -I $(ASTROMETRY)/include -I $(ASTROMETRY)/include/astrometry -I $(ASTR
 #CFLAGS += -DAN_GIT_DATE='"$(AN_GIT_DATE)"'
 #CFLAGS += -DAN_GIT_URL='"$(AN_GIT_URL)"'
 
-CFLAGS += -DAN_GIT_REVISION='"c1782b82a2723673fdf120e6ddc31b1d253c12e6"' -DAN_GIT_DATE='"Thu_Jan_7_07:49:26_2021_-0500"' -DAN_GIT_URL='"https://github.com/dstndstn/astrometry.net.git"'
+CFLAGS += -DAN_GIT_REVISION='"0.95"' -DAN_GIT_DATE='"Mon_May_6_18:41:28_2024_-0400"' -DAN_GIT_URL='"https://github.com/dstndstn/astrometry.net"'
 
 ANBASE_FILES = starutil mathutil bl-sort bl bt healpix-utils \
 	healpix permutedsort ioutils fileutils md5 \
@@ -97,7 +97,7 @@ QFITS_FILES = anqfits qfits_card qfits_convert qfits_error qfits_header \
 	qfits_image qfits_md5 qfits_table qfits_time qfits_tools qfits_byteswap \
 	qfits_memory qfits_rw qfits_float
 	
-KD_FILES = kdint_ddd kdint_fff kdint_ddu kdint_duu kdint_dds kdint_dss kdtree \
+KD_FILES = kdint_ddd kdint_lll kdint_fff kdint_ddu kdint_duu kdint_dds kdint_dss kdtree \
 	kdtree_dim kdtree_mem kdtree_fits_io dualtree dualtree_rangesearch \
 	dualtree_nearestneighbour
 
@@ -245,19 +245,19 @@ $(WCSINFO_LIB): $(ASTROMETRY)/util/wcsinfo.o
 	$(AR) $(ARFLAGS) $@ $^
 
 $(IMAGE2XY): $(ASTROMETRY)/solver/image2xy-main.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^
+	$(CC) -o $@ $(LDFLAGS) $^ -lm
 
 $(NEWWCS): $(ASTROMETRY)/solver/new-wcs-main.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^
+	$(CC) -o $@ $(LDFLAGS) $^ -lm
 
 $(SOLVEFIELD): $(ASTROMETRY)/solver/solve-field.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^
+	$(CC) -o $@ $(LDFLAGS) $^ -lm
 
 $(ASTROMETRYENGINE): $(ASTROMETRY)/solver/engine-main.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^
+	$(CC) -o $@ $(LDFLAGS) $^ -lm
 
 $(WCSINFO): $(ASTROMETRY)/util/wcsinfo.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^
+	$(CC) -o $@ $(LDFLAGS) $^ -lm
 
 package: ROOT = indigo-astrometry-$(VERSION)-$(DEBIAN_ARCH)
 package: all
@@ -282,8 +282,8 @@ debs-docker:
 	cd ../cfitsio; git archive --format=tar --prefix=cfitsio/ HEAD | gzip >../astrometry/cfitsio.tar.gz
 	cd ../astrometry.net; git archive --format=tar --prefix=astrometry.net/ HEAD | gzip >../astrometry/astrometry.net.tar.gz
 	cd ../astrometry; git archive --format=tar --prefix=indigo-astrometry/ HEAD | gzip >indigo-astrometry.tar.gz
-	sh tools/build_debs.sh "i386/debian:stretch-slim" "indigo-astrometry-$(VERSION)-i386.deb" $(VERSION)
-	sh tools/build_debs.sh "amd64/debian:stretch-slim" "indigo-astrometry-$(VERSION)-amd64.deb" $(VERSION)
+	sh tools/build_debs.sh "i386/debian:buster-slim" "indigo-astrometry-$(VERSION)-i386.deb" $(VERSION)
+	sh tools/build_debs.sh "amd64/debian:buster-slim" "indigo-astrometry-$(VERSION)-amd64.deb" $(VERSION)
 	sh tools/build_debs.sh "arm32v7/debian:buster-slim" "indigo-astrometry-$(VERSION)-armhf.deb" $(VERSION)
 	sh tools/build_debs.sh "arm64v8/debian:buster-slim" "indigo-astrometry-$(VERSION)-arm64.deb" $(VERSION)
 	rm indigo-astrometry.tar.gz cfitsio.tar.gz astrometry.net.tar.gz
