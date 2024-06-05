@@ -86,6 +86,15 @@
 		9D26B2F82C10A0F300EC2806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B2F72C10A0F300EC2806 /* ContentView.swift */; };
 		9D26B2FA2C10A0F500EC2806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D26B2F92C10A0F500EC2806 /* Assets.xcassets */; };
 		9D26B2FD2C10A0F500EC2806 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D26B2FC2C10A0F500EC2806 /* Preview Assets.xcassets */; };
+		9D26B3032C10A5B900EC2806 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3022C10A5B900EC2806 /* Logger.swift */; };
+		9D26B3052C10A5F600EC2806 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3042C10A5F600EC2806 /* Defaults.swift */; };
+		9D26B3072C10A66800EC2806 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3062C10A66800EC2806 /* Extensions.swift */; };
+		9D26B3092C10A98A00EC2806 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3082C10A98A00EC2806 /* Toolbar.swift */; };
+		9D26B3152C10AE6D00EC2806 /* image2xy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5972885125A387B1004E6388 /* image2xy */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9D26B3162C10AE6F00EC2806 /* solve-field in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5972889825A39077004E6388 /* solve-field */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9D26B3172C10AE7100EC2806 /* astrometry-engine in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A10BD25A39232005AD445 /* astrometry-engine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9D26B3182C10AE7400EC2806 /* wcsinfo in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A10E825A3A847005AD445 /* wcsinfo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9D26B3192C10AE7700EC2806 /* new-wcs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A110B25A3A91A005AD445 /* new-wcs */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9DE6CCAB1F0E59D60086A9DD /* RawImageRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */; };
 		9DF426561C24657500DEF999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF426551C24657500DEF999 /* AppDelegate.swift */; };
 		9DF426581C24657500DEF999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DF426571C24657500DEF999 /* Assets.xcassets */; };
@@ -129,6 +138,41 @@
 			remoteGlobalIDString = 5972888925A39077004E6388;
 			remoteInfo = "solve-field";
 		};
+		9D26B30A2C10AE2C00EC2806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592A10AE25A39232005AD445;
+			remoteInfo = "astrometry-engine";
+		};
+		9D26B30C2C10AE2C00EC2806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5972885025A387B1004E6388;
+			remoteInfo = image2xy;
+		};
+		9D26B30E2C10AE2C00EC2806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592A10FC25A3A91A005AD445;
+			remoteInfo = "new-wcs";
+		};
+		9D26B3102C10AE2C00EC2806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5972888925A39077004E6388;
+			remoteInfo = "solve-field";
+		};
+		9D26B3122C10AE2C00EC2806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D78BE241AA5BF7900234AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592A10D925A3A847005AD445;
+			remoteInfo = wcsinfo;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,6 +187,20 @@
 				592A10C325A39290005AD445 /* astrometry-engine in CopyFiles */,
 				592A10A625A391EA005AD445 /* solve-field in CopyFiles */,
 				5972886E25A38A82004E6388 /* image2xy in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D26B3142C10AE5400EC2806 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				9D26B3152C10AE6D00EC2806 /* image2xy in CopyFiles */,
+				9D26B3162C10AE6F00EC2806 /* solve-field in CopyFiles */,
+				9D26B3172C10AE7100EC2806 /* astrometry-engine in CopyFiles */,
+				9D26B3182C10AE7400EC2806 /* wcsinfo in CopyFiles */,
+				9D26B3192C10AE7700EC2806 /* new-wcs in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +272,10 @@
 		9D26B2F92C10A0F500EC2806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D26B2FC2C10A0F500EC2806 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D26B2FE2C10A0F500EC2806 /* Astrometry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Astrometry.entitlements; sourceTree = "<group>"; };
+		9D26B3022C10A5B900EC2806 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		9D26B3042C10A5F600EC2806 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		9D26B3062C10A66800EC2806 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9D26B3082C10A98A00EC2806 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawImageRep.swift; sourceTree = "<group>"; };
 		9DF426531C24657500DEF999 /* Astrometry 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astrometry 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF426551C24657500DEF999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -367,9 +429,13 @@
 			children = (
 				9D26B2F52C10A0F300EC2806 /* AstrometryApp.swift */,
 				9D26B2F72C10A0F300EC2806 /* ContentView.swift */,
+				9D26B3042C10A5F600EC2806 /* Defaults.swift */,
+				9D26B3022C10A5B900EC2806 /* Logger.swift */,
 				9D26B2F92C10A0F500EC2806 /* Assets.xcassets */,
 				9D26B2FE2C10A0F500EC2806 /* Astrometry.entitlements */,
 				9D26B2FB2C10A0F500EC2806 /* Preview Content */,
+				9D26B3062C10A66800EC2806 /* Extensions.swift */,
+				9D26B3082C10A98A00EC2806 /* Toolbar.swift */,
 			);
 			path = Astrometry;
 			sourceTree = "<group>";
@@ -573,10 +639,16 @@
 				9D26B2EF2C10A0F300EC2806 /* Sources */,
 				9D26B2F02C10A0F300EC2806 /* Frameworks */,
 				9D26B2F12C10A0F300EC2806 /* Resources */,
+				9D26B3142C10AE5400EC2806 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9D26B30B2C10AE2C00EC2806 /* PBXTargetDependency */,
+				9D26B30D2C10AE2C00EC2806 /* PBXTargetDependency */,
+				9D26B30F2C10AE2C00EC2806 /* PBXTargetDependency */,
+				9D26B3112C10AE2C00EC2806 /* PBXTargetDependency */,
+				9D26B3132C10AE2C00EC2806 /* PBXTargetDependency */,
 			);
 			name = Astrometry;
 			productName = Astrometry;
@@ -745,7 +817,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D26B3072C10A66800EC2806 /* Extensions.swift in Sources */,
 				9D26B2F82C10A0F300EC2806 /* ContentView.swift in Sources */,
+				9D26B3052C10A5F600EC2806 /* Defaults.swift in Sources */,
+				9D26B3092C10A98A00EC2806 /* Toolbar.swift in Sources */,
+				9D26B3032C10A5B900EC2806 /* Logger.swift in Sources */,
 				9D26B2F62C10A0F300EC2806 /* AstrometryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,6 +886,31 @@
 			isa = PBXTargetDependency;
 			target = 5972888925A39077004E6388 /* solve-field */;
 			targetProxy = 597288A925A390C1004E6388 /* PBXContainerItemProxy */;
+		};
+		9D26B30B2C10AE2C00EC2806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592A10AE25A39232005AD445 /* astrometry-engine */;
+			targetProxy = 9D26B30A2C10AE2C00EC2806 /* PBXContainerItemProxy */;
+		};
+		9D26B30D2C10AE2C00EC2806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5972885025A387B1004E6388 /* image2xy */;
+			targetProxy = 9D26B30C2C10AE2C00EC2806 /* PBXContainerItemProxy */;
+		};
+		9D26B30F2C10AE2C00EC2806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592A10FC25A3A91A005AD445 /* new-wcs */;
+			targetProxy = 9D26B30E2C10AE2C00EC2806 /* PBXContainerItemProxy */;
+		};
+		9D26B3112C10AE2C00EC2806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5972888925A39077004E6388 /* solve-field */;
+			targetProxy = 9D26B3102C10AE2C00EC2806 /* PBXContainerItemProxy */;
+		};
+		9D26B3132C10AE2C00EC2806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592A10D925A3A847005AD445 /* wcsinfo */;
+			targetProxy = 9D26B3122C10AE2C00EC2806 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1336,7 +1437,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 5.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
@@ -1390,7 +1491,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 5.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
