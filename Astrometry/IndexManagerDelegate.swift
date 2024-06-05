@@ -9,7 +9,7 @@
 import Cocoa
 
 class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
-
+  
   @IBOutlet weak var window: NSWindow!
   @IBOutlet weak var series4200: NSView!
   @IBOutlet weak var series4100: NSView!
@@ -40,7 +40,7 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
       }
     }
   }
-
+  
   func downloadDidBegin(_ download: NSURLDownload) {
     currentLength = 0
     DispatchQueue.main.async {
@@ -112,12 +112,12 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
     if let files = FILES[title] {
       for file in files {
         if FILE_MANAGER.fileExists(atPath: FOLDER.appendingPathComponent(file).path) {
-            if checkbox.state.rawValue == 0 {
-              WORKSPACE.performFileOperation(NSWorkspace.FileOperationName.recycleOperation, source: FOLDER.path, destination: "", files: [file], tag: nil)
+          if checkbox.state.rawValue == 0 {
+            WORKSPACE.recycle([URL(fileURLWithPath: file)])
             self.statusText.stringValue = "Removed \(file)"
           }
         } else {
-            if checkbox.state.rawValue == 1 {
+          if checkbox.state.rawValue == 1 {
             queue.append(file)
           }
         }
@@ -128,14 +128,14 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
   @IBAction func skip2(_ sender: AnyObject) {
     let button = sender as! NSButton
     if button.state.rawValue == -1 {
-        button.state = NSControl.StateValue(rawValue: 1)
+      button.state = NSControl.StateValue(rawValue: 1)
     }
   }
-
+  
   @IBAction func readme(_ sender: AnyObject) {
     NSWorkspace.shared.open(URL(string: "http://astrometry.net/doc/readme.html")!)
   }
-
+  
   @IBAction func abort(_ sender: AnyObject) {
     queue.removeAll()
     if let download = self.download {
@@ -167,7 +167,7 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
     }
   }
   
-   @IBAction func show(_ sender: AnyObject) {
+  @IBAction func show(_ sender: AnyObject) {
     for checkbox in series4100.subviews {
       validate(checkbox as! NSButton)
     }
@@ -192,6 +192,5 @@ class IndexManagerDelegate: NSObject, NSURLDownloadDelegate {
       show(self)
     }
   }
-  
 }
 

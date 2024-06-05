@@ -6,3 +6,5 @@ xcuserdata/*
 astrometry.xcodeproj/xcuserdata/*
 .hg
 .hgignore
+lib/*
+bin/*

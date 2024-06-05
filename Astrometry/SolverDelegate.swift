@@ -3,7 +3,7 @@
 //  Astrometry
 //
 //  Created by Peter Polakovic on 18.12.15.
-//  Copyright © 2015 CloudMakers, s. r. o. All rights reserved.
+//  Copyright © 2015-2024 CloudMakers, s. r. o. All rights reserved.
 //
 
 import Cocoa
@@ -27,7 +27,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
   fileprivate var decCenter: Double?
   fileprivate var orientation: Double?
   fileprivate var pixelScale: Double?
-  fileprivate var parity: Double?
+  fileprivate var parity: Int?
   
   func append(_ string: String, color: NSColor? = nil) {
     DispatchQueue.main.async { [self] in
@@ -83,6 +83,21 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     }
   }
   
+  override func awakeFromNib() {
+    append("Astrometry \(VERSION)-\(BUILD)", color: GREEN)
+    let task = Process()
+    let pipe = Pipe()
+    task.launchPath = Bundle.main.path(forAuxiliaryExecutable: "solve-field")
+    task.arguments = ["--version"]
+    task.standardOutput = pipe
+    task.launch()
+    if let line = pipe.fileHandleForReading.readLine() {
+      append("Astrometry.net engine \(line)", color: GREEN)
+    } else {
+      failed("Failed to execute Astrometry.net engine")
+    }
+  }
+  
   func execute(_ executable: String, arguments: [String], result: FileHandle? = nil) throws {
     var cmd =  "\n" + executable
     for arg in arguments {
@@ -115,7 +130,16 @@ class SolverDelegate: NSObject, NetServiceDelegate {
               pixelScale = Double(line.split(" ")[1])
               append(line, color: GREEN)
             } else if line.hasPrefix("parity ") {
-              parity = Double(line.split(" ")[1])
+              if let parity = Double(line.split(" ")[1]) {
+                if parity >= 0 {
+                  self.parity = 1
+                } else {
+                  self.parity = 0
+                }
+              }
+              append(line, color: GREEN)
+            } else if line.hasPrefix("Field center:") || line.hasPrefix("Field size:") || line.hasPrefix("Field rotation angle:") || line.hasPrefix("Field parity:") {
+              append(line, color: GREEN)
             } else {
               append(line)
             }
@@ -215,9 +239,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
         if rmFITS {
           files.append(fits)
         }
-        for file in files {
-          WORKSPACE.performFileOperation(NSWorkspace.FileOperationName.recycleOperation, source: "", destination: "", files: [file], tag: nil)
-        }
+        WORKSPACE.recycle(files.map({ return URL(fileURLWithPath: $0) }))
       }
     }
   }
@@ -228,7 +250,7 @@ class SolverDelegate: NSObject, NetServiceDelegate {
     openPanel.prompt = "Select image file"
     openPanel.allowedFileTypes = [ "fit", "fits", "jpeg", "jpg", "png", "tif", "tiff", "raw", "nef", "cr2" ]
     openPanel.beginSheetModal(for: window, completionHandler: { [self] result in
-      if result.rawValue == NSFileHandlingPanelOKButton {
+      if result == .OK {
         if let openURL = openPanel.url {
           busy("\nProcessing manual request")
           if DEFAULTS.bool(forKey: "writeWCSHeaders") {
@@ -237,8 +259,8 @@ class SolverDelegate: NSObject, NetServiceDelegate {
             savePanel.nameFieldStringValue = openURL.deletingPathExtension().lastPathComponent + "_wcs"
             savePanel.allowedFileTypes = [ "fits" ]
             savePanel.prompt = "Select output file"
-            savePanel.beginSheetModal(for: window, completionHandler: { result in
-              if result.rawValue == NSFileHandlingPanelOKButton {
+            savePanel.beginSheetModal(for: window, completionHandler: { [self] result in
+              if result == .OK {
                 if let saveURL = savePanel.url {
                   solvePath(openURL.path, saveURL.path)
                 }

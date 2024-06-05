@@ -15,6 +15,9 @@ let RED = NSColor(calibratedRed: 0.8, green: 0.0, blue: 0.0, alpha: 1.0)
 let FILE_MANAGER = FileManager.default
 let WORKSPACE = NSWorkspace.shared
 let DEFAULTS = UserDefaults.standard
+let BUNDLE = Bundle.main
+let VERSION = BUNDLE.infoDictionary!["CFBundleShortVersionString"]!
+let BUILD = BUNDLE.infoDictionary!["CFBundleVersion"]!
 
 let LEGACY_FOLDER = FILE_MANAGER.urls(for: FileManager.SearchPathDirectory.applicationSupportDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!.appendingPathComponent("/Astrometry")
 let FOLDER = FILE_MANAGER.containerURL(forSecurityApplicationGroupIdentifier: "AG8BXW65A2.INDIGO")!.appendingPathComponent("Data/Library/Application Support/Astrometry")

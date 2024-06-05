@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -404,7 +404,10 @@
 				9D78BE2D1AA5BF7900234AE1 /* Products */,
 				5972885F25A389D9004E6388 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 			wrapsLines = 0;
 		};
 		9D78BE2D1AA5BF7900234AE1 /* Products */ = {
@@ -574,7 +577,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry" */;
 			buildPhases = (
-				593AC44C25A324EE0016525C /* ShellScript */,
 				9DF4264F1C24657500DEF999 /* Sources */,
 				9DF426501C24657500DEF999 /* Frameworks */,
 				9DF426511C24657500DEF999 /* Resources */,
@@ -600,8 +602,9 @@
 		9D78BE241AA5BF7900234AE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = "CloudMakers, s. r. o.";
 				TargetAttributes = {
 					592A10AE25A39232005AD445 = {
@@ -673,26 +676,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		593AC44C25A324EE0016525C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make all\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		592A10AF25A39232005AD445 /* Sources */ = {
@@ -830,7 +813,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -848,7 +832,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.astrometry-engine";
@@ -877,7 +862,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -891,7 +877,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.astrometry-engine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -919,7 +906,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -937,7 +925,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.wcsinfo;
@@ -966,7 +955,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -980,7 +970,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.wcsinfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1008,7 +999,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1026,7 +1018,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.new-wcs";
@@ -1055,7 +1048,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1069,7 +1063,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.new-wcs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1097,7 +1092,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1115,7 +1111,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.image2xy;
@@ -1144,7 +1141,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1158,7 +1156,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.image2xy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1186,7 +1185,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1204,7 +1204,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.solve-field";
@@ -1233,7 +1234,8 @@
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1247,7 +1249,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 2.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.solve-field";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1285,8 +1288,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1316,7 +1321,6 @@
 					dynamic_lookup,
 				);
 				SDKROOT = macosx;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1351,8 +1355,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
@@ -1378,8 +1384,8 @@
 					dynamic_lookup,
 				);
 				SDKROOT = macosx;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1401,7 +1407,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 815;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1419,12 +1426,16 @@
 				INFOPLIST_FILE = Astrometry/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Astrometry;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1450,7 +1461,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 815;
+				CURRENT_PROJECT_VERSION = 15;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1464,12 +1476,16 @@
 				INFOPLIST_FILE = Astrometry/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Astrometry;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				MARKETING_VERSION = 5.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -167,7 +167,7 @@
         <window title="Solver" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="solver" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="520" height="226"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="520" height="200"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="520" height="226"/>
@@ -265,7 +265,7 @@ DQ
         <window title="Index Manager" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="index-manager" animationBehavior="default" id="f7s-VD-xpR">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="360" height="570"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="944"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="OUF-sZ-H30">
                 <rect key="frame" x="0.0" y="0.0" width="360" height="570"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -599,7 +599,7 @@ DQ
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <levelIndicatorCell key="cell" controlSize="small" alignment="left" maxValue="1" levelIndicatorStyle="continuousCapacity" id="jBI-qe-eaV"/>
                     </levelIndicator>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="agE-ea-nZY">
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="agE-ea-nZY">
                         <rect key="frame" x="18" y="48" width="324" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="YXG-Ug-5n7">
@@ -638,7 +638,7 @@ DQ
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="331" y="527"/>
+            <point key="canvasLocation" x="503" y="534"/>
         </window>
     </objects>
 </document>
