@@ -153,12 +153,6 @@
 		59110C3425A2879900CE0DB3 /* libengine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libengine.a; sourceTree = "<group>"; };
 		59110C3525A2879900CE0DB3 /* libgsl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgsl.a; sourceTree = "<group>"; };
 		59110C3725A2879900CE0DB3 /* libcat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcat.a; sourceTree = "<group>"; };
-		59217F571AA6668200C6EA41 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		59217F5A1AA6668200C6EA41 /* nomad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nomad.h; sourceTree = "<group>"; };
-		59217F5B1AA6668200C6EA41 /* os-features-config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "os-features-config.h"; sourceTree = "<group>"; };
-		59217F5C1AA6668200C6EA41 /* qfits_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qfits_config.h; sourceTree = "<group>"; };
-		59217F5D1AA6668200C6EA41 /* svn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svn.h; sourceTree = "<group>"; };
-		59217F5E1AA6668200C6EA41 /* usnob-fits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "usnob-fits.h"; sourceTree = "<group>"; };
 		59217FBA1AA7A65500C6EA41 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		592A10A225A391C6005AD445 /* solve-field.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "solve-field.plist"; sourceTree = "<group>"; };
 		592A10AD25A3922B005AD445 /* astrometry-engine.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "astrometry-engine.plist"; sourceTree = "<group>"; };
@@ -186,7 +180,6 @@
 		59395B4B259510E100AF5042 /* String+SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SHA1.swift"; sourceTree = "<group>"; };
 		59395B4C259510E100AF5042 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
 		59395B4D259510E100AF5042 /* Socket+Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Socket+Server.swift"; sourceTree = "<group>"; };
-		593AC44E25A325400016525C /* image2xy-main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "image2xy-main.c"; sourceTree = "<group>"; };
 		593AC45525A35EF10016525C /* Astrometry.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Astrometry.entitlements; sourceTree = "<group>"; };
 		594564B21C2871A200FEA745 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		595603CF1C233875004AEB4C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
@@ -212,7 +205,7 @@
 		9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexManagerDelegate.swift; sourceTree = "<group>"; };
 		9D0602801C280BE700787E2A /* SolverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SolverDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawImageRep.swift; sourceTree = "<group>"; };
-		9DF426531C24657500DEF999 /* Astrometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DF426531C24657500DEF999 /* Astrometry 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astrometry 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF426551C24657500DEF999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF426571C24657500DEF999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DF4265A1C24657500DEF999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -328,44 +321,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		59217F511AA6665100C6EA41 /* fixes */ = {
-			isa = PBXGroup;
-			children = (
-				593AC44B25A3243F0016525C /* src */,
-				59217F581AA6668200C6EA41 /* include */,
-			);
-			name = fixes;
-			sourceTree = "<group>";
-		};
-		59217F581AA6668200C6EA41 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				59217F571AA6668200C6EA41 /* config.h */,
-				59217F591AA6668200C6EA41 /* astrometry */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		59217F591AA6668200C6EA41 /* astrometry */ = {
-			isa = PBXGroup;
-			children = (
-				59217F5A1AA6668200C6EA41 /* nomad.h */,
-				59217F5B1AA6668200C6EA41 /* os-features-config.h */,
-				59217F5C1AA6668200C6EA41 /* qfits_config.h */,
-				59217F5D1AA6668200C6EA41 /* svn.h */,
-				59217F5E1AA6668200C6EA41 /* usnob-fits.h */,
-			);
-			path = astrometry;
-			sourceTree = "<group>";
-		};
-		593AC44B25A3243F0016525C /* src */ = {
-			isa = PBXGroup;
-			children = (
-				593AC44E25A325400016525C /* image2xy-main.c */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		595603D11C2338C8004AEB4C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,8 +351,17 @@
 				5982059B1E788DE000EE4ACD /* LICENSE.md */,
 				5982059C1E788DE000EE4ACD /* README.md */,
 				59110BC525A2521F00CE0DB3 /* Makefile */,
-				9DF426541C24657500DEF999 /* Astrometry */,
-				59217F511AA6665100C6EA41 /* fixes */,
+				5972884625A3793E004E6388 /* image2xy.entitlements */,
+				5972884725A37A6E004E6388 /* wcsinfo.entitlements */,
+				5972884825A37A7F004E6388 /* astrometry-engine.entitlements */,
+				5972884925A37A8F004E6388 /* solve-field.entitlements */,
+				5972884A25A37A9D004E6388 /* new-wcs.entitlements */,
+				5972887125A38B27004E6388 /* image2xy.plist */,
+				592A10A225A391C6005AD445 /* solve-field.plist */,
+				592A10AD25A3922B005AD445 /* astrometry-engine.plist */,
+				592A10F025A3A8A4005AD445 /* wcsinfo.plist */,
+				592A10FB25A3A913005AD445 /* new-wcs.plist */,
+				9DF426541C24657500DEF999 /* Astrometry 2 */,
 				59110C2E25A2879900CE0DB3 /* lib */,
 				59A21E4225BB550400005965 /* tools */,
 				595603D11C2338C8004AEB4C /* Libraries */,
@@ -413,7 +377,7 @@
 		9D78BE2D1AA5BF7900234AE1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DF426531C24657500DEF999 /* Astrometry.app */,
+				9DF426531C24657500DEF999 /* Astrometry 2.app */,
 				5972885125A387B1004E6388 /* image2xy */,
 				5972889825A39077004E6388 /* solve-field */,
 				592A10BD25A39232005AD445 /* astrometry-engine */,
@@ -423,7 +387,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DF426541C24657500DEF999 /* Astrometry */ = {
+		9DF426541C24657500DEF999 /* Astrometry 2 */ = {
 			isa = PBXGroup;
 			children = (
 				9DF426551C24657500DEF999 /* AppDelegate.swift */,
@@ -439,27 +403,17 @@
 				9DF426631C24660700DEF999 /* Swifter */,
 				9DF426601C24658D00DEF999 /* Supporting Files */,
 			);
-			path = Astrometry;
+			path = "Astrometry 2";
 			sourceTree = "<group>";
 		};
 		9DF426601C24658D00DEF999 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				593AC45525A35EF10016525C /* Astrometry.entitlements */,
-				5972884625A3793E004E6388 /* image2xy.entitlements */,
-				5972884725A37A6E004E6388 /* wcsinfo.entitlements */,
-				5972884825A37A7F004E6388 /* astrometry-engine.entitlements */,
-				5972884925A37A8F004E6388 /* solve-field.entitlements */,
-				5972884A25A37A9D004E6388 /* new-wcs.entitlements */,
 				595605B61C2488C3004AEB4C /* Credits.rtf */,
 				9DF426571C24657500DEF999 /* Assets.xcassets */,
 				9DF426591C24657500DEF999 /* MainMenu.xib */,
 				9DF4265C1C24657500DEF999 /* Info.plist */,
-				5972887125A38B27004E6388 /* image2xy.plist */,
-				592A10A225A391C6005AD445 /* solve-field.plist */,
-				592A10AD25A3922B005AD445 /* astrometry-engine.plist */,
-				592A10F025A3A8A4005AD445 /* wcsinfo.plist */,
-				592A10FB25A3A913005AD445 /* new-wcs.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -573,9 +527,9 @@
 			productReference = 5972889825A39077004E6388 /* solve-field */;
 			productType = "com.apple.product-type.tool";
 		};
-		9DF426521C24657500DEF999 /* Astrometry */ = {
+		9DF426521C24657500DEF999 /* Astrometry 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry" */;
+			buildConfigurationList = 9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry 2" */;
 			buildPhases = (
 				9DF4264F1C24657500DEF999 /* Sources */,
 				9DF426501C24657500DEF999 /* Frameworks */,
@@ -591,9 +545,9 @@
 				597288AA25A390C1004E6388 /* PBXTargetDependency */,
 				5972886D25A38A7C004E6388 /* PBXTargetDependency */,
 			);
-			name = Astrometry;
+			name = "Astrometry 2";
 			productName = Astrometry;
-			productReference = 9DF426531C24657500DEF999 /* Astrometry.app */;
+			productReference = 9DF426531C24657500DEF999 /* Astrometry 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -654,7 +608,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DF426521C24657500DEF999 /* Astrometry */,
+				9DF426521C24657500DEF999 /* Astrometry 2 */,
 				5972885025A387B1004E6388 /* image2xy */,
 				5972888925A39077004E6388 /* solve-field */,
 				592A10AE25A39232005AD445 /* astrometry-engine */,
@@ -808,7 +762,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry/astrometry-engine.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "astrometry-engine.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -827,7 +781,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry/astrometry-engine.plist";
+				INFOPLIST_FILE = "astrometry-engine.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -857,7 +811,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry/astrometry-engine.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "astrometry-engine.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -872,7 +826,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry/astrometry-engine.plist";
+				INFOPLIST_FILE = "astrometry-engine.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -901,7 +855,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/wcsinfo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = wcsinfo.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -920,7 +874,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Astrometry/wcsinfo.plist;
+				INFOPLIST_FILE = wcsinfo.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -950,7 +904,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/wcsinfo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = wcsinfo.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -965,7 +919,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Astrometry/wcsinfo.plist;
+				INFOPLIST_FILE = wcsinfo.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -994,7 +948,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry/new-wcs.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "new-wcs.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -1013,7 +967,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry/new-wcs.plist";
+				INFOPLIST_FILE = "new-wcs.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -1043,7 +997,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry/new-wcs.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "new-wcs.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -1058,7 +1012,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry/new-wcs.plist";
+				INFOPLIST_FILE = "new-wcs.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -1087,7 +1041,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/image2xy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = image2xy.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -1106,7 +1060,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Astrometry/image2xy.plist;
+				INFOPLIST_FILE = image2xy.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -1136,7 +1090,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/image2xy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = image2xy.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -1151,7 +1105,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Astrometry/image2xy.plist;
+				INFOPLIST_FILE = image2xy.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -1180,7 +1134,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry/solve-field.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "solve-field.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -1199,7 +1153,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry/solve-field.plist";
+				INFOPLIST_FILE = "solve-field.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -1229,7 +1183,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry/solve-field.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "solve-field.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -1244,7 +1198,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry/solve-field.plist";
+				INFOPLIST_FILE = "solve-field.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -1403,7 +1357,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry 2/Astrometry.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1423,7 +1377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Astrometry/Info.plist;
+				INFOPLIST_FILE = "Astrometry 2/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Astrometry;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1439,7 +1393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry/Astrometry-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry 2/Astrometry-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1457,7 +1411,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Astrometry 2/Astrometry.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1473,7 +1427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Astrometry/Info.plist;
+				INFOPLIST_FILE = "Astrometry 2/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Astrometry;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1489,7 +1443,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry/Astrometry-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry 2/Astrometry-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1550,7 +1504,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry" */ = {
+		9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DF4265E1C24657500DEF999 /* Debug */,
