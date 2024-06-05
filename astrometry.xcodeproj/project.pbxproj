@@ -74,6 +74,8 @@
 		5972889225A39077004E6388 /* libkd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3225A2879900CE0DB3 /* libkd.a */; };
 		5972889325A39077004E6388 /* libqfits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C2F25A2879900CE0DB3 /* libqfits.a */; };
 		597288B125A390F3004E6388 /* libsolve-field.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885D25A38988004E6388 /* libsolve-field.a */; };
+		59B0CC1B2C10C8D200345B4E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 59B0CC1A2C10C8D200345B4E /* Credits.rtf */; };
+		59B0CC1D2C10D49E00345B4E /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59B0CC1C2C10D49E00345B4E /* beep.wav */; };
 		59BB8C1225F167C300AA8AC4 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BB8C1125F167C200AA8AC4 /* FileHandle.swift */; };
 		59BB8C3D25F16C7900AA8AC4 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
 		59BB8C4425F16C7A00AA8AC4 /* fake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5972887C25A38FBA004E6388 /* fake.c */; };
@@ -86,10 +88,8 @@
 		9D26B2F82C10A0F300EC2806 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B2F72C10A0F300EC2806 /* ContentView.swift */; };
 		9D26B2FA2C10A0F500EC2806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D26B2F92C10A0F500EC2806 /* Assets.xcassets */; };
 		9D26B2FD2C10A0F500EC2806 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D26B2FC2C10A0F500EC2806 /* Preview Assets.xcassets */; };
-		9D26B3032C10A5B900EC2806 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3022C10A5B900EC2806 /* Logger.swift */; };
 		9D26B3052C10A5F600EC2806 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3042C10A5F600EC2806 /* Defaults.swift */; };
 		9D26B3072C10A66800EC2806 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3062C10A66800EC2806 /* Extensions.swift */; };
-		9D26B3092C10A98A00EC2806 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D26B3082C10A98A00EC2806 /* Toolbar.swift */; };
 		9D26B3152C10AE6D00EC2806 /* image2xy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5972885125A387B1004E6388 /* image2xy */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9D26B3162C10AE6F00EC2806 /* solve-field in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5972889825A39077004E6388 /* solve-field */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9D26B3172C10AE7100EC2806 /* astrometry-engine in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592A10BD25A39232005AD445 /* astrometry-engine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -263,21 +263,21 @@
 		5982059B1E788DE000EE4ACD /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		5982059C1E788DE000EE4ACD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		59A21E4B25BB551E00005965 /* build_debs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build_debs.sh; sourceTree = "<group>"; };
+		59B0CC1A2C10C8D200345B4E /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		59B0CC1C2C10D49E00345B4E /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		59BB8C1125F167C200AA8AC4 /* FileHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandle.swift; sourceTree = "<group>"; };
 		9D06027E1C2808CB00787E2A /* IndexManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexManagerDelegate.swift; sourceTree = "<group>"; };
 		9D0602801C280BE700787E2A /* SolverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SolverDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
-		9D26B2F32C10A0F300EC2806 /* Astrometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D26B2F32C10A0F300EC2806 /* INDIGO Astrometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "INDIGO Astrometry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D26B2F52C10A0F300EC2806 /* AstrometryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrometryApp.swift; sourceTree = "<group>"; };
 		9D26B2F72C10A0F300EC2806 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D26B2F92C10A0F500EC2806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D26B2FC2C10A0F500EC2806 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D26B2FE2C10A0F500EC2806 /* Astrometry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Astrometry.entitlements; sourceTree = "<group>"; };
-		9D26B3022C10A5B900EC2806 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		9D26B3042C10A5F600EC2806 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		9D26B3042C10A5F600EC2806 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9D26B3062C10A66800EC2806 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9D26B3082C10A98A00EC2806 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		9DE6CCAA1F0E59D60086A9DD /* RawImageRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawImageRep.swift; sourceTree = "<group>"; };
-		9DF426531C24657500DEF999 /* Astrometry 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astrometry 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DF426531C24657500DEF999 /* Astrometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF426551C24657500DEF999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DF426571C24657500DEF999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DF4265A1C24657500DEF999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -424,20 +424,20 @@
 			path = tools;
 			sourceTree = "<group>";
 		};
-		9D26B2F42C10A0F300EC2806 /* Astrometry */ = {
+		9D26B2F42C10A0F300EC2806 /* INDIGO Astrometry */ = {
 			isa = PBXGroup;
 			children = (
 				9D26B2F52C10A0F300EC2806 /* AstrometryApp.swift */,
 				9D26B2F72C10A0F300EC2806 /* ContentView.swift */,
 				9D26B3042C10A5F600EC2806 /* Defaults.swift */,
-				9D26B3022C10A5B900EC2806 /* Logger.swift */,
+				9D26B3062C10A66800EC2806 /* Extensions.swift */,
 				9D26B2F92C10A0F500EC2806 /* Assets.xcassets */,
 				9D26B2FE2C10A0F500EC2806 /* Astrometry.entitlements */,
+				59B0CC1A2C10C8D200345B4E /* Credits.rtf */,
+				59B0CC1C2C10D49E00345B4E /* beep.wav */,
 				9D26B2FB2C10A0F500EC2806 /* Preview Content */,
-				9D26B3062C10A66800EC2806 /* Extensions.swift */,
-				9D26B3082C10A98A00EC2806 /* Toolbar.swift */,
 			);
-			path = Astrometry;
+			path = "INDIGO Astrometry";
 			sourceTree = "<group>";
 		};
 		9D26B2FB2C10A0F500EC2806 /* Preview Content */ = {
@@ -464,11 +464,11 @@
 				592A10AD25A3922B005AD445 /* astrometry-engine.plist */,
 				592A10F025A3A8A4005AD445 /* wcsinfo.plist */,
 				592A10FB25A3A913005AD445 /* new-wcs.plist */,
-				9DF426541C24657500DEF999 /* Astrometry 2 */,
 				59110C2E25A2879900CE0DB3 /* lib */,
 				59A21E4225BB550400005965 /* tools */,
 				595603D11C2338C8004AEB4C /* Libraries */,
-				9D26B2F42C10A0F300EC2806 /* Astrometry */,
+				9DF426541C24657500DEF999 /* Astrometry */,
+				9D26B2F42C10A0F300EC2806 /* INDIGO Astrometry */,
 				9D78BE2D1AA5BF7900234AE1 /* Products */,
 				5972885F25A389D9004E6388 /* Frameworks */,
 			);
@@ -481,18 +481,18 @@
 		9D78BE2D1AA5BF7900234AE1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DF426531C24657500DEF999 /* Astrometry 2.app */,
+				9DF426531C24657500DEF999 /* Astrometry.app */,
 				5972885125A387B1004E6388 /* image2xy */,
 				5972889825A39077004E6388 /* solve-field */,
 				592A10BD25A39232005AD445 /* astrometry-engine */,
 				592A10E825A3A847005AD445 /* wcsinfo */,
 				592A110B25A3A91A005AD445 /* new-wcs */,
-				9D26B2F32C10A0F300EC2806 /* Astrometry.app */,
+				9D26B2F32C10A0F300EC2806 /* INDIGO Astrometry.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DF426541C24657500DEF999 /* Astrometry 2 */ = {
+		9DF426541C24657500DEF999 /* Astrometry */ = {
 			isa = PBXGroup;
 			children = (
 				9DF426551C24657500DEF999 /* AppDelegate.swift */,
@@ -508,7 +508,7 @@
 				9DF426631C24660700DEF999 /* Swifter */,
 				9DF426601C24658D00DEF999 /* Supporting Files */,
 			);
-			path = "Astrometry 2";
+			path = Astrometry;
 			sourceTree = "<group>";
 		};
 		9DF426601C24658D00DEF999 /* Supporting Files */ = {
@@ -632,9 +632,9 @@
 			productReference = 5972889825A39077004E6388 /* solve-field */;
 			productType = "com.apple.product-type.tool";
 		};
-		9D26B2F22C10A0F300EC2806 /* Astrometry */ = {
+		9D26B2F22C10A0F300EC2806 /* INDIGO Astrometry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D26B2FF2C10A0F500EC2806 /* Build configuration list for PBXNativeTarget "Astrometry" */;
+			buildConfigurationList = 9D26B2FF2C10A0F500EC2806 /* Build configuration list for PBXNativeTarget "INDIGO Astrometry" */;
 			buildPhases = (
 				9D26B2EF2C10A0F300EC2806 /* Sources */,
 				9D26B2F02C10A0F300EC2806 /* Frameworks */,
@@ -650,14 +650,14 @@
 				9D26B3112C10AE2C00EC2806 /* PBXTargetDependency */,
 				9D26B3132C10AE2C00EC2806 /* PBXTargetDependency */,
 			);
-			name = Astrometry;
+			name = "INDIGO Astrometry";
 			productName = Astrometry;
-			productReference = 9D26B2F32C10A0F300EC2806 /* Astrometry.app */;
+			productReference = 9D26B2F32C10A0F300EC2806 /* INDIGO Astrometry.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9DF426521C24657500DEF999 /* Astrometry 2 */ = {
+		9DF426521C24657500DEF999 /* Astrometry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry 2" */;
+			buildConfigurationList = 9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry" */;
 			buildPhases = (
 				9DF4264F1C24657500DEF999 /* Sources */,
 				9DF426501C24657500DEF999 /* Frameworks */,
@@ -673,9 +673,9 @@
 				597288AA25A390C1004E6388 /* PBXTargetDependency */,
 				5972886D25A38A7C004E6388 /* PBXTargetDependency */,
 			);
-			name = "Astrometry 2";
+			name = Astrometry;
 			productName = Astrometry;
-			productReference = 9DF426531C24657500DEF999 /* Astrometry 2.app */;
+			productReference = 9DF426531C24657500DEF999 /* Astrometry.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -739,8 +739,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DF426521C24657500DEF999 /* Astrometry 2 */,
-				9D26B2F22C10A0F300EC2806 /* Astrometry */,
+				9DF426521C24657500DEF999 /* Astrometry */,
+				9D26B2F22C10A0F300EC2806 /* INDIGO Astrometry */,
 				5972885025A387B1004E6388 /* image2xy */,
 				5972888925A39077004E6388 /* solve-field */,
 				592A10AE25A39232005AD445 /* astrometry-engine */,
@@ -755,7 +755,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B0CC1D2C10D49E00345B4E /* beep.wav in Resources */,
 				9D26B2FD2C10A0F500EC2806 /* Preview Assets.xcassets in Resources */,
+				59B0CC1B2C10C8D200345B4E /* Credits.rtf in Resources */,
 				9D26B2FA2C10A0F500EC2806 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,8 +822,6 @@
 				9D26B3072C10A66800EC2806 /* Extensions.swift in Sources */,
 				9D26B2F82C10A0F300EC2806 /* ContentView.swift in Sources */,
 				9D26B3052C10A5F600EC2806 /* Defaults.swift in Sources */,
-				9D26B3092C10A98A00EC2806 /* Toolbar.swift in Sources */,
-				9D26B3032C10A5B900EC2806 /* Logger.swift in Sources */,
 				9D26B2F62C10A0F300EC2806 /* AstrometryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1410,12 +1410,11 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "INDIGO Astrometry/Astrometry.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"Astrometry/Preview Content\"";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1430,17 +1429,18 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CloudMakers, s. r. o. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 5.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.INDIGO-Astrometry";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1468,12 +1468,11 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "INDIGO Astrometry/Astrometry.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Astrometry/Preview Content\"";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1484,16 +1483,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CloudMakers, s. r. o. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 5.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.cloudmakers.INDIGO-Astrometry";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1645,7 +1645,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry 2/Astrometry.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1665,8 +1665,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry 2/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Astrometry;
+				INFOPLIST_FILE = Astrometry/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1681,7 +1680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry 2/Astrometry-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry/Astrometry-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1699,7 +1698,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_ENTITLEMENTS = "Astrometry 2/Astrometry.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Astrometry/Astrometry.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1715,8 +1714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Astrometry 2/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Astrometry;
+				INFOPLIST_FILE = Astrometry/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1731,7 +1729,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eu.cloudmakers.Astrometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry 2/Astrometry-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astrometry/Astrometry-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1783,7 +1781,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D26B2FF2C10A0F500EC2806 /* Build configuration list for PBXNativeTarget "Astrometry" */ = {
+		9D26B2FF2C10A0F500EC2806 /* Build configuration list for PBXNativeTarget "INDIGO Astrometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D26B3002C10A0F500EC2806 /* Debug */,
@@ -1801,7 +1799,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry 2" */ = {
+		9DF4265D1C24657500DEF999 /* Build configuration list for PBXNativeTarget "Astrometry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DF4265E1C24657500DEF999 /* Debug */,
