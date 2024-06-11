@@ -19,10 +19,10 @@ make debs-docker
 NOTE: you need a running Docker and ARM qemu emulator.
 
 ## MacOS
-MacOS local Astrometry.net plate-solver with GUI and embeded HTTP service.
+MacOS local Astrometry.net plate-solver with GUI and embeded IPC/HTTP service.
 
 To build from source, unpack astrometry.net and cfitsio sources to ../astrometry.net and ../cfitsio, or simply call:
 ```
 clone_sources.sh
 ```
-then build it with Xcode
+then build it with Xcode either Astrometry (general purpose) or INDIGO Astrometry (counter part for Astrometry agent only) target.
