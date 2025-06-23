@@ -390,6 +390,8 @@ struct ContentView: View {
       Task.detached {
         let requestURL = FOLDER.appendingPathComponent("request")
         let responseURL = FOLDER.appendingPathComponent("response")
+        mkfifo(requestURL.path, 0o666)
+        mkfifo(responseURL.path, 0o666)
         Logger.shared.logMessage("IPC listener started", type: .info, speak: true)
         while true {
           if let requestHandle = try? FileHandle(forReadingFrom: requestURL), let responseHandle = try? FileHandle(forWritingTo: responseURL) {

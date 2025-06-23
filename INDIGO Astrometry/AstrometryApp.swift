@@ -12,11 +12,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let requestURL = FOLDER.appendingPathComponent("request")
   let responseURL = FOLDER.appendingPathComponent("response")
 
-  func applicationDidFinishLaunching(_ notification: Notification) {
-    mkfifo(requestURL.path, 0o666)
-    mkfifo(responseURL.path, 0o666)
-  }
-  
   func applicationWillTerminate(_ notification: Notification) {
     unlink(requestURL.path)
     unlink(responseURL.path)

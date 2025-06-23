@@ -57,6 +57,7 @@
 		59395BC6259512FD00AF5042 /* SwifterProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59395B3A259510E000AF5042 /* SwifterProcess.swift */; };
 		594564B31C2871A200FEA745 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594564B21C2871A200FEA745 /* Constants.swift */; };
 		595605B71C2488C3004AEB4C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 595605B61C2488C3004AEB4C /* Credits.rtf */; };
+		5968C4A42E09A6EE00BB906F /* INDIGO Astrometry.icon in Resources */ = {isa = PBXBuildFile; fileRef = 5968C4A32E09A6EE00BB906F /* INDIGO Astrometry.icon */; };
 		5972886025A389D9004E6388 /* liban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3025A2879900CE0DB3 /* liban.a */; };
 		5972886125A389D9004E6388 /* libcfitsio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59110C3325A2879900CE0DB3 /* libcfitsio.a */; };
 		5972886225A389D9004E6388 /* libimage2xy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5972885B25A38988004E6388 /* libimage2xy.a */; };
@@ -246,6 +247,8 @@
 		594564B21C2871A200FEA745 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		595603CF1C233875004AEB4C /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		595605B61C2488C3004AEB4C /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		5968C4A22E09A6E900BB906F /* INDIGO Astrometry.afdesign */ = {isa = PBXFileReference; lastKnownFileType = file; path = "INDIGO Astrometry.afdesign"; sourceTree = "<group>"; };
+		5968C4A32E09A6EE00BB906F /* INDIGO Astrometry.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "INDIGO Astrometry.icon"; sourceTree = "<group>"; };
 		5972884625A3793E004E6388 /* image2xy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = image2xy.entitlements; sourceTree = "<group>"; };
 		5972884725A37A6E004E6388 /* wcsinfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wcsinfo.entitlements; sourceTree = "<group>"; };
 		5972884825A37A7F004E6388 /* astrometry-engine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "astrometry-engine.entitlements"; sourceTree = "<group>"; };
@@ -432,6 +435,8 @@
 				9D26B3042C10A5F600EC2806 /* Defaults.swift */,
 				9D26B3062C10A66800EC2806 /* Extensions.swift */,
 				9D26B2F92C10A0F500EC2806 /* Assets.xcassets */,
+				5968C4A22E09A6E900BB906F /* INDIGO Astrometry.afdesign */,
+				5968C4A32E09A6EE00BB906F /* INDIGO Astrometry.icon */,
 				9D26B2FE2C10A0F500EC2806 /* Astrometry.entitlements */,
 				59B0CC1A2C10C8D200345B4E /* Credits.rtf */,
 				59B0CC1C2C10D49E00345B4E /* beep.wav */,
@@ -759,6 +764,7 @@
 				9D26B2FD2C10A0F500EC2806 /* Preview Assets.xcassets in Resources */,
 				59B0CC1B2C10C8D200345B4E /* Credits.rtf in Resources */,
 				9D26B2FA2C10A0F500EC2806 /* Assets.xcassets in Resources */,
+				5968C4A42E09A6EE00BB906F /* INDIGO Astrometry.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +949,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "astrometry-engine.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -992,6 +999,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "astrometry-engine.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1036,6 +1044,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = wcsinfo.entitlements;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1085,6 +1094,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = wcsinfo.entitlements;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1129,6 +1139,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "new-wcs.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1178,6 +1189,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "new-wcs.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1222,6 +1234,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = image2xy.entitlements;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1271,6 +1284,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = image2xy.entitlements;
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1315,6 +1329,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "solve-field.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1364,6 +1379,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "solve-field.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
@@ -1413,7 +1429,7 @@
 				CODE_SIGN_ENTITLEMENTS = "INDIGO Astrometry/Astrometry.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1471,7 +1487,7 @@
 				CODE_SIGN_ENTITLEMENTS = "INDIGO Astrometry/Astrometry.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AG8BXW65A2;
 				ENABLE_HARDENED_RUNTIME = YES;
