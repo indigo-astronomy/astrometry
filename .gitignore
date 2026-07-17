@@ -8,3 +8,4 @@ astrometry.xcodeproj/xcuserdata/*
 .hgignore
 lib/*
 bin/*
+dist/*
