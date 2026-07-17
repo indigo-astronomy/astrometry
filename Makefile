@@ -1,6 +1,28 @@
 
 ifeq ($(OS),Windows_NT)
 	OS_DETECTED = Windows
+	ARCH_DETECTED = x64
+	EXE = .exe
+	CC = gcc
+	AR = ar
+	# Locate the mingw toolchain's root (the dir containing bin/gcc) so we can
+	# also pick up the bundled "opt" tree (regex.h / libregex.a) shipped by
+	# Qt's mingw distribution, used for POSIX regex support. Note: GNU Make's
+	# $(wildcard) on Windows needs "C:/..." style paths, not MSYS "/c/...".
+	GCC_PATH := $(subst \,/,$(firstword $(shell where gcc)))
+	MINGW_BINDIR := $(dir $(GCC_PATH))
+	MINGW_ROOT := $(patsubst %/,%,$(MINGW_BINDIR)..)
+	MINGW_OPT := $(MINGW_ROOT)/opt
+	CFLAGS = $(DEBUG_BUILD) -O3 -std=gnu11 -pthread -D_WIN32_WINNT=0x0601 -DWIN32_LEAN_AND_MEAN \
+		-D_GNU_SOURCE \
+		-I include/win-compat
+	ifneq ($(wildcard $(MINGW_OPT)/include/regex.h),)
+		CFLAGS += -I $(MINGW_OPT)/include
+		LDFLAGS += -L $(MINGW_OPT)/lib
+	endif
+	LDFLAGS += -pthread -static -static-libgcc
+	ARFLAGS = -rv
+	EXTRA_LIBS = -lregex -lpsapi
 else
 	OS_DETECTED = $(shell uname -s)
 	ARCH_DETECTED = $(shell uname -m)
@@ -178,11 +200,11 @@ WCSINFO_LIB = lib/libwcsinfo.a
 
 LIBS = $(ENGINE_LIB) $(KD_LIB) $(CAT_LIB) $(AN_LIB) $(QFITS_LIB) $(GSL_LIB) $(CFITSIO_LIB)
 
-IMAGE2XY = bin/image2xy
-NEWWCS = bin/new-wcs
-SOLVEFIELD = bin/solve-field
-ASTROMETRYENGINE = bin/astrometry-engine
-WCSINFO = bin/wcsinfo
+IMAGE2XY = bin/image2xy$(EXE)
+NEWWCS = bin/new-wcs$(EXE)
+SOLVEFIELD = bin/solve-field$(EXE)
+ASTROMETRYENGINE = bin/astrometry-engine$(EXE)
+WCSINFO = bin/wcsinfo$(EXE)
 
 all: init $(ANBASE_LIB) $(ANUTILS_LIB) $(ANFILES_LIB) $(QFITS_LIB) $(KD_LIB) $(GSL_LIB) $(CFITSIO_LIB) $(ENGINE_LIB) \
 	$(ASTROMETRY)/catalogs/openngc-names.c $(ASTROMETRY)/catalogs/openngc-entries.c $(CAT_LIB) \
@@ -245,19 +267,19 @@ $(WCSINFO_LIB): $(ASTROMETRY)/util/wcsinfo.o
 	$(AR) $(ARFLAGS) $@ $^
 
 $(IMAGE2XY): $(ASTROMETRY)/solver/image2xy-main.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^ -lm
+	$(CC) -o $@ $(LDFLAGS) $^ -lm $(EXTRA_LIBS)
 
 $(NEWWCS): $(ASTROMETRY)/solver/new-wcs-main.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^ -lm
+	$(CC) -o $@ $(LDFLAGS) $^ -lm $(EXTRA_LIBS)
 
 $(SOLVEFIELD): $(ASTROMETRY)/solver/solve-field.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^ -lm
+	$(CC) -o $@ $(LDFLAGS) $^ -lm $(EXTRA_LIBS)
 
 $(ASTROMETRYENGINE): $(ASTROMETRY)/solver/engine-main.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^ -lm
+	$(CC) -o $@ $(LDFLAGS) $^ -lm $(EXTRA_LIBS)
 
 $(WCSINFO): $(ASTROMETRY)/util/wcsinfo.o $(LIBS)
-	$(CC) -o $@ $(LDFLAGS) $^ -lm
+	$(CC) -o $@ $(LDFLAGS) $^ -lm $(EXTRA_LIBS)
 
 package: ROOT = indigo-astrometry-$(VERSION)-$(DEBIAN_ARCH)
 package: all
