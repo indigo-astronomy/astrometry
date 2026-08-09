@@ -53,9 +53,9 @@ struct ToolbarButton: View {
         .imageScale(.large)
         .frame(width: 24, height: 24)
         .contentShape(RoundedRectangle(cornerRadius: 8))
-        .foregroundColor(state ? .accentColor : .secondary)
+        .foregroundStyle(state ? Color.accentColor : Color.secondary)
     }
-    .foregroundColor(state ? .accentColor : .secondary)
+    .foregroundStyle(state ? Color.accentColor : Color.secondary)
     .background(RoundedRectangle(cornerRadius: 8, style: .continuous).stroke(Color.accentColor).opacity(0.0))
     .help(label)
   }
@@ -329,7 +329,7 @@ struct LogView: View {
 struct ContentView: View {
   @State var isBusy = false
   
-  func execute(_ executable: String, arguments: [String], result: FileHandle? = nil) {
+  nonisolated func execute(_ executable: String, arguments: [String], result: FileHandle? = nil) {
     var ok = false
     let start = Date().timeIntervalSince1970
     Logger.shared.logMessage("Processing request...", type: .info, speak: true)
@@ -395,20 +395,21 @@ struct ContentView: View {
         Logger.shared.logMessage("IPC listener started", type: .info, speak: true)
         while true {
           if let requestHandle = try? FileHandle(forReadingFrom: requestURL), let responseHandle = try? FileHandle(forWritingTo: responseURL) {
-            if isBusy {
+            let busy = await MainActor.run { isBusy }
+            if busy {
               responseHandle.writeLine("message: Solver is busy")
               responseHandle.writeLine("<<<EOF>>>")
               responseHandle.closeFile()
               requestHandle.closeFile()
             } else {
-              isBusy = true
+              await MainActor.run { isBusy = true }
               var args = [String]()
-              while isBusy {
+              while true {
                 if let line = requestHandle.readLine() {
                   if line == "<<<EOF>>>" {
                     let command = args.removeFirst()
                     execute(command, arguments: args, result: responseHandle)
-                    isBusy = false
+                    await MainActor.run { isBusy = false }
                     responseHandle.writeLine("<<<EOF>>>")
                     responseHandle.closeFile()
                     requestHandle.closeFile()
@@ -417,7 +418,8 @@ struct ContentView: View {
                     args.append(line)
                   }
                 } else {
-                  isBusy = false
+                  await MainActor.run { isBusy = false }
+                  break
                 }
               }
             }

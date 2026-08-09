@@ -1,6 +1,19 @@
 {
   "fill" : {
-    "solid" : "extended-gray:0.83742,1.00000"
+    "linear-gradient" : [
+      "extended-gray:1.00000,1.00000",
+      "extended-gray:0.75000,1.00000"
+    ],
+    "orientation" : {
+      "start" : {
+        "x" : 0.5,
+        "y" : 1
+      },
+      "stop" : {
+        "x" : 0.5,
+        "y" : 0.3
+      }
+    }
   },
   "groups" : [
     {
@@ -19,7 +32,7 @@
           "image-name" : "slice1.png",
           "name" : "slice1",
           "position" : {
-            "scale" : 1,
+            "scale" : 1.2,
             "translation-in-points" : [
               0,
               0

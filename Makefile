@@ -12,7 +12,7 @@ else
 		else
 			MAC_ARCH = -arch x86_64
 		endif
-		CFLAGS = $(DEBUG_BUILD) $(MAC_ARCH) -mmacosx-version-min=10.10 -fPIC -O3 -std=gnu11
+		CFLAGS = $(DEBUG_BUILD) $(MAC_ARCH) -mmacosx-version-min=10.10 -fPIC -O3 -std=gnu11 -fno-common
 		LDFLAGS = $(MAC_ARCH) -headerpad_max_install_names -mmacosx-version-min=10.10 -lobjc
 		ARFLAGS = -static -o
 	endif
